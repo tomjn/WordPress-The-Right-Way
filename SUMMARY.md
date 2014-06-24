@@ -13,7 +13,7 @@
 * [Multisite](multisite/README.md)
 * [Testing](testing/README.md)
 * [Servers And Deployment](servers_and_deployment/README.md)
-* [SSL](ssl/README.md)
+* [Security](ssl/README.md)
 * [Resources](resources/README.md)
 * [Community](community/README.md)
 * [Credits](credits/README.md)
