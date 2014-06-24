@@ -1,8 +1,20 @@
 # Security
 
- - nonces
- - roles and capabilities
+## Salts
+
+## Nonces
+
+## The Location of `wp-config`
+
+## Roles and Capabilities
+
+## Removing vs Hiding Settings Pages
+
 
 ## SSL
 
- - Admin only SSL
+### Admin Only SSL
+
+## Myths
+
+### Hiding the Admin and Login URLs
