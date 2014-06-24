@@ -1,7 +1,8 @@
 # Community
 
  - WordCamps
- - User Groups
- - .org support forums
- - IRC
+ - Contributor Days
+ - Local User Groups
+ - .org Support Forums
+ - IRC Channels
  - WordPress Stack Exchange
