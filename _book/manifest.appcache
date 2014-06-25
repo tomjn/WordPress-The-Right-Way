@@ -1,16 +1,17 @@
 CACHE MANIFEST
-# Revision 1403642597501
+# Revision 1403684695401
 
 CACHE:
-i18n/README.html
-index.html
+getting_started/README.html
 code_style_guide/README.html
 community/README.html
 core/README.html
 credits/README.html
-debugging/README.html
 forms_and_ajax/README.html
-getting_started/README.html
+debugging/README.html
+index.html
+i18n/README.html
+javascript/README.html
 multisite/README.html
 post_types/README.html
 queries/README.html
