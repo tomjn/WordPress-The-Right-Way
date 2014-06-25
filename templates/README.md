@@ -6,3 +6,4 @@
  - Functions.php and Plugins
  - Loading Javascript and Stylesheets
  - Templates and Plugins
+ - Forms

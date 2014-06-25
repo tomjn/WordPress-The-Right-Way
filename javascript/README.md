@@ -9,8 +9,9 @@ Using:
 - `admin_enqueue_scripts`,
 - `wp_enqueue_media`,
 - `login_enqueue_scripts`
-- using `define('SCRIPT_DEBUG', true);`
+- Using `define('SCRIPT_DEBUG', true);`
+- AJAX
 
-List of all the build in scripts that can be used (jQuery, etc, etc)
+List of all the built in scripts that can be used (jQuery, etc, etc)
 
 Maybe a bit about backbone.

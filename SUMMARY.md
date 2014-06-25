@@ -9,7 +9,6 @@
 * [Templates](templates/README.md)
 * [JavaScript](javascript/README.md)
 * [Data](post_types/README.md)
-* [Forms and AJAX](forms_and_ajax/README.md)
 * [I18n](i18n/README.md)
 * [Multisite](multisite/README.md)
 * [Testing](testing/README.md)
