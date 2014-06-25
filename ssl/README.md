@@ -16,6 +16,8 @@
 
 ## Custom Password Reset Code
 
+## timthumb.php
+
 ## SSL
 
 ### Admin Only SSL
@@ -23,5 +25,7 @@
 ## Myths
 
 ### Hiding the Admin and Login URLs
+
+### Deactivated Plugins & Themes
 
 ## Recovering From Attacks
