@@ -21,3 +21,10 @@ It's tempting to modify parts of Core to remove or add things, but this must nev
 Instead, use Hooks/Actions and Filters to modify Core behaviour.
 
 ## How core development works on .org
+
+ - trunk
+ - develop
+ - grunt builds develop into trunk
+ - Trac
+ - code freeze
+ - release
