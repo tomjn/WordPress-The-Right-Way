@@ -3,6 +3,7 @@
 * [Getting Started](getting_started/README.md)
 * [Code Style Guide](code_style_guide/README.md)
 * [Debugging](debugging/README.md)
+   * [wp-config.php](debugging/wp-configphp.md)
 * [Core](core/README.md)
 * [Data](post_types/README.md)
 * [Queries](queries/README.md)
