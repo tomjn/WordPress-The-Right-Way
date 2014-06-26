@@ -16,19 +16,6 @@ There are several kinds of error logging, but the most basic are:
 
 In a production/live environment, you want to write errors to a log file.
 
-### `WP_DEBUG`
-
-`WP_DEBUG` is a constant you can define in `wp-config.php`.
-
-    define('WP_DEBUG', true );
-
-You should never enable `WP_DEBUG` on a production/live server.
-
-When `WP_DEBUG` is true, WordPress enters debug mode. It can be extended with these constants:
-
- - `WP_DEBUG_LOG`, when true, will log all errors to wp-content/debug.log
- - `WP_DEBUG_DISPLAY`, when true, will display errors on the frontend in the browser
-
 ### Warnings vs Errors
 
 Depending on how PHP is configured, warnings will also be shown. A warning is something that does not stop PHP from running but indicates a problem might have occurred. For example:
