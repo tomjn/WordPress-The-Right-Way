@@ -57,6 +57,15 @@ While VVV is better if you want to work on WordPress' core VagrantPress good for
 
 ### MAMP, WAMP, & LAMP
 
+Most server stacks are LAMP stacks, which stands for:
+
+ - Linux
+ - Apache
+ - MySQL
+ - PHP
+
+MAMP and WAMP are the Windows and OS X versions of LAMP, packaged up, and distributed as an installer. These are the most common variety of local environments. While easy to use, they have their own issues, e.g. MAMP comes as a commercial product with a trial period ( although it has a free version that comes bundled which most people use ).
+
 ### IIS
 
 Microsoft Internet Information Services is the server software that powers Windows based servers. Variants of it come with Windows if you install the appropriate components, but knowledge of IIS setup in the WordPress community is rare. Most remote servers run an Apache or Nginx setup, and developer knowledge is geared in that direction.
@@ -65,7 +74,11 @@ IIS is not be the easiest route to take.
 
 ## Version Control
 
+A vital part of working in teams and contributing is version control. Version control systems track changes over time and allow developers to collaborate and undo changes.
+
 ### Git
+
+[Git is a popular decentralised system](http://git-scm.com/), if you've ever been on GitHub, you've encountered git.
 
 ### Subversion
 
