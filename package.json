@@ -1,0 +1,13 @@
+{
+    "name": "wordpresstherightway",
+    "version": "1.0.0",
+    "description": "WordPress The Right Way book",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tarendai/WordPress-The-Right-Way.git"
+    },
+    "author": "Tom J Nowell <contact@tomjn.com>",
+    "dependencies": {
+        "gitbook-plugin-autocover": "0.0.5"
+    }
+}
