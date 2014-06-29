@@ -2,6 +2,8 @@
 
 ## Loading templates via `get_template_part`
 
+Mention `locate_template` function
+
 
 ## How Templates are Chosen and the Template Hierarchy
 
@@ -12,19 +14,15 @@ Notes on how a template is chosen using the main query. How templates are chosen
 
 ## Loading Stylesheets
 
-
+enquing stylesheets properly
 
 ## Templates and Plugins
 
-
-
-### locate_template
-
-
+`template_include` filter
 
 ## Forms
 
-
+Forms that submit to a separate standalone PHP file in your theme are bad. An example of how to handle a basic form submission on a page template
 
 ## Virtual Pages
 
