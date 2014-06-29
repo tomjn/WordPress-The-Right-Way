@@ -8,6 +8,5 @@
     },
     "author": "Tom J Nowell <contact@tomjn.com>",
     "dependencies": {
-        "gitbook-plugin-autocover": "0.0.5"
     }
 }

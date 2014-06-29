@@ -1,21 +1,2 @@
 {
-    "plugins": ["autocover"],
-    "pluginsConfig": {
-        "autocover": {
-		    "title": "WordPress The Right Way",
-		    "author": "Tom J Nowell & Community",
-		    "font": {
-		        "size": null,
-		        "family": "Arial",
-		        "color": "#FFFFFF"
-		    },
-		    "size": {
-		        "w": 1800,
-		        "h": 2360
-		    },
-		    "background": {
-		        "color": "#464646"
-		    }
-		}
-    }
 }
