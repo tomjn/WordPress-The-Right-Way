@@ -95,6 +95,26 @@ When you call `query_posts`, you will need to restore the main query after you'v
 
 ### The `pre_get_posts` Filter
 
+If you need to change the main query and display something else on the page, you should use the `pre_get_posts` filter.
+
+Many people will want to use this for things such as removing posts from an archive, changing the post types for search, excluding categories, and others
+
+Here is the Codex example for searching only for posts:
+
+```
+function search_filter($query) {
+    if ( !is_admin() && $query->is_main_query() ) {
+        if ($query->is_search) {
+            $query->set('post_type', 'post');
+        }
+    }
+}
+
+add_action( 'pre_get_posts', 'search_filter' );
+```
+
+These filters can go in a themes `functions.php`, or in a plugin.
+
 ## Taxonomy Queries
 
 When dealing with taxonomies ( including post categories and tags ), it's safer to rely on the generic APIs rather than the legacy helper APIs. These include:
@@ -149,6 +169,7 @@ if ( ! empty( $user_query->results ) ) {
 	echo 'No users found.';
 }
 ```
+
 ## SQL
 
 ### WPDB
@@ -159,9 +180,21 @@ But if you have to make an SQL query, use `WPDB` objects.
 
 ### dbDelta and Table Creation
 
-dbDelta is fiddly and awkward to use.
+The `dbDelta` function examines the current table structure, compares it to the desired table structure, and either adds or modifies the table as necessary, so it can be very handy for updates.
+
+The dbDelta function is rather picky, however. For instance:
+
+ - You must put each field on its own line in your SQL statement.
+ - You must have two spaces between the words `PRIMARY KEY` and the definition of your primary key.
+ - You must use the key word `KEY` rather than its synonym `INDEX` and you must include at least one KEY.
+ - You must not use any apostrophes or backticks around field names.
+ - `CREATE TABLE` must be captalised
+
+With those caveats, here are the next lines in our function, which will actually create or update the table. You'll need to substitute your own table structure in the $sql variable.
 
 ## Further Reading
 
  - [You don't know query](http://www.slideshare.net/andrewnacin/you-dont-know-query-wordcamp-netherlands-2012), a talk by Andrew Nacin
  - [When you should use WP_Query vs query_posts](http://wordpress.stackexchange.com/a/1755/736), Andrei Savchenko/Rarst
+ - [Creating Tables With Plugins - Codex](http://codex.wordpress.org/Creating_Tables_with_Plugins#Creating_or_Updating_the_Table)
+ - [pre_get_posts - Codex](http://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts)
