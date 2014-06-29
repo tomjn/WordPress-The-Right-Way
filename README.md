@@ -13,3 +13,7 @@ This project is not affiliated with Automattic or the WordPress Foundation (thou
 Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
 
 [![Build Status](https://www.gitbook.io/button/status/book/tarendai/wordpress-the-right-way)](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity)
+
+## License
+
+[Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated
