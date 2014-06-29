@@ -49,7 +49,7 @@ When installed, VVV will have a www subfolder containing all your sites for edit
 
 #### VagrantPress
 
-Another WordPress devlepment environment which is setup on Vagrant is [VagrantPress](https://github.com/chad-thompson/vagrantpress). It is in some ways not as complex as VVV but offers a great setup to start developing locally.
+Another WordPress development environment which is setup on Vagrant is [VagrantPress](https://github.com/chad-thompson/vagrantpress). It is in some ways not as complex as VVV but offers a great setup to start developing locally.
 
 The main difference between VVV is that VagrantPress onyly sets up one local WordPress installation and does not alter the `hosts` file to forward a URL.
 
