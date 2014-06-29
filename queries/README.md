@@ -78,9 +78,9 @@ $posts = get_posts( $arguments );
 
 #### Don't use `query_posts`
 
-`query_posts` is used to modify the main query, however it does this by discarding it and replacing it with a new query. This is incredibly wasteful and has a major performance cost.
+`query_posts` is an overly simplistic and problematic way to modify the main query of a page by replacing it with new instance of the query.
 
-Using `query_posts` can encourage bad habits, and cannot be nested inside other queries. Use the `pre_get_posts` filter instead.
+It is inefficient (re-runs SQL queries) and will outright fail in some circumstances (especially often when dealing with posts pagination). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. Do not use `query_posts()`.
 
 
 ### Cleaning up after Queries
@@ -97,10 +97,58 @@ When you call `query_posts`, you will need to restore the main query after you'v
 
 ## Taxonomy Queries
 
+When dealing with taxonomies ( including post categories and tags ), it's safer to rely on the generic APIs rather than the legacy helper APIs. These include:
+
+ - `get_taxonomies`
+ - `get_terms`
+ - `get_term_by`
+ - `get_taxonomy`
+ - `wp_get_object_terms`
+ - `wp_set_object_terms`
+
+It's easier to learn one set of APIs, and think of categories and tags as just another taxonomy, rather than mixing and matching older functions such as `get_category` etc
+
 ## Comment Queries
 
+```
+<?php
+$args = array(
+   // args here
+);
+
+// The Query
+$comments_query = new WP_Comment_Query;
+$comments = $comments_query->query( $args );
+
+// Comment Loop
+if ( $comments ) {
+	foreach ( $comments as $comment ) {
+		echo '<p>' . $comment->comment_content . '</p>';
+	}
+} else {
+	echo 'No comments found.';
+}
+```
 ## User Queries
 
+```
+<?php
+$args = array(
+    //
+);
+
+// The Query
+$user_query = new WP_User_Query( $args );
+
+// User Loop
+if ( ! empty( $user_query->results ) ) {
+	foreach ( $user_query->results as $user ) {
+		echo '<p>' . $user->display_name . '</p>';
+	}
+} else {
+	echo 'No users found.';
+}
+```
 ## SQL
 
 ### WPDB
@@ -112,3 +160,8 @@ But if you have to make an SQL query, use `WPDB` objects.
 ### dbDelta and Table Creation
 
 dbDelta is fiddly and awkward to use.
+
+## Further Reading
+
+ - [You don't know query](http://www.slideshare.net/andrewnacin/you-dont-know-query-wordcamp-netherlands-2012), a talk by Andrew Nacin
+ - [When you should use WP_Query vs query_posts](http://wordpress.stackexchange.com/a/1755/736), Andrei Savchenko/Rarst
