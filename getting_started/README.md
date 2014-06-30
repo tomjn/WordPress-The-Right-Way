@@ -4,15 +4,15 @@
 
 It's assumed that you have a basic knowledge of PHP. This will include a knowledge of:
 
- - functions
- - arrays
- - variables
- - loops and conditionals
- - classes and objects
- - class inheritance
- - polymorphism
- - POST and GET
- - variable scope
+ - [functions](http://www.php.net/manual/en/language.functions.php)
+ - [arrays](http://www.php.net/manual/en/language.types.array.php)
+ - [variables](http://www.php.net/manual/en/language.variables.php)
+ - [loops and conditionals](http://www.php.net/manual/en/language.control-structures.php)
+ - [classes and objects](http://www.php.net/manual/en/language.oop5.php)
+ - [class inheritance](http://www.php.net/manual/en/language.oop5.inheritance.php)
+ - [polymorphism](http://code.tutsplus.com/tutorials/understanding-and-applying-polymorphism-in-php--net-14362)
+ - [POST](http://www.php.net/manual/en/reserved.variables.post.php) and [GET](http://www.php.net/manual/en/reserved.variables.get.php)
+ - [variable scope](http://www.php.net/manual/en/language.variables.scope.php)
 
 If you don't have a good grasp of those concepts, you should make sure you have a firm understanding before continuing.
 
