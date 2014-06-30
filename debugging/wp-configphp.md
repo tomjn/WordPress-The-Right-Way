@@ -64,7 +64,7 @@ define( 'CONCATENATE_SCRIPTS', false );
 ---
 
 ### `SAVEQUERIES`
-When you are dealing with the database you might want to save your queries so that you can debug what is happening inside fo your plugin or theme.
+When you are dealing with the database you might want to save your queries so that you can debug what is happening inside of your plugin or theme.
 
 **Make `$wpdb` save Queries**
 ```php
