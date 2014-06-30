@@ -10,6 +10,20 @@ Indenting in WordPress is done using tabs, representing 4 spaces visually. Inden
 
 A good editor will auto-indent for you, most can re-indent a file if you've older code that needs fixing.
 
+A good way to ensure that all members on a team are using the same
+styles is to use [Editor Config](http://editorconfig.org). It contains
+plugins for different editors, so everyone can use their favorite
+editor.
+
+For instance, the following `.editorconfig` file enforces the above
+rule, indentation as tabs of width 4 spaces.
+
+```ini
+[*.php]
+indent_style = tabs
+indent_size = 4
+```
+
 ### PHP Tag Spam
 
 The `<?php` and `?>` tags should be used sparingly. For example:
