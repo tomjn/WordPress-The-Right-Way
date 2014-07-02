@@ -29,42 +29,14 @@ It's important to have a local development environment. Gone are the old days of
 
 With a local environment, you can work faster, no more uploading and downloading files, being at the mercy of a dodgy internet connection, or waiting for pages to load from the open web. With a local server stack you can work on a train in a tunnel with no wifi or phone signal, and test your work before deploying it to the live server.
 
-Here are a few options for setting up a local development environment.
+Here are a few options for setting up a local development environment. They fall into two categories:
 
-### Vagrant
+ - Virtual Machines
+ - Native Server Stacks
 
-A popular way to setup a local development evironment is [Vagrant](http://www.vagrantup.com/). Vagrant is a command line tool to easily setup  development environments. With Vagrant it is possible to create any environment you like and configure it.
+The first type of environment usually involves projects such as Vagrant, and gives you a standardised consistent virtual machine to work with.
 
-For example you can define a setup for a Ubuntu environment with defined packages like GIT, PHP, and MySQL while another similiar setup uses a RedHat environment.
-
-Some smart people already created configurations for WordPress and offers them for free. Two popular WordPress Vagrant setups are discusses below.
-
-#### VVV
-
-[Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) is a Vagrant setup started by 10up, that gives you a virtual machine with a full WordPress stack, and all the tools you need to work on Core and your own websites.
-
-Available on every operating system and actively maintained and used by prominent WordPress agencies, this is the most flexible and portable methods of getting a consistent and reliable development environment up quickly.
-
-When installed, VVV will have a www subfolder containing all your sites for editing.
-
-#### VagrantPress
-
-Another WordPress development environment which is setup on Vagrant is [VagrantPress](https://github.com/chad-thompson/vagrantpress). It is in some ways not as complex as VVV but offers a great setup to start developing locally.
-
-The main difference between VVV is that VagrantPress onyly sets up one local WordPress installation and does not alter the `hosts` file to forward a URL.
-
-While VVV is better if you want to work on WordPress' core VagrantPress good for any development which needs just one installation.
-
-### MAMP, WAMP, & LAMP
-
-Most server stacks are LAMP stacks, which stands for:
-
- - Linux
- - Apache
- - MySQL
- - PHP
-
-MAMP and WAMP are the Windows and OS X versions of LAMP, packaged up, and distributed as an installer. These are the most common variety of local environments. While easy to use, they have their own issues, e.g. MAMP comes as a commercial product with a trial period ( although it has a free version that comes bundled which most people use ).
+The second, installs the server software directly into your operating system. There are various tools that make this easy, but your environment will be unique and more difficult to debug. These are sometimes called LAMP stacks, which stands for Linux Apache MySQL PHP.
 
 ### IIS
 
@@ -78,7 +50,7 @@ A vital part of working in teams and contributing is version control. Version co
 
 ### Git
 
-[Git is a popular decentralised system](http://git-scm.com/), if you've ever been on GitHub, you've encountered git.
+Created by Linus Torvalds the creator of Linux, [Git is a popular decentralised system](http://git-scm.com/), if you've ever been on GitHub, you've encountered git.
 
 ### Subversion
 
