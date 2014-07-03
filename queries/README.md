@@ -10,7 +10,7 @@ Every page displayed by WordPress has a main query. This query grabs posts from 
 
 Once that template is loaded, the main loop begins, allowing the theme to display the posts found by the main query. Here is an example main loop:
 
-```
+```php
 if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
@@ -29,7 +29,9 @@ This object is told what to fetch using Query Variables. These values are passed
 
 For example, the query variable 'p' is used to fetch a specific post type, e.g.
 
-    $posts = get_posts( 'p=12' );
+```php
+$posts = get_posts( 'p=12' );
+```
 
 Fetches the post with ID 12. The full list of options are available on the `WP_Query` codex entry.
 
@@ -49,18 +51,19 @@ This diagram explains what happens in each method:
 
 #### `WP_Query`
 
-```
+```php
 $query = new WP_Query( $arguments );
 ```
+
 All post queries are wrappers around `WP_Query` objects. A `WP_Query` object represents a query, e.g. the main query, and has helpful methods such as:
 
-```
+```php
 $query->have_posts();
 $query->the_post();
 ```
 etc. The functions `have_posts();` and `the_post();` found in most themes are wrappers around the main query object:
 
-```
+```php
 function have_posts() {
 	global $wp_query;
 
@@ -70,7 +73,7 @@ function have_posts() {
 
 #### `get_posts`
 
-```
+```php
 $posts = get_posts( $arguments );
 ```
 
@@ -101,7 +104,7 @@ Many people will want to use this for things such as removing posts from an arch
 
 Here is the Codex example for searching only for posts:
 
-```
+```php
 function search_filter($query) {
     if ( !is_admin() && $query->is_main_query() ) {
         if ($query->is_search) {
@@ -130,8 +133,7 @@ It's easier to learn one set of APIs, and think of categories and tags as just a
 
 ## Comment Queries
 
-```
-<?php
+```php
 $args = array(
    // args here
 );
@@ -149,10 +151,10 @@ if ( $comments ) {
 	echo 'No comments found.';
 }
 ```
+
 ## User Queries
 
-```
-<?php
+```php
 $args = array(
     //
 );
