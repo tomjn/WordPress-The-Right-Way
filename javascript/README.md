@@ -11,7 +11,7 @@ You can check if a script has been enqueued, printed, or registered by calling `
 
 For example, here we check if fitvid has been added, and enqueued it if it hasn't:
 
-```
+```php
 $handle = 'fluidVids.js';
 $list = 'enqueued';
 if (wp_script_is( $handle, $list )) {
@@ -26,7 +26,7 @@ if (wp_script_is( $handle, $list )) {
 
 When adding javascript to the admin area, it's tempting to use the `admin_head` action. Don't do this, instead use this hook when including javascript in the Admin area. For examples:
 
-```
+```php
 function my_enqueue($hook) {
     wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . 'script.js' );
 }
@@ -38,7 +38,7 @@ add_action( 'admin_enqueue_scripts', 'my_enqueue' );
 
 When adding styles and scripts to the login screen, use the `login_enqueue_scripts` hook to add them. For example:
 
-```
+```php
 function themeslug_enqueue_style() {
 	wp_enqueue_style( 'core', 'style.css', false ); 
 }
