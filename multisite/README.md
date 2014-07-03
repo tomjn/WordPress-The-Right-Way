@@ -4,7 +4,7 @@
 
 Can be done but is expensive
 
-```
+```php
 switch_to_blog( $blog_id );
 // Do something
 restore_current_blog();
