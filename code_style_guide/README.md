@@ -28,7 +28,7 @@ indent_size = 4
 
 The `<?php` and `?>` tags should be used sparingly. For example:
 
-```
+```php
 <?php while( have_posts() ) { ?>
     <?php the_post(); ?>
     <?php the_title(); ?>
@@ -38,7 +38,7 @@ The `<?php` and `?>` tags should be used sparingly. For example:
 ```
 Would be easier to read as:
 
-```
+```php
 <?php
 while( have_posts() ) {
     the_post();
