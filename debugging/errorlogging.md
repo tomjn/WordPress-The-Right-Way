@@ -12,7 +12,7 @@ In a production/live environment, you want to write errors to a log file.
 
 Depending on how PHP is configured, warnings will also be shown. A warning is something that does not stop PHP from running but indicates a problem might have occurred. For example:
 
-```
+```php
 $my_array = array(
     'alice' => 5,
     'bob' => 6
