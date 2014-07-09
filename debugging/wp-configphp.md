@@ -25,7 +25,7 @@ A minor patch later the on [Wordpress version 2.3.2](http://codex.wordpress.org/
 Later on in the version 2.5, WordPress raised the [error reporting](http://www.php.net/error-reporting) level to E_ALL, that will allow to see logs for Notices and Deprecation messages.
 
 ###### _Notes:_
-If you have this option turned on you might encounter problems with AJAX requests, this problem is related to Notices been printed on the output of the AJAX response, that **will break XML and JSON**.
+If you have this option turned on, you might encounter problems with AJAX requests, this problem is related to Notices been printed on the output of the AJAX response, that **will break XML and JSON**.
 
 #### `WP_DEBUG_LOG`
 When you use `WP_DEBUG` set to `true` you have access to this constant, and this will allow you to log your notices and warnings to a file.
@@ -41,7 +41,7 @@ If these variables don't produce the output you are expecting check out the [Cod
 ### `SCRIPT_DEBUG`
 When you have a WordPress plugin or theme that is including the Minified version of your CSS or JavaScript files by default you are doing it wrong!
 
-Following the WordPress idea of creating a file for development and it's minified version is very good and you should have both files in your plugin, and based on this variable you will enqueue one or the other.
+Following the WordPress idea of creating a file for development and its minified version is very good and you should have both files in your plugin, and based on this variable you will enqueue one or the other.
 
 By default this constant will be set to `false`, and if you want to be able to debug CSS or JavaScript files from WordPress you should turn it to `true`.
 
@@ -51,7 +51,7 @@ define( 'SCRIPT_DEBUG', true );
 ```
 _Check that the values must be **bool** instead of **string**_
 
-WordPress default files `wp-includes` and `wp-admin` will be set to it's development version if set to `true`.
+WordPress default files `wp-includes` and `wp-admin` will be set to its development version if set to `true`.
 
 ### `CONCATENATE_SCRIPTS`
 On your WordPress administration you will have all your JavaScript files concatenated in to one single request based on the dependencies and priority of enqueue.
