@@ -129,7 +129,7 @@ When dealing with taxonomies ( including post categories and tags ), it's safer 
  - `wp_get_object_terms`
  - `wp_set_object_terms`
 
-It's easier to learn one set of APIs, and think of categories and tags as just another taxonomy, rather than mixing and matching older functions such as `get_category` etc
+It's easier to learn one set of APIs, and think of categories and tags as just another taxonomy, rather than mixing and matching older functions such as `get_category` etc.
 
 ## Comment Queries
 
@@ -190,7 +190,7 @@ The dbDelta function is rather picky, however. For instance:
  - You must have two spaces between the words `PRIMARY KEY` and the definition of your primary key.
  - You must use the key word `KEY` rather than its synonym `INDEX` and you must include at least one KEY.
  - You must not use any apostrophes or backticks around field names.
- - `CREATE TABLE` must be captalised
+ - `CREATE TABLE` must be capitalised.
 
 With those caveats, here are the next lines in our function, which will actually create or update the table. You'll need to substitute your own table structure in the $sql variable.
 
