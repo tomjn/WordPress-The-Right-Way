@@ -18,7 +18,7 @@ Tags and categories are taxonomies. Individual tags and categories are called te
 
 For example, a colour taxonomy. Purple would be a term in the colour taxonomy. Remember to flush permalinks if you change your taxonomy registration.
 
-Object IDs are attached to taxonomy terms. These IDs are normally post IDs, but this is purely convention. There is nothing preventing a user or a comment taxonomy. A user taxonomy would be useful for grouping users into locations or job roles
+Object IDs are attached to taxonomy terms. These IDs are normally post IDs, but this is purely convention. There is nothing preventing a user or a comment taxonomy. A user taxonomy would be useful for grouping users into locations or job roles.
 
 ## Meta
 
