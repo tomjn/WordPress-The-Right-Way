@@ -1,6 +1,6 @@
-# Handling Errors
+# エラーの取り扱い
 
-## Return values
+## 返り値
 
 ## `is_wp_error`
 
