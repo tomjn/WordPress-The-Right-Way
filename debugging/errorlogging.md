@@ -1,16 +1,16 @@
-# Error Logging
+# エラーの記録
 
-There are several kinds of error logging, but the most basic are:
+エラーの記録にはいくつか種類がありますが、主なものは以下になります:
 
- - Displaying errors on the frontend
- - Writing errors to a log file
- - Not displaying anything at all
+ - 表側にエラーを表示する
+ - ログファイルにエラーを書き込む
+ - 何も表示させない
 
-In a production/live environment, you want to write errors to a log file.
+本番環境ではエラーはログファイルに書き込んだほうがいいでしょう。
 
-## Warnings vs Errors
+## 警告(Warning) vs エラー(Error)
 
-Depending on how PHP is configured, warnings will also be shown. A warning is something that does not stop PHP from running but indicates a problem might have occurred. For example:
+PHPがどのように設定されているかにもよりますが、警告(Warning)が表示されることもあります。警告(Warning)はPHPを止めてしまうわけではありませんが、問題となり得ることを示します。例えば:
 
 ```php
 $my_array = array(
@@ -20,14 +20,14 @@ $my_array = array(
 echo $my_array['eve'];
 ```
 
-Here, I am echoing the 'eve' entry in `$my_array`, but there is no such entry. PHP responds by creating an empty value and logging a warning. Warnings are indicators of bugs and mistakes.
+ここでは`$my_array`内の'eve'エントリーをエコーしようとしているのですが、そのようなエントリーはありません。PHPは空の値を作り警告を記録します。警告(Warning)はバグやミスを指し示すのです。
 
-## PHP Error Reporting
+## PHPエラーレポーティング
 
-Depending on what was defined in your `php.ini`, PHP will have an error reporting level. Everything below that level will be ignored or considered a warning. Everything above it will be considered an error. This can vary from server to server.
+`php.ini`に何が定義されていのかによりますが、PHPにはエラーレポーティングレベルというものがあります。そのレベル以下のものはすべて無視されるか単なる警告とみなされます。これはサーバーによって様々です。
 
-## The `@` operator
+## `@` エラー制御演算子
 
-Never use the `@` operator. It's used to hide errors and warnings in code, but it doesn't do what people expect it to do.
+エラー制御演算子 `@` は決して使ってはいけません。これはコードのエラーと警告を隠しますが、普通の人が望むような動作はしません。
 
-`@` works by settings the error reporting level on a command so that no error is logged. It doesn't prevent the error from happening, which is what people expect it to do. This can mean fatal errors are not caught or logged. Avoid using the `@` operator, and treat all instances of it with suspicion.
+`@` はコマンド上のエラー報告レベル設定によって動作するので、エラーが記録されません。これは、普通の人が望むような、エラーの発生を防止するものではありません。これは致命的なエラーが捉えられないか、記録されないようにすることを意味します。エラー制御演算子 `@` の使用は避け、このインスタンスはすべて疑いをもって扱うようにします。

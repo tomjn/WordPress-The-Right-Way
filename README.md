@@ -1,19 +1,21 @@
 # WordPress The Right Way
 
-A book inspired by [PHP The Right Way](http://www.phptherightway.com/), but for WordPress developers
+これは [PHP The Right Way](http://www.phptherightway.com/) にインスパイヤされた、WordPress開発者向けの本です。
 
 Initial draft edit, each chapter contains a brief list of things that should be mentioned in them. Suggestions are welcome.
 
-This project is not affiliated with Automattic or the WordPress Foundation (though their support is welcome).
+最初の草稿の編集で、各章にはその章で扱うことの簡単なリストが含めました。提案があれば歓迎します。
 
-## How to Contribute
+このプロジェクトはAutomatticともWordPress Foundation とも関係していません (サポートは歓迎しますが)。
 
-[You can contribute on GitHub](https://github.com/Tarendai/WordPress-The-Right-Way), changes will be [pushed to Gitbook.io automatically](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) when the [main repository](https://github.com/Tarendai/WordPress-The-Right-Way) changes, which will rebuild the site.
+## 参加協力の方法
 
-Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
+[GitHub上で参加協力できます](https://github.com/Tarendai/WordPress-The-Right-Way)。[メインのリポジトリ](https://github.com/Tarendai/WordPress-The-Right-Way)が変更されると、その変更が[自動的にGitbook.ioへプッシュされ、](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity)サイトがリビルドされます。
+
+この本は、テキストエディターでマークダウンファイルを更新したり、[Gitbookデスクトップアプリ](https://github.com/GitbookIO/editor/blob/master/README.md)で開いたりして編集することができます。デスクトップアプリではライブプレビューのオプションもあります。
 
 [![Build Status](https://www.gitbook.io/button/status/book/tarendai/wordpress-the-right-way)](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity)
 
-## License
+## ライセンス
 
 [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated
