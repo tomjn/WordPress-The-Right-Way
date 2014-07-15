@@ -1,22 +1,21 @@
-# Debugging
+# デバッグ
 
-When developing for WordPress, it's important that your code works, but when it fails it can be like a needle in a haystack. It doesn't need to be that way.
+WordPressの開発時には自分のコードが動作することは重要ですが、動作に失敗した時は、その失敗が非常に見つけにくいことがあります。そうした失敗を見つけられるようにする必要があります。
 
-This chapter covers:
+この章では以下扱います:
 
- - How to find out what errors have occurred
- - How to debug the issue
- - Plugins and tools to make your life easier
- - Features in WordPress that make debugging easier
- - How to prevent problems from occurring to begin with and easy automated tools to catch mistakes for you
+ - どのようなエラーが発生しているのかを見つける
+ - どのようにその問題をデバッグするか
+ - 助けになるプラグインやツール
+ - デバッグを容易にするWordPressの機能
+ - 問題の発生を未然に防ぐ方法とミスを見つけるための簡単な自動化されたツール
 
-But before you continue, a word on White Screens of Death
+先にいく前に画面が真っ白になった時の対応を。
 
-## White Screens of Death
+## 画面が真っ白になったとき
 
-A common issue with new WordPress developers is the white screen of death. This happens when a fatal error occurs in PHP. Many new developers respond to this by making changes and hoping the problem goes away, but there are better ways of dealing with this.
+WordPressの新人開発者が出くわすよくある問題の1つが、画面が真っ白になって動かなくなることでしょう。これはPHPで致命的なエラー(fatal error)が発生した時に起こります。多くの新人WordPress開発者は変更することによって対応し、この問題が何処かへ言ってしまうことを望むことでしょう。しかし、この事態に対応するにはもっといい方法があります。
 
-When an error occurs in PHP, it gets logged somewhere, and you can find out what went wrong and where.
+PHPではエラーが発生するとどこかにそれを記録し、それにより何が原因で、どこでそれが発生しているのかを見つけることができます。
 
-A good starting point for developers is to [enable `WP_DEBUG`](wp-configphp.md).
-
+開発者にとっての良い出発点は[`WP_DEBUG`を有効にすること](wp-configphp.md)です。
