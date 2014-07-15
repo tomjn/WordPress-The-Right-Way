@@ -1,31 +1,40 @@
-# Getting Started
+# さあ、始めよう
 
-## Basic PHP
+## PHPの基礎
 
-It's assumed that you have a basic knowledge of PHP. This will include a knowledge of:
+この本では、PHPの基礎的な知識があることを前提としています。その知識には次の項目が含まれます:
 
- - [functions](http://www.php.net/manual/en/language.functions.php)
- - [arrays](http://www.php.net/manual/en/language.types.array.php)
- - [variables](http://www.php.net/manual/en/language.variables.php)
- - [loops and conditionals](http://www.php.net/manual/en/language.control-structures.php)
- - [classes and objects](http://www.php.net/manual/en/language.oop5.php)
- - [class inheritance](http://www.php.net/manual/en/language.oop5.inheritance.php)
- - [polymorphism](http://code.tutsplus.com/tutorials/understanding-and-applying-polymorphism-in-php--net-14362)
- - [POST](http://www.php.net/manual/en/reserved.variables.post.php) and [GET](http://www.php.net/manual/en/reserved.variables.get.php)
- - [variable scope](http://www.php.net/manual/en/language.variables.scope.php)
+ - [関数](http://www.php.net/manual/en/language.functions.php)
+ - [配列](http://www.php.net/manual/en/language.types.array.php)
+ - [変数](http://www.php.net/manual/en/language.variables.php)
+ - [ループと条件](http://www.php.net/manual/en/language.control-structures.php)
+ - [クラスとオブジェクト](http://www.php.net/manual/en/language.oop5.php)
+ - [クラスの継承](http://www.php.net/manual/en/language.oop5.inheritance.php)
+ - [ポリモーフィズム](http://code.tutsplus.com/tutorials/understanding-and-applying-polymorphism-in-php--net-14362)
+ - [POST](http://www.php.net/manual/en/reserved.variables.post.php) と [GET](http://www.php.net/manual/en/reserved.variables.get.php)
+ - [変数のスコープ](http://www.php.net/manual/en/language.variables.scope.php)
 
-If you don't have a good grasp of those concepts, you should make sure you have a firm understanding before continuing.
+これらの概念の十分な理解がない場合、先に進む前にしっかりと理解しておいたほうがいいでしょう。
 
 It's also assumed you have a code editor that has PHP syntax highlighting, although these will be beneficial:
+
+また、PHPシンタックスハイライト機能を持つコードエディターを持っていることも前提としています。次も訳に立ちます:
 
  - Auto Indenting
  - Auto-completion
  - Brace matching
  - Syntax checking
+ - 自動インデント
+ - 自動補完
+ - ブレスマッチング
+ - 構文チェック
 
 ## Local Development Environments
+## ローカル開発環境
 
 It's important to have a local development environment. Gone are the old days of changing a PHP file then updating it on the live server and hoping for the best.
+
+ローカルの開発環境を持つことも重要です。PHPファイルを変更し、本番サーバーのそれをアップデートして無事を祈るという昔の日々は去りました。
 
 With a local environment, you can work faster, no more uploading and downloading files, being at the mercy of a dodgy internet connection, or waiting for pages to load from the open web. With a local server stack you can work on a train in a tunnel with no wifi or phone signal, and test your work before deploying it to the live server.
 
