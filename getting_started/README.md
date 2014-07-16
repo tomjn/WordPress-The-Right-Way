@@ -36,7 +36,7 @@
 
 1つ目のタイプの環境は、Vagrantなどのプロジェクトを通常は含んでいて、標準化された一貫性のある仮想マシンを利用します。
 
-The second, installs the server software directly into your operating system. There are various tools that make this easy, but your environment will be unique and more difficult to debug. These are sometimes called LAMP stacks, which stands for Linux Apache MySQL PHP.
+2つ目のタイプは、自分のオペレーティングシステムにサーバーソフトウェアを直接インストールするタイプです。これを簡単に行うための様々なツールがありますが、その環境は独自のものになってしまうためデバッグが難しくなります。これらはLAMP(Linux Apache MySQL PHPの頭文字)スタックと呼ばれることもあります。
 
 ### IIS
 
