@@ -16,34 +16,25 @@
 
 これらの概念の十分な理解がない場合、先に進む前にしっかりと理解しておいたほうがいいでしょう。
 
-It's also assumed you have a code editor that has PHP syntax highlighting, although these will be beneficial:
-
 また、PHPシンタックスハイライト機能を持つコードエディターを持っていることも前提としています。次も訳に立ちます:
 
- - Auto Indenting
- - Auto-completion
- - Brace matching
- - Syntax checking
  - 自動インデント
  - 自動補完
  - ブレスマッチング
  - 構文チェック
 
-## Local Development Environments
 ## ローカル開発環境
-
-It's important to have a local development environment. Gone are the old days of changing a PHP file then updating it on the live server and hoping for the best.
 
 ローカルの開発環境を持つことも重要です。PHPファイルを変更し、本番サーバーのそれをアップデートして無事を祈るという昔の日々は去りました。
 
-With a local environment, you can work faster, no more uploading and downloading files, being at the mercy of a dodgy internet connection, or waiting for pages to load from the open web. With a local server stack you can work on a train in a tunnel with no wifi or phone signal, and test your work before deploying it to the live server.
+ローカルの開発環境を使えば、より速く作業でき、ファイルのアップロードやダウンロードが必要無くなり、不安定なインターネット接続に翻弄されることもなく、ウェブページの読み込みを待たされることもなくなります。ローカルのサーバスタックを使えば、Wifiや携帯電話の電波のないトンネルに入った列車の中でも作業できますし、本番サーバにデプロイ前にテストもできます。
 
-Here are a few options for setting up a local development environment. They fall into two categories:
+ローカルの開発環境の構築にはいくつか方法がありますが、大別すると2つのカテゴリーになります:
 
- - Virtual Machines
- - Native Server Stacks
+ - バーチャルマシーン
+ - ネイティブのサーバスタック
 
-The first type of environment usually involves projects such as Vagrant, and gives you a standardised consistent virtual machine to work with.
+1つ目のタイプの環境は、Vagrantなどのプロジェクトを通常は含んでいて、標準化された一貫性のある仮想マシンを利用します。
 
 The second, installs the server software directly into your operating system. There are various tools that make this easy, but your environment will be unique and more difficult to debug. These are sometimes called LAMP stacks, which stands for Linux Apache MySQL PHP.
 

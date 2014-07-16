@@ -1,4 +1,4 @@
-# Tools
+# ツール
 
 Debugging tools fall into two categories:
 

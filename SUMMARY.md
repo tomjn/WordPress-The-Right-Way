@@ -1,7 +1,7 @@
 # Summary
 
-* [Getting Started](getting_started/README.md)
-* [Code Style Guide](code_style_guide/README.md)
+* [さあ、始めよう](getting_started/README.md)
+* [コーディングスタイルガイド](code_style_guide/README.md)
 * [Debugging](debugging/README.md)
    * [Error Logging](debugging/errorlogging.md)
    * [Handling Errors](debugging/handlingerrors.md)
@@ -21,4 +21,3 @@
 * [Resources](resources/README.md)
 * [Community](community/README.md)
 * [Credits](credits/README.md)
-
