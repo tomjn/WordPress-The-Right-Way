@@ -1,11 +1,13 @@
 # ツール
 
-Debugging tools fall into two categories:
+デバッグ用ツールは2つのカテゴリーに分かれます:
 
- - Tools to diagnose issues when they arise and reveal problems
- - Tools that prevent mistakes and errors from ever happening to begin with
+ - 何か発生した時にそれを診断し、問題点を明らかにするためのツール
+ - ミスやエラーの発生自身を未然に防ぐツール
 
 The age old adage still applies: **prevention is better than cure**
+
+古の格言はここでも当てはまります: **予防は治療に勝る**
 
 ## Debugging Tools
 
