@@ -40,11 +40,11 @@
 
 ### IIS
 
-Microsoft Internet Information Services is the server software that powers Windows based servers. Variants of it come with Windows if you install the appropriate components, but knowledge of IIS setup in the WordPress community is rare. Most remote servers run an Apache or Nginx setup, and developer knowledge is geared in that direction.
+Microsoft Internet Information Services はWindowsベースのサーバを動かすサーバーソフトウェアです。Windowsに付属していて、インストールするコンポーネントによって様々な変種があります。WordPressのコミュニティではIISのセットアップに関する知見は多くありません。たいていのリモートサーバーはApacheもしくはNginxで動いていて、開発者の知見もそちらの方に集中しています。
 
-IIS is not be the easiest route to take.
+IISの選択は難しいものとなるでしょう。
 
-## Version Control
+## バージョン管理
 
 A vital part of working in teams and contributing is version control. Version control systems track changes over time and allow developers to collaborate and undo changes.
 
