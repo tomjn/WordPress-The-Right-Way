@@ -46,12 +46,12 @@ IISの選択は難しいものとなるでしょう。
 
 ## バージョン管理
 
-A vital part of working in teams and contributing is version control. Version control systems track changes over time and allow developers to collaborate and undo changes.
+チームでの作業にはバージョン管理は必須です。バージョン管理システムは長期間に渡って変更を追跡し、開発者が共同で作業をしたり、変更を元に戻したりできるようにします。
 
 ### Git
 
-Created by Linus Torvalds the creator of Linux, [Git is a popular decentralised system](http://git-scm.com/), if you've ever been on GitHub, you've encountered git.
+Linuxの作者、リーナス・トーバルズによって作られた[Gitは人気のある分散型のシステム](http://git-scm.com/)です。GitHubをお使いであれば、すでにご存知かと思います。
 
 ### Subversion
 
-Also known as svn, this is a centralised version control system, used for the plugin and theme repositories on WordPress.org
+svnとしても知られていて、集中管理型のバージョン管理システムです。WordPress.org上のプラグインとテーマのリポジトリに使われています。
