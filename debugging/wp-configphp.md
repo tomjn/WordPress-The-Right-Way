@@ -32,28 +32,26 @@ _この値は**文字列**ではなく**真偽値**でなくてはなりませ�
 `WP_DEBUG`を使い、この定数を`true`にセットすると、NoticeやWarningのログをファイルに記録します。
 
 #### `WP_DEBUG_DISPLAY`
-When you use `WP_DEBUG` set to `true` you have access to this constant, with it you can choose to display or not the notices and warnings on the screen.
-`WP_DEBUG`を使い set to `true`
-
-###### Note:
-If these variables don't produce the output you are expecting check out the [Codex Section about ways to setup your logging](http://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging).
+`WP_DEBUG`を使いこの定数を`true`にセットするとNoticeやWarningをスクリーンに表示するかどうかを選択できます。
+###### メモ:
+もしこれらの変数が期待していた出力を産み出さないのであれば、[Codexのロギングセットアップに関するセクション(英語)](http://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging) [(日本語)](http://wpdocs.sourceforge.jp/wp-config.php_%E3%81%AE%E7%B7%A8%E9%9B%86#.E3.82.A8.E3.83.A9.E3.83.BC.E3.83.AD.E3.82.B0.E5.8F.96.E5.BE.97.E3.81.AE.E8.A8.AD.E5.AE.9A)を読むといいでしょう。
 
 ---
 
 ### `SCRIPT_DEBUG`
-When you have a WordPress plugin or theme that is including the Minified version of your CSS or JavaScript files by default you are doing it wrong!
+ミニファイされたバージョンのCSSやJavaScriptのファイルをデフォルトでプラグインやテーマに持たせるのはよくありません!
 
-Following the WordPress idea of creating a file for development and it's minified version is very good and you should have both files in your plugin, and based on this variable you will enqueue one or the other.
+開発用とミニファイされたバージョンのファイルを作成するというWordPressの考えに従うのはよい方法で、自分のプラグインには両方のファイルを持たせるべきです。その変数をベースにすればどちらかをエンキューさせることができます。
 
-By default this constant will be set to `false`, and if you want to be able to debug CSS or JavaScript files from WordPress you should turn it to `true`.
+デフォルトではこの定数は`false`にセットされていて、WordPressからのCSSやJavaScriptをデバッグしたいときはこれを`true`にするといいでしょう。
 
-#### Activates the Logs
+#### ログ取得の有効化
 ```php
 define( 'SCRIPT_DEBUG', true );
 ```
-_Check that the values must be **bool** instead of **string**_
+_この値は**文字列**ではなく**真偽値**でなくてはなりません。_
 
-WordPress default files `wp-includes` and `wp-admin` will be set to it's development version if set to `true`.
+`true`にセットすると `wp-includes`と`wp-admin`にあるWordPressのデフォルトファイルは開発バージョンになります。
 
 ### `CONCATENATE_SCRIPTS`
 On your WordPress administration you will have all your JavaScript files concatenated in to one single request based on the dependencies and priority of enqueue.
