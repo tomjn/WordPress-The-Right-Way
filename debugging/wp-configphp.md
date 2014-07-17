@@ -1,37 +1,39 @@
-# Constants of `wp-config.php`
+# `wp-config.php`の内容
 
-Currently there are several PHP constants on the `wp-config.php` that will allow you to improve you WordPress code and help you debug.
+`wp-config.php`ファイル上にはPHPのいくつかの定数が今のところ、WordPressのコードを改善したりデバッグの助けになったりします。
 
 ---
 
 ### `WP_DEBUG`
-This is an Option included in [WordPress version 2.3.1](http://codex.wordpress.org/Version_2.3.1).
+これは[WordPress バージョン 2.3.1](http://codex.wordpress.org/Version_2.3.1)で含まれるようになったオプションです。
 
-By default this will be set to `false` which will prevent warnings and errors from been shown, but **all WordPress developers should have this option active**.
+デフォルトでは`false`にセットされていて、警告やエラーを表示しないようになっていますが、**すべてのWordPressの開発者はこのオプションを有効にするべきです**。
 
-#### Activates the Logs
+#### ログの有効化
 ```php
 define( 'WP_DEBUG', true );
 ```
 
-#### Deactivates the Logs
+#### ログの無効化
 ```php
 define( 'WP_DEBUG', false );
 ```
-_Check that the values must be **bool** instead of **string**_
 
-A minor patch later the on [Wordpress version 2.3.2](http://codex.wordpress.org/Version_2.3.2), the system allowed us to have a more granular control over the Database error logs.
+_この値は**文字列**ではなく**真偽値**でなくてはなりません。_
 
-Later on in the version 2.5, WordPress raised the [error reporting](http://www.php.net/error-reporting) level to E_ALL, that will allow to see logs for Notices and Deprecation messages.
+[WordPressバージョン 2.3.2](http://codex.wordpress.org/Version_2.3.2)であとからマイナーなパッチが取り込まれ、データベースのエラーログに対するより粒度の細かいコントロールを可能になりました。
 
-###### _Notes:_
-If you have this option turned on you might encounter problems with AJAX requests, this problem is related to Notices been printed on the output of the AJAX response, that **will break XML and JSON**.
+さらにその後、バージョン2.5で[エラーレポーティング](http://www.php.net/error-reporting)のレベルがE_ALLに引き上げられました。これによりNotices(注意)とDeprecation(非推奨)メッセージを表示するようになりました。
+
+###### _メモ:_
+このオプションを有効にするとAJAXリクエストで問題が発生するかもしれません。この問題はAJAXレスポンスの出力にNoticeが表示されてしまい、**XMLとJSONを壊してしまう**ことに関連します。
 
 #### `WP_DEBUG_LOG`
-When you use `WP_DEBUG` set to `true` you have access to this constant, and this will allow you to log your notices and warnings to a file.
+`WP_DEBUG`を使い、この定数を`true`にセットすると、NoticeやWarningのログをファイルに記録します。
 
 #### `WP_DEBUG_DISPLAY`
 When you use `WP_DEBUG` set to `true` you have access to this constant, with it you can choose to display or not the notices and warnings on the screen.
+`WP_DEBUG`を使い set to `true`
 
 ###### Note:
 If these variables don't produce the output you are expecting check out the [Codex Section about ways to setup your logging](http://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging).

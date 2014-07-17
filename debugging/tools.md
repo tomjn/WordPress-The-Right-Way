@@ -5,21 +5,24 @@
  - 何か発生した時にそれを診断し、問題点を明らかにするためのツール
  - ミスやエラーの発生自身を未然に防ぐツール
 
-The age old adage still applies: **prevention is better than cure**
-
 古の格言はここでも当てはまります: **予防は治療に勝る**
 
-## Debugging Tools
+## デバッグ用ツール / プラグイン
 
-### Query Monitor
+WordPressのリポジトリから[Developer](https://wordpress.org/plugins/developer/)プラグインをインストールすると、たくさんの種類のデバッグ用ツールに簡単にアクセスできるようになります:
+ - [Log Deprecated Notices](http://wordpress.org/plugins/developer)は、deprecated(非推奨)の関数の利用のログを取ります。
+ - [Debug Bar](http://wordpress.org/plugins/debug-bar)はPHPのNotices/Warnings/Errorsのデバッギング、SQLクエリーのレビュー、キャッシュ動作の分析、その他多くのためのインターフェイスを提供します。また、プラグインで拡張可能です。
+ - 例えば、[Debug Console](https://wordpress.org/plugins/debug-bar-console/)はとても便利です。
+
+### クエリーモニター
 
 ### XDebug
 
-### PHP Debuggers
+### PHPデバッガー
 
-### Browser Web Inspectors
+### ブラウザーのウェブインスペクター
 
-## Prevention
+## 予防
 
 ### PHP Mess Detector
 
