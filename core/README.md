@@ -1,26 +1,26 @@
-# Core
+# コア
 
-WordPress core is the code that powers WordPress itself. It is what you get when downloading WordPress from wordpress.org, minus the themes and plugins.
+WordPressコアとは、WordPress自身を動かしているコードのことです。wordpress.orgからWordPressをダウンロードすると取得できるものからテーマとプラグインを取り除いた分になります。
 
-## Load Process
+## 読み込みプロセス
 
-todo: add a note on the core load process, and references Rarsts blog post
+todo: コアの読み込みプロセスに関するメモとRarstsのブログ記事への参照
 
 [![WordPress Core Load](../assets/wordpress_core_load.png)](../assets/wordpress_core_load.png)
 
-## Deregistering jQuery
+## jQueryの登録解除
 
-Many plugin & theme developers attempt to unregister the jQuery that comes with core, and add their own copy, normally the jQuery on the Google CDN. Do not do this, it can cause compatability issues.
+コアに同梱されているjQueryの登録を解除して自分のコピーやGoogle CDNのものを追加しようとするプラグインやテーマの開発者がたくさんいますが、互換性の問題を引き起こす可能性があるので、それはやめましょう。
 
-Instead use the copy of jQuery that comes with WordPress and aim for the version used in the latest WordPress when testing. This ensures maximum compatability across plugins.
+その代わり、WordPressに同梱されているjQueryのコピーを使い、テスト時には最新のWordPressで使われているバージョンを目標にしましょう。これにより、プラグイン間の互換性を最大化します。
 
-## Modifying Core
+## コアファイルの変更
 
-It's tempting to modify parts of Core to remove or add things, but this must never be done. When WordPress updates, all your changes will be lost.
+何かを追加したり取り除いたりするためにコアの一部を修正したい誘惑に駆られるかもしれませんが、それは絶対にダメです。WordPressがアップデートされるとその変更はすべて失われます。
 
-Instead, use Hooks/Actions and Filters to modify Core behaviour.
+その代わり、フック/アクションとフィルターを使ってコアの挙動を変更しましょう。
 
-## How core development works on .org
+## .orgでのコアの開発作業
 
  - trunk
  - develop
