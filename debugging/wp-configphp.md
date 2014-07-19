@@ -54,9 +54,9 @@ _この値は**文字列**ではなく**真偽値**でなくてはなりませ�
 `true`にセットすると `wp-includes`と`wp-admin`にあるWordPressのデフォルトファイルは開発バージョンになります。
 
 ### `CONCATENATE_SCRIPTS`
-On your WordPress administration you will have all your JavaScript files concatenated in to one single request based on the dependencies and priority of enqueue.
+WordPressの管理画面では、依存性とエンキューの優先度に応じてすべてのJavaScriptファイルが1つのリクエストに連結されます。
 
-To remove this feature all around you can set this constant to `false`.
+この機能を無効にするにはこの定数を`false`に設定します。
 ```php
 define( 'CONCATENATE_SCRIPTS', false );
 ```
@@ -64,10 +64,10 @@ define( 'CONCATENATE_SCRIPTS', false );
 ---
 
 ### `SAVEQUERIES`
-When you are dealing with the database you might want to save your queries so that you can debug what is happening inside of your plugin or theme.
+データベースを扱うときには、プラグインやテーマ内で起こっていることをデバッグできるように、クエリーを保存したいと考えることでしょう。
 
 **Make `$wpdb` save Queries**
 ```php
 define( 'SAVEQUERIES', true );
 ```
-_**Note:** this will slowdown your WordPress_
+_**メモ:** これtrueにするとWordPressが遅くなります_
