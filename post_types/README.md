@@ -1,37 +1,35 @@
-# Data
+# データ
 
-A description of the WordPress Data Model:
+WordPressのデータモデルの説明です:
 
-## Post types
+## 投稿タイプ
 
-Posts, pages, attachments, and menus are all different kinds of posts. You can register your own post types. Remember to flush permalinks when you change your post types or you'll get 404s. Never flush permalinks on every page load, it's expensive!
+投稿、ページ、添付、そしてメニュー、これらはすべて違う種類の投稿タイプです。独自の投稿タイプを登録することもできます。投稿タイプを変更した際はパーマリンク設定で(変更がなくても)「変更を保存」をクリックしてください。こうしないと404(ページがみつかりません)になってしまいます。
 
-Posts also have post meta
+## コメント
 
-## Comments
+コメントは独自のテーブルを持ち、メタデータの保存も可能です。開発者がこれを利用することはまれですが、面白いことが可能です。
 
-Comments have their own table and are capable of storing meta data. This is rarely used by developers but allows interesting things.
+## タームとタクソノミー
 
-## Terms and Taxonomies
+タグとカテゴリーはタクソノミーの一種です。それぞれのタグとカテゴリーはタームと呼ばれます。独自のタクソノミーを登録することも可能です。
 
-Tags and categories are taxonomies. Individual tags and categories are called terms. You can register your own taxonomies.
+例えば、色のタクソノミーを考えてみましょう。紫色は色タクソノミーに含まれる一つのタームです。タクソノミーの登録を変更したら忘れずにパーマリンクを更新してください。
 
-For example, a colour taxonomy. Purple would be a term in the colour taxonomy. Remember to flush permalinks if you change your taxonomy registration.
+タクソノミーのタームにはオブジェクトIDが付きます。これらのIDは通常は投稿IDですが、これは純粋に慣習です。ユーザーやコメントのタクソノミーも可能です。ユーザータクソノミーはユーザーを場所や役割に応じてグループ分けするときに便利でしょう。
 
-Object IDs are attached to taxonomy terms. These IDs are normally post IDs, but this is purely convention. There is nothing preventing a user or a comment taxonomy. A user taxonomy would be useful for grouping users into locations or job roles
+## メタ
 
-## Meta
+投稿、コメント、ユーザーはメタを持ちます。
 
-Posts, comments, and users have meta
+## オプション
 
-## Options
+オプションは専用のテーブルにキーバリューのペアとして保存されます。いくつかのオプションは自動読み込みフラグがセットされていて、クエリーの数を減らすために各ページの読み込み時に自動的に読み込まれます。
 
-Options are stored as key value pairs in their own table. Some options have an autoload flag set and are loaded on every page load to reduce the number of queries.
+## トランシエント
 
-## Transients
+トランシエント(Transients)はオプションとして保存され、一時的なキャッシュとして使用されます。
 
-Transients are stored as options and are used to cache things temporarily
+## オブジェクトキャッシュ
 
-## Object Cache
-
-By default WordPress will use in memory caching that does not persist between page loads. There are plugins available that extend this to use APC or memcache amongst others.
+デフォルトでは、WordPressはメモリー内のキャッシュを利用しますが、これはページの読み込みと読み込みの間では存続しません。APCやmemcachなどを利用してこれを存続させるプラグインがいくつか有ります。
