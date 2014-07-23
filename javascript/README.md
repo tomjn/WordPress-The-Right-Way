@@ -1,58 +1,59 @@
 # Javascript
 
-Using:
+WordPress comes with dependency management and enqueueing for Javascript files. Don't use raw `<script>` tags to embed Javascript.
 
-## `wp_enqueue_script`
-## `wp_localize_script`
-## register/deregister
-## `wp_script_is`
+## Registering and Enqueueing
 
-You can check if a script has been enqueued, printed, or registered by calling `wp_script_is`.
+Javascript files should be registered. Registering makes the dependency manager aware of the script. To embed a script onto a page, it must be enqueued.
 
-For example, here we check if fitvid has been added, and enqueued it if it hasn't:
+Let's register and enqueue a script.
 
 ```php
-$handle = 'fluidVids.js';
-$list = 'enqueued';
-if (wp_script_is( $handle, $list )) {
-	return;
-} else {
-	wp_register_script( 'fluidVids.js', plugin_dir_url(__FILE__).'js/fluidvids.min.js');
-	wp_enqueue_script( 'fluidVids.js' );
+function register_and_enqueue_a_script() {
+	// Register a script with a handle of `my-script` that lives inside the theme folder, which has a dependency on jQuery.
+	wp_register_script( 'my-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ) );
+	// Enqueue the script.
+	wp_enqueue_script( 'my-script' );
 }
+// Use the wp_enqueue_scripts function for registering and enqueueing scripts on the front end.
+add_action( 'wp_enqueue_scripts', 'register_and_enqueue_a_script' );
 ```
 
-## `admin_enqueue_scripts`
+Scripts should only be enqueued when necessary; wrap conditionals around `wp_enqueue_script()` calls appropriately.
 
-When adding javascript to the admin area, it's tempting to use the `admin_head` action. Don't do this, instead use this hook when including javascript in the Admin area. For examples:
+When enqueueing javascript in the admin interface, use the `admin_enqueue_scripts` hook.
+
+When adding scripts to the login screen, use the `login_enqueue_scripts` hook.
+
+## Localizing
+
+Localizing a script allows you to pass variables from PHP into JS. This is typically used for internationalization of strings (hence localization), but there are plenty of other uses for this technique.
+
+Let's localize a script.
 
 ```php
-function my_enqueue($hook) {
-    wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . 'script.js' );
+function register_localize_and_enqueue_a_script() {
+	wp_register_script( 'my-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ) );
+	// Send in localized data to the script.
+	$data_for_script = array( 'alertText' => __( 'Are you sure you want to do this?' ) );
+	wp_localize_script( 'my-script', 'scriptData', $data_for_script );
+	wp_enqueue_script( 'my-script' );
 }
-add_action( 'admin_enqueue_scripts', 'my_enqueue' );
+add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
 ```
 
-## `wp_enqueue_media`
-## `login_enqueue_scripts`
+In the javascript file, the data is available in the object name specified while localizing.
 
-When adding styles and scripts to the login screen, use the `login_enqueue_scripts` hook to add them. For example:
-
-```php
-function themeslug_enqueue_style() {
-	wp_enqueue_style( 'core', 'style.css', false ); 
-}
-
-function themeslug_enqueue_script() {
-	wp_enqueue_script( 'my-js', 'filename.js', false );
-}
-
-add_action( 'login_enqueue_scripts', 'themeslug_enqueue_style', 10 );
-add_action( 'login_enqueue_scripts', 'themeslug_enqueue_script', 1 );
+```javascript
+( function( $ ) {
+	alert( scriptData.alertText );
+} )( jQuery );
 ```
+
+## Deregister / Dequeueing
+
+Scripts can be deregistered and dequeued via `wp_deregister_script()` and `wp_dequeue_script()`.
 
 ## AJAX
 
-List of all the built in scripts that can be used (jQuery, etc, etc)
-
-Maybe a bit about backbone.
+[missing documentation]
