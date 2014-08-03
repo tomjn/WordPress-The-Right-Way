@@ -1,8 +1,8 @@
-# Multisite
+# マルチサイト
 
-## Grabbing Data From Another Blog in a Network
+## Networkネットワーク内の他のブログからデータを取得する
 
-Can be done but is expensive
+可能だが、高くつく
 
 ```php
 switch_to_blog( $blog_id );
@@ -10,12 +10,12 @@ switch_to_blog( $blog_id );
 restore_current_blog();
 ```
 
-`restore_current_blog` undos the last call to `switch_to_blog`, but only by one step, so always call `restore_current_blog` before calling `switch_to_blog` again
+`restore_current_blog`は `switch_to_blog`への最後の呼び出しを取り消しますが、これは1ステップのみによってなので、`switch_to_blog`を再度呼びだす前に`restore_current_blog`をつねに呼び出します。
 
-## Listing Blogs in a Network
+## ネットワーク内のブログを一覧表示する
 
-Doable but doesn't scale for big networks and is expensive
+可能だが、大きなネットワークではスケールせず、高くつく
 
-## Domain Mapping
+## ドメインマッピング
 
-A note on the domain mapping plugin
+ドメインマッピングのプラグインのメモ

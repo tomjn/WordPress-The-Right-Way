@@ -1,8 +1,8 @@
 # I18n
 
- - Creating translation files
- - Loading translation files
- - Translating Core
- - Post Type Slugs
- - Setting the Admin language
- - Foreign Twitter Embeds
+ - 翻訳ファイルの作成
+ - 翻訳ファイルの読み込み
+ - コアの翻訳
+ - 投稿タイプのスラッグ
+ - 管理画面の言語の設定
+ - 外部Twitterの埋め込み

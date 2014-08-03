@@ -1,14 +1,14 @@
-# Queries
+# クエリー
 
-This chapter talks about two kinds of queries. Post queries, taxonomy queries, comment queries, user queries, and general SQL queries.
+この章では2つの種類のクエリーについて説明します。ポストクエリー、タクソノミークエリー、コメントクエリー、ユーザークエリー、そして通常のSQLクエリーです。
 
-## Post Queries
+## ポストクエリー
 
-### The Main Loop
+### メインループ
 
-Every page displayed by WordPress has a main query. This query grabs posts from the database, and is used to determine what template should be loaded.
+WordPressによって表示されるすべてのページにはメインクエリーがあります。このクエリーはデータベースから投稿を取得し、どのテンプレートが読み込まれるべきなのかを決定するのにも使われます。
 
-Once that template is loaded, the main loop begins, allowing the theme to display the posts found by the main query. Here is an example main loop:
+テンプレートが読み込まれるとメインループが開始され、メインクエリーによって見つけられた投稿をテーマが表示します。
 
 ```php
 if ( have_posts() ) {
@@ -21,33 +21,33 @@ if ( have_posts() ) {
 }
 ```
 
-### The Main Query and Query Variables
+### メインクエリーとクエリー変数
 
-The main query is created using the URL, and is represented by a `WP_Query` object.
+メインクエリーはURLがを使って生成され、`WP_Query`オブジェクトによって表示されます。
 
-This object is told what to fetch using Query Variables. These values are passed into the query object at the start, and must be part of a list of valid query variables.
+このオブジェクトはクエリー変数を使って何を取得するのかを命令されます。これらの変数は最初にクエリーオブジェクトに渡され、有効なクエリー変数の一部となります。
 
-For example, the query variable 'p' is used to fetch a specific post type, e.g.
+例えば、クエリー変数 'p' は特定の投稿タイプを取得するのに次ように使われます:
 
 ```php
 $posts = get_posts( 'p=12' );
 ```
 
-Fetches the post with ID 12. The full list of options are available on the `WP_Query` codex entry.
+これはID12の投稿を取得します。完全なオプションの一覧はCodexの`WP_Query`のエントリーで参照できます。
 
-### Making a Query
+### クエリー発行
 
-To retrieve posts from the Database, you need to make a post query. All methods of getting posts are layers on top of the `WP_Query` object.
+データベースから投稿を取得するには投稿クエリーを作成する必要があります。投稿取得のすべてのメソッドは`WP_Query`オブジェクトの上に層になっています。
 
-There are 3 ways to do this:
+これを行うには3つの方法があります:
 
  - `WP_Query`
  - `get_posts`
  - `query_posts`
 
-This diagram explains what happens in each method:
+このダイアグラムは各メソッドで何が行われているのかを説明しています:
 
-[![WordPress Core Load](../assets/query_functions.png)](../assets/query_functions.png)
+[![WordPressコアの読み込み](../assets/query_functions.png)](../assets/query_functions.png)
 
 #### `WP_Query`
 
@@ -55,13 +55,14 @@ This diagram explains what happens in each method:
 $query = new WP_Query( $arguments );
 ```
 
-All post queries are wrappers around `WP_Query` objects. A `WP_Query` object represents a query, e.g. the main query, and has helpful methods such as:
+すべての投稿クエリーは`WP_Query`オブジェクトのラッパーです。`WP_Query`オブジェクトはクエリー(例えばメインクエリー)を表していて、次のような便利なメソッドを持っています:
 
 ```php
 $query->have_posts();
 $query->the_post();
 ```
-etc. The functions `have_posts();` and `the_post();` found in most themes are wrappers around the main query object:
+
+たいていのテーマにみられる関数の`have_posts();`と`the_post();`はメインクエリーオブジェクトのラッパーです:
 
 ```php
 function have_posts() {
@@ -77,32 +78,32 @@ function have_posts() {
 $posts = get_posts( $arguments );
 ```
 
-`get_posts` is similar to `WP_Query`, and takes the same arguments, but it returns an array containing the requested posts in full. You shouldn't use `get_posts` if you're intending to create a post loop.
+`get_posts`は`WP_Query`と似ていて同じ引き数を取りますが、リクエストされた投稿のすべてを含んだ配列を返します。投稿ループの作成を意図していないのであれば`get_posts`は使うべきはありません。
 
-#### Don't use `query_posts`
+#### `query_posts`は使わない
 
-`query_posts` is an overly simplistic and problematic way to modify the main query of a page by replacing it with new instance of the query.
+`query_posts`は極端に単純化されていて、ページのメインクエリーを変更する方法としては、クエリーの新しいインスタンスでそれを置き換えるので問題のある方法です。
 
-It is inefficient (re-runs SQL queries) and will outright fail in some circumstances (especially often when dealing with posts pagination). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. Do not use `query_posts()`.
+これは非効率(SQLクエリーを再度走らせます)で、特定の状況(特にページングを扱うときに)で完全に動作しなくなります。この用途では`pre_get_posts`フックの利用など、モダンなWordPressのコードにはより信頼性のあるメソッドを使うべきです。`query_posts()`を使ってはいけません。
 
 
-### Cleaning up after Queries
+### クエリー発行後の後始末
 
 #### `wp_reset_postdata`
 
-When using `WP_Query` or `get_posts`, you may set the current post object, using `the_post` or `setup_postdata`. If you do, you need to clean up after yourself when you finish your while loop. Do this by calling `wp_reset_postdata`.
+`WP_Query`もしくは`get_posts`を使うとき、`the_post`もしくは`setup_postdata`を使ってカレントの投稿オブジェクトをセットできます。これを行ったら、ループが終わった時点で後始末をする必要があります。`wp_reset_postdata`を呼び出すことでこれを行います。
 
 #### `wp_reset_query`
 
-When you call `query_posts`, you will need to restore the main query after you've done your work. You can do this with `wp_reset_query`.
+`query_posts`を呼び出した時、その動作が終わったらメインクエリーを戻す必要があります。これは`wp_reset_query`で行えます。
 
-### The `pre_get_posts` Filter
+### `pre_get_posts` フィルター
 
-If you need to change the main query and display something else on the page, you should use the `pre_get_posts` filter.
+メインクエリーを変更して、そのページに何か別のものを表示させる必要がある場合には`pre_get_posts`を使うといいでしょう。
 
-Many people will want to use this for things such as removing posts from an archive, changing the post types for search, excluding categories, and others
+アーカイブから投稿を取り除いたり、検索時の投稿タイプを変更したり、カテゴリーを除外したりなどなどのためにこれはよく利用されます。
 
-Here is the Codex example for searching only for posts:
+以下は投稿のみを検索対象にするためのCodexに記載されているサンプルです:
 
 ```php
 function search_filter($query) {
@@ -116,11 +117,11 @@ function search_filter($query) {
 add_action( 'pre_get_posts', 'search_filter' );
 ```
 
-These filters can go in a themes `functions.php`, or in a plugin.
+このフィルターはテーマの`functions.php`もしくはプラグイン内で使えます。
 
-## Taxonomy Queries
+## タクソノミークエリー
 
-When dealing with taxonomies ( including post categories and tags ), it's safer to rely on the generic APIs rather than the legacy helper APIs. These include:
+タクソノミー(投稿のカテゴリーやタグも含む)を扱うときは古いヘルパーAPIよりも包括的な以下の様なAPIに頼るほうが安全です:
 
  - `get_taxonomies`
  - `get_terms`
@@ -129,9 +130,9 @@ When dealing with taxonomies ( including post categories and tags ), it's safer 
  - `wp_get_object_terms`
  - `wp_set_object_terms`
 
-It's easier to learn one set of APIs, and think of categories and tags as just another taxonomy, rather than mixing and matching older functions such as `get_category` etc
+APIのひとセットを学ぶほうがより簡単ですし、カテゴリーとタグは単なるタクソノミーの一種として考え、`get_category`などの古い関数の組み合わせとマッチングとは考えないほうがいいでしょう。
 
-## Comment Queries
+## コメントクエリー
 
 ```php
 $args = array(
@@ -152,7 +153,7 @@ if ( $comments ) {
 }
 ```
 
-## User Queries
+## ユーザークエリー
 
 ```php
 $args = array(
@@ -176,25 +177,25 @@ if ( ! empty( $user_query->results ) ) {
 
 ### WPDB
 
-It can be tempting for the uninformed to resort to a raw SQL query to grab posts. Only do this as a last resort.
+よく知らない方は、投稿記事を取得するために生のSQLクエリーに頼ろうとする誘惑に駆られることでしょう。しかし、それは最後の手段です。
 
-But if you have to make an SQL query, use `WPDB` objects.
+SQLクエリーを作る必要のある場合は`WPDb`オブジェクトを使いましょう。
 
-### dbDelta and Table Creation
+### dbDelta とテーブル作成
 
-The `dbDelta` function examines the current table structure, compares it to the desired table structure, and either adds or modifies the table as necessary, so it can be very handy for updates.
+`dbDelta`関数は現行のテーブル構造を調べ、望ましいテーブル構造を比較し、必要に応じてテーブルを追加もしくは変更します。そのため、アップデートにはとても便利な時があります。
 
-The dbDelta function is rather picky, however. For instance:
+dbDelta関数は好き嫌いがあるかもしれません。例えば:
 
- - You must put each field on its own line in your SQL statement.
- - You must have two spaces between the words `PRIMARY KEY` and the definition of your primary key.
- - You must use the key word `KEY` rather than its synonym `INDEX` and you must include at least one KEY.
- - You must not use any apostrophes or backticks around field names.
- - `CREATE TABLE` must be captalised
+ - 各フィールドはSQLステートメント内の各行に置く必要があります。
+ - `PRIMARY KEY`とプライマリーキーの定義の間には半角スペースを2つ入れる必要があります。
+ - 同義語の`INDEX`ではなくキーワードの`KEY`を使う必要があり、最低でも一つのキーを含める必要があります。
+ - フィールド名の周りではアポストロフィとバッククォートは使えません。
+ - `CREATE TABLE`は大文字にする必要があります。
 
-With those caveats, here are the next lines in our function, which will actually create or update the table. You'll need to substitute your own table structure in the $sql variable.
+こうした注意事項を念頭に置いて、実際にテーブルを作成もしくは更新する関数を作ります。$sql変数内で独自のテーブル構造を置き換える必要がでてくるでしょう。
 
-## Further Reading
+## さらに詳しくは
 
  - [You don't know query](http://www.slideshare.net/andrewnacin/you-dont-know-query-wordcamp-netherlands-2012), a talk by Andrew Nacin
  - [When you should use WP_Query vs query_posts](http://wordpress.stackexchange.com/a/1755/736), Andrei Savchenko/Rarst

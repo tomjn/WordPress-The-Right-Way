@@ -1,34 +1,34 @@
-# Templates
+# テンプレート
 
-## Loading templates via `get_template_part`
+##  `get_template_part`経由でテンプレートを読み込む
 
-Mention `locate_template` function
-
-
-## How Templates are Chosen and the Template Hierarchy
-
-Notes on how a template is chosen using the main query. How templates are chosen and loaded, how child themes are involved. Show the template hierarchy diagram
-
-## Functions.php and Plugins
+`locate_template`関数について書く。
 
 
-## Loading Stylesheets
+## テンプレートがどのように選択されるかとテンプレート階層について
 
-enquing stylesheets properly
+メインクエリーを使ってテンプレートがどのように選択されるのかの記述。テンプレートがどのように選択されるのか、子テーマがどのように読み込まれるのかについて。テンプレート階層図を表示。
 
-## Templates and Plugins
+## functions.phpとプラグイン
 
-`template_include` filter
 
-## Forms
+## スタイルシートの読み込み
 
-Forms that submit to a separate standalone PHP file in your theme are bad. An example of how to handle a basic form submission on a page template
+スタイルシートを正しく読み込ませる
 
-## Virtual Pages
+## テンプレートとプラグイン
 
-For when you need a page/URL that doesn't have an associated post or archive, e.g. a shopping cart or an API endpoint.
+`template_include`フィルター
 
-## Further Reading
+## フォーム
 
- - link to template diagram
- - interactive template diagram
+テーマ内で別のスタンドアローンのPHPファイルをサブミットするフォームはよくありません。ページテンプレート上で基本的なフォームサブミッションをどのように扱うかの例
+
+## 下層ページ
+
+投稿やアーカイブと関連付けられていないページ/URL、例えばショッピングカートやAPIのエンドポイントが必要なとき。
+
+## さらに詳しくは
+
+ - テンプレートダイアログへのリンク
+ - インタラクティブなテンプレートダイアログ
