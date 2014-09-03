@@ -1,8 +1,8 @@
-# A Basic Widget
+# 基本的なウィジェット
 
-## What is a Widget
+## ウィジェットとは
 
-## The Simplest Widget Possible
+## 一番簡単なウィジェット
 
 ```php
 class My_Widget extends WP_Widget {
@@ -37,16 +37,16 @@ add_action( 'widgets_init', function(){
  - `form`
  - `update`
 
-## Adding Widget Fields
+## ウィジェットフィールドの追加
 
-Adding form fields to the backend, then accessing them on the frontend
+バックエンドにフォームフィールドを追加し、フロントエンドのそのフィールドにアクセスする
 
 ## `the_widget`
 
-How to display a widget without a sidebar
+サイドバーなしでウィジェットを表示させるには
 
 ```php
 the_widget( $widget, $instance, $args );
 ```
 
-A note that if you need to do this then you should reconsider your approach
+これを行う必要があるとのなら、やり方を再考すべきでしょう。

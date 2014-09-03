@@ -1,8 +1,8 @@
 # Javascript
 
-## Enqueing a script
+## スクリプトのエンキュー
 
-### For the widget form in the admin area
+### 管理画面でのウィジェットのフォーム
 
 A quick note on how to do it, and a note on running the JS, so that it doesn't get ran on the html used to create new widget forms, only those in the sidebars on the right
 

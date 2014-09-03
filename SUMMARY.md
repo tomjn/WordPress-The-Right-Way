@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [はじめに](README.md)
 * [さあ、始めよう](getting_started/README.md)
 * [コーディングスタイルガイド](code_style_guide/README.md)
 * [デバッギング](debugging/README.md)
@@ -13,10 +13,10 @@
 * [クエリー](queries/README.md)
 * [ルーティング](routing/README.md)
 * [テンプレート](templates/README.md)
-* [Widgets](widgets/README.md)
-   * [A Basic Widget](widgets/a_basic_widget.md)
-   * [Javascript](widgets/javascript.md)
 * [JavaScript](javascript/README.md)
+* [ウィジェット](widgets/README.md)
+   * [基本的なウィジェット](widgets/a_basic_widget.md)
+   * [Javascript](widgets/javascript.md)
 * [I18n](i18n/README.md)
 * [マルチサイト](multisite/README.md)
 * [テスト](testing/README.md)

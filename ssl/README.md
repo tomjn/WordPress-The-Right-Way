@@ -1,18 +1,18 @@
-# Security
+# セキュリティ
 
-## Salts
+## ソルト
 
 ## Nonces
 
-## The Location of `wp-config`
+## `wp-config`の場所
 
-## Table prefixes
+## テーブルプリフィックス
 
 ## User ID 1
 
-## Roles and Capabilities
+## Roles and Capabilities権限
 
-## Removing vs Hiding Settings Pages
+## 設定ページを取り除くか隠すか
 
 ## Custom Password Reset Code
 
