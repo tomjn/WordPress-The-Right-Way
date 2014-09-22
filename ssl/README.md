@@ -10,22 +10,22 @@
 
 ## User ID 1
 
-## Roles and Capabilities権限
+## 権限
 
 ## 設定ページを取り除くか隠すか
 
-## Custom Password Reset Code
+## カスタムなパスワードリセットコード
 
 ## timthumb.php
 
 ## SSL
 
-### Admin Only SSL
+### 管理画面のみのSSL
 
-## Myths
+## 迷信
 
-### Hiding the Admin and Login URLs
+### 管理画面とログインのURLを隠すことについて
 
-### Deactivated Plugins & Themes
+### 無効化されたプラグインとテーマ
 
-## Recovering From Attacks
+## 攻撃からの復旧
