@@ -1,7 +1,7 @@
 * [English](en)
+* [日本語 (にほんご)](ja)
 
 <!--
-* [日本語 (にほんご)](ja)
 * [Deutsch](de)
 * [Español](es)
 * [Français](fr)
