@@ -18,4 +18,15 @@ Doable but doesn't scale for big networks and is expensive
 
 ## Domain Mapping
 
-A note on the domain mapping plugin
+WordPress support on default Domain Mapping inside the Multisite Solution. You can add the domain value on the site settings and it works. This default solution works fine, also on an Multinetwork installation.
+
+Often is it helpful - not necessary, that to set the `COOKIE_DOMAIN` constant to an empty string in your `wp-config.php`:
+
+ `define('COOKIE_DOMAIN', '');`
+ 
+Otherwise is it possible, that WordPress will always set it to your network’s `$current_site->domain` and you won’t be able to login into any of the other sites.
+
+But if you will run your Multisite with Alias, more than one domain, then is the core not sufficient. For this goal do you need a plugin, that enhance the functionality of the WordPress Core. Currently two examples, that will work.
+
+ * [Mercator - WordPress multisite domain mapping for the modern era.](https://github.com/humanmade/Mercator)
+ * [WordPress MU Domain Mapping - Map any blog/site on a WordPressMU or WordPress 3.X network to an external domain.](https://wordpress.org/plugins/wordpress-mu-domain-mapping/)
