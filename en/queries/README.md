@@ -1,6 +1,6 @@
 # Queries
 
-This chapter talks about two kinds of queries. Post queries, taxonomy queries, comment queries, user queries, and general SQL queries.
+This chapter talks about several kinds of query. Post queries, taxonomy queries, comment queries, user queries, and general SQL queries.
 
 Whenever possible, use the query APIs that WordPress provides, rather than directly calling the database. This allows the internal cache system to speed up your queries, and for caching plugins to help out.
 
