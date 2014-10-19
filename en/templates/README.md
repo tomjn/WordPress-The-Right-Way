@@ -2,12 +2,48 @@
 
 ## Loading templates via `get_template_part`
 
-Mention `locate_template` function
+When including templates in your theme, it's tempting to use code such as this:
 
+```php
+include( 'customloop.php' );
+```
 
-## How Templates are Chosen and the Template Hierarchy
+However, doing this breaks support for child themes. Instead using `get_template_part` will do the job better, while giving extra flexibility. For example:
 
-Notes on how a template is chosen using the main query. How templates are chosen and loaded, how child themes are involved. Show the template hierarchy diagram
+```php
+get_template_part( 'custom', 'loop' );
+```
+
+This way WordPress will attempt to load `custom-loop.php`. If the file does not exist, it will load `custom.php`, and if a child theme exists, it will load the child theme version of the file.
+
+This allows fallback templates and specialised templates based on post meta and other data such as post type. For example:
+
+```php
+get_template_part( 'loop', get_post_type() );
+```
+
+This will load `loop.php`, but if a custom version of the template exists for that post type, it will load that instead. e.g. `loop-page.php`
+
+Internally, `get_template_part` uses the `locate_template` function. This function finds the appropriate file, and returns its name. This is useful for finding a template, without loading it.
+
+`locate_template is also useful for plugin theming. For example:
+
+```php
+// if the theme has a custom template for my plugin
+if ( locate_template( 'mycustomplugin.php') != '' ) {
+	// load the custom template for my plugin from the theme
+	get_template_part( 'mycustomplugin.php' );
+} else {
+	// fallback to the plugins default theme
+	include( 'defaulttemplates/mycustomplugin.php' );
+}
+```
+
+If you wish to provide such a system in your plugin though, it's advised you use the `template_include` filter. Scroll down for a more in depth look at the `template_include` filter.
+
+## How Templates are Chosen, and The Template Hierarchy
+
+ - Notes on how a template is chosen using the main query. How templates are chosen and loaded, how child themes are involved. Show the template hierarchy diagram
 
 ## Functions.php and Plugins
 
@@ -21,19 +57,19 @@ Post types, taxonomies, shortcodes, and widgets, should be implemented in a sepa
 
 ## Loading Stylesheets
 
-enquing stylesheets properly
+ - enquing stylesheets properly
 
 ## Templates and Plugins
 
-`template_include` filter
+ - `template_include` filter
 
 ## Forms
 
-Forms that submit to a separate standalone PHP file in your theme are bad. An example of how to handle a basic form submission on a page template
+ - Forms that submit to a separate standalone PHP file in your theme are bad. An example of how to handle a basic form submission on a page template
 
 ## Virtual Pages
 
-For when you need a page/URL that doesn't have an associated post or archive, e.g. a shopping cart or an API endpoint.
+ - For when you need a page/URL that doesn't have an associated post or archive, e.g. a shopping cart or an API endpoint.
 
 ## Further Reading
 
