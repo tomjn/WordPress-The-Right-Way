@@ -11,6 +11,13 @@ Notes on how a template is chosen using the main query. How templates are chosen
 
 ## Functions.php and Plugins
 
+`functions.php` is a file in your theme that gets loaded prior to any templates. If your theme has non-template functionality, such as changing the length of excerpts, adding stylesheets and scripts, etc, this is where that code would go.
+
+Because of the way functions.php is loaded, it can be considered a plugin, as there is no difference between `functions.php` and plugin development. However, there is a difference in how it's loaded.
+
+If your theme registers post types and taxonomies, shortcodes, or widgets, this data is no longer available to the user when they change theme. This is a large problem for data portability, and can cause a persons site to become non-functional or broken.
+
+Post types, taxonomies, shortcodes, and widgets, should be implemented in a separate plugin so that the users data remains portable, and their site is not broken when themes change. To do otherwise is irresponsible.
 
 ## Loading Stylesheets
 
