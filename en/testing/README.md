@@ -4,7 +4,6 @@
 ## WP Test & Theme Test Data
 
 
-
 ## Theme review tester plugin
 
 
