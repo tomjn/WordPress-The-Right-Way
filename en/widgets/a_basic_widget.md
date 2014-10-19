@@ -2,6 +2,12 @@
 
 ## What is a Widget
 
+A widget is a self contained block of content that can be inserted into a widget area on the front end. It's primary use case is for sidebars, but it can be used for pages, headers, and other template areas.
+
+It defines a frontend template, an admin form, a save function, and a constructor that provides the name and description.
+
+Widgets must be registered on the `widgets_init` action.
+
 ## The Simplest Widget Possible
 
 ```php
@@ -39,11 +45,13 @@ add_action( 'widgets_init', function(){
 
 ## Adding Widget Fields
 
-Adding form fields to the backend, then accessing them on the frontend
+@TODO: - Adding form fields to the backend, then accessing them on the frontend
 
 ## `the_widget`
 
-How to display a widget without a sidebar
+While not advised, sometimes it's necessary or desirable to display a widget, without a sidebar. This may be useful in theme development.
+
+To do this, use a function called `the_widget`. It takes the ID of a widget, an instance array, and some arguments.
 
 ```php
 the_widget( $widget, $instance, $args );
