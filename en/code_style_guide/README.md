@@ -2,7 +2,9 @@
 
 ## Clean Code
 
-It's important to keep code readable and maintainable.
+It's important to keep code readable and maintainable. This prevents small but critical errors from becoming hidden in your code, while making whole classes of bugs incredibly obvious ( missing closing braces are easy to spot when you indent consistently ).
+
+While it's best to use the same standard as everybody else, if you're more comfortable using a PSR standard, then use that. If you do though, do it consistently.
 
 ### Indenting
 
