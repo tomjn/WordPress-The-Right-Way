@@ -12,8 +12,8 @@ Let's register and enqueue a script.
 // Use the wp_enqueue_scripts function for registering and enqueueing scripts on the front end.
 add_action( 'wp_enqueue_scripts', 'register_and_enqueue_a_script' );
 function register_and_enqueue_a_script() {
-	// Register a script with a handle of `my-script` 
-	//  + that lives inside the theme folder, 
+	// Register a script with a handle of `my-script`
+	//  + that lives inside the theme folder,
 	//  + which has a dependency on jQuery,
 	//  + where the UNIX timestamp of the last file change gets used as version number
 	//    to prevent hardcore caching in browsers - helps with updates and during dev
@@ -38,7 +38,7 @@ When adding scripts to the login screen, use the `login_enqueue_scripts` hook.
 
 ## Localizing
 
-Localizing a script allows you to pass variables from PHP into JS. This is typically used for internationalization of strings (hence localization), but there are plenty of other uses for this technique. 
+Localizing a script allows you to pass variables from PHP into JS. This is typically used for internationalization of strings (hence localization), but there are plenty of other uses for this technique.
 
 From a technical side, localizing a script means that there will be a new `<script>` tag added right before your registered script, that contains a _global_ JavaScript object with the name you specified during localizing (the 2nd argument). This also means that if you add another script later on, that has this script as dependency, then you will be able to use the global object there as well. WordPress resolves chained dependencies just fine.
 
@@ -147,7 +147,7 @@ And the accompanying Javascript:
 			// Localized variable, see example below.
 			plugin.ajax_url,
 			{
-				// The action name specified here triggers 
+				// The action name specified here triggers
 				// the corresponding wp_ajax_* and wp_ajax_nopriv_* hooks server-side.
 				action : 'create_new_post',
 				// Wrap up any data required server-side in an object.
@@ -188,7 +188,7 @@ function register_localize_and_enqueue_a_script() {
 
 ## The JavaScript side of WP AJAX
 
-There are several ways to go on this. The most common is to use `$.ajax()`. Of course, there are shortcuts available like `$.post()` and `$.getJSON()`. 
+There are several ways to go on this. The most common is to use `$.ajax()`. Of course, there are shortcuts available like `$.post()` and `$.getJSON()`.
 
 Here's the default example.
 
@@ -236,7 +236,7 @@ $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
 	$.ajax( { ... etc ... } )
 		.done( function( ... ) { etc }
 		.fail( function( ... ) { etc }
-		
+
 } )
 	.delay( 500 );
 ```
@@ -287,11 +287,11 @@ A common scenario (regarding how often it is needed and how easy it then is to h
 
 About the problem first:
 
-> AJAX callback (A) executes 
-> AJAX Callback (B) doesn't know that it has to wait for (A) 
+> AJAX callback (A) executes
+> AJAX Callback (B) doesn't know that it has to wait for (A)
 > You can't see the problem in your local install as (A) is finished too fast.
 
-The interesting question is how to wait until A is finished to then start B and its processing. 
+The interesting question is how to wait until A is finished to then start B and its processing.
 
 The answer is "deferred" loading and ["promises"](http://en.wikipedia.org/wiki/Futures_and_promises), also known as "futures".
 
@@ -314,7 +314,7 @@ Here's an example:
            } );
     )
     // Again, you could leverage .done() as well. See jQuery docs.
-    .then( 
+    .then(
         // Success
         function( response ) {
             // Has been successful
