@@ -2,33 +2,37 @@
 
 A description of the WordPress Data Model:
 
+## Meta
+
+Meta data is data with a key/name and a value, attached to another piece of data. Some people will know them as custom fields. Others will know them as user meta.
+
 ## Post types
 
 Posts, pages, attachments, and menus are all different kinds of posts. You can register your own post types. Remember to flush permalinks when you change your post types or you'll get 404s. Never flush permalinks on every page load, it's expensive!
 
-Posts also have post meta
+Posts also have post meta.
 
 ## Comments
 
-Comments have their own table and are capable of storing meta data. This is rarely used by developers but allows interesting things.
+Comments have their own table, and are attached to a post. Comments are not a type of post however, but they are capable of storing meta data. This is rarely used by developers but allows for interesting things.
 
 ## Terms and Taxonomies
 
-Tags and categories are taxonomies. Individual tags and categories are called terms. You can register your own taxonomies.
+A taxonomy is a way of categorising or organising things. Items are organised using terms in that taxonomy.
 
-For example, a colour taxonomy. Purple would be a term in the colour taxonomy. Remember to flush permalinks if you change your taxonomy registration.
+For example, yellow is a term in the colour taxonomy. Big and small are both terms in the size taxonomy.
 
-Object IDs are attached to taxonomy terms. These IDs are normally post IDs, but this is purely convention. There is nothing preventing a user or a comment taxonomy. A user taxonomy would be useful for grouping users into locations or job roles.
+The Tags and categories that come with WordPress are both taxonomies. Individual tags and categories are called terms.
 
-## Meta
+You can register your own taxonomies, but remember to flush permalinks if you change your taxonomy registration.
 
-Posts, comments, and users have meta
+Taxonomy terms are tied to Object IDs, where an object ID can be any kind of data. This includes posts, users, or comments. These IDs are normally post IDs, but this is purely convention. There is nothing preventing a user or a comment taxonomy. A user taxonomy would be useful for grouping users into locations or job roles.
 
 ## Options
 
 Options are stored as key value pairs in their own table. Some options have an autoload flag set and are loaded on every page load to reduce the number of queries.
 
-## Transients
+### Transients
 
 Transients are stored as options and are used to cache things temporarily
 
