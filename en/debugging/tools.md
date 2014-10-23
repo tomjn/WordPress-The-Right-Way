@@ -15,8 +15,14 @@ Installing the plugin [Developer](https://wordpress.org/plugins/developer/) from
  - [Debug Console](https://wordpress.org/plugins/debug-bar-console/) The Debug Console for example is really useful.
  - [Query Monitor](https://wordpress.org/plugins/query-monitor/) View debugging and performance information on database queries, hooks, conditionals, HTTP requests, redirects and more.
 
-### Xdebug
-The [Xdebug](http://xdebug.org/index.php) PHP Extension allows for enhanced debugging, function and method tracing, and profiling of PHP applications.
+### Xdebug and Remote Debugging
+The [Xdebug](http://xdebug.org/index.php) PHP Extension allows for enhanced debugging, function and method tracing, and profiling of PHP applications. This is [installed with VVV and can be turned on/off](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Code-Debugging#meet-xdebug).
+
+With [PHPStorm](https://www.jetbrains.com/phpstorm/), you can install a browser extension to access Xdebug (or [Zend Debugger](http://files.zend.com/help/Zend-Studio/zend-studio.htm#debugging_php_in_zend_studio.htm)) from within the IDE.
+
+Rather than manually adding `var_dump` statements and reloading the page, you can add a breakpoint anywhere in your PHP code, execution will stop and you can see a stack trace, inspect (and modify) the values of all variables and objects or manually evaluate (test) a PHP expression.
+
+With [zero-configuration debugging](http://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm) (controlled via cookies and bookmarklets) you don't need to add `?XDEBUG_SESSION_START` to your URLs and you can also debug HTTP post requests.
 
 ### PHP Debuggers
 - [DBG](http://www.php-debugger.com/) - PHP Debugger and Profiler
