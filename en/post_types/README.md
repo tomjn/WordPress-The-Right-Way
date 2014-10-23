@@ -12,6 +12,12 @@ Posts, pages, attachments, and menus are all different kinds of posts. You can r
 
 Posts also have post meta.
 
+### Uploaded Files & Images
+
+When you upload a file, WordPress does not reference the image or file using its URL, it uses an attachment. Attachments are posts of type `attachment`, and are referred to by their post ID. For example, when you set a featured image on a post, it stores the post ID of the image you chose in that posts meta.
+
+As a result, you can request different sizes of an image using its attachment ID. Because it hasn't saved the URL, WordPress can generate resized versions of the original, and they can be cropped and manipulated independently.
+
 ## Comments
 
 Comments have their own table, and are attached to a post. Comments are not a type of post however, but they are capable of storing meta data. This is rarely used by developers but allows for interesting things.
