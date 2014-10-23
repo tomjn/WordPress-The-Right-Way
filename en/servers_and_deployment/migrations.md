@@ -8,8 +8,10 @@ Since server moves and domain changes are a large topic, we're going to cover on
 
 On a new server, the environment may not match the old environment, and so you should look out for:
 
- - Older PHP versions. Using newer PHP features on a server, then moving to an older version could cause your code to Fatal error. Check before hand what version of PHP is used and make sure it's the same or greater.
- - File system changes. Not every server puts your site at /srv/www, some use /var/www, and you should make sure that any hardcoded paths are changed to match
+- Older PHP versions. Using newer PHP features on a server, then moving to an older version could cause your code to Fatal error. Check before hand what version of PHP is used and make sure it's the same or greater.
+    - Run `php -v` or use the `phpversion()` command if you don't have access to the server.
+    - PHPStorm uses: use the *PHP Language Level* setting to check for errors automatically.
+- File system changes. Not every server puts your site at /srv/www, some use /var/www, and you should make sure that any hardcoded paths are changed to match. You can normally substitute `$_SERVER['DOCUMENT_ROOT']` instead.
 
 ## URL changes
 
@@ -19,4 +21,4 @@ A new user may decide to use a small SQL command to search for all instances of 
 
 The reason for this is that some data is stored in serialised PHP data structures. These serialised strings contain the length of the URL, and if your URLs length changes, the data structures are no longer valid. This causes issues when you attempt to load your site.
 
-To get around this, a number of tools are available that can look inside the data structures and modify them correctly. We recommend using WP CLI, but other solutions exist.
+To get around this, a number of tools are available that can look inside the data structures and modify them correctly. We recommend using WP-CLI's [search-replace](http://wp-cli.org/commands/search-replace/) command, but other solutions exist.
