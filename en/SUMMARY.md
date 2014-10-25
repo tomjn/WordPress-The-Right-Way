@@ -32,7 +32,6 @@
    * [Test Type](testing/theory/test_types.md)
        * [Unit Testing](testing/theory/unit_testing.md)
        * [Integration Testing](testing/theory/integration_testing.md)
-       * [End-To-End Testing](testing/theory/endtoend_testing.md)
        * [Behaviour Testing](testing/theory/behaviour_testing.md)
    * [Test Driven Development](testing/tdd.md)
    * [WP_UnitTestCase](testing/wp_unittestcase.md)
