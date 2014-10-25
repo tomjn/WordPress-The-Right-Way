@@ -4,7 +4,16 @@ WordPress core is the code that powers WordPress itself. It is what you get when
 
 ## Load Process
 
-todo: add a note on the core load process, and references Rarsts blog post
+At the most basic, the WordPress core loading follows this pattern:
+
+ - Load MU plugins
+ - Load Activated plugins
+ - load theme functions.php
+ - Run init hook
+ - Run main query
+ - Load template
+
+Administration and AJAX requests follow a similar but lighter process. This diagram covers the specifics:
 
 [![WordPress Core Load](../assets/wordpress_core_load.png)](../assets/wordpress_core_load.png)
 
@@ -28,3 +37,8 @@ Instead, use Hooks/Actions and Filters to modify Core behaviour.
  - Trac
  - code freeze
  - release
+
+
+## Further Reading
+
+ - [Making Sense of Core Load](http://www.rarst.net/wordpress/wordpress-core-load/)
