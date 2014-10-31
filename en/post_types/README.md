@@ -12,6 +12,24 @@ Posts, pages, attachments, and menus are all different kinds of posts. You can r
 
 Posts also have post meta.
 
+### Default Post Types
+
+The default post types are as follows:
+
+ - Post (`post`)
+ - Page (`page`)
+ - Attachment (`attachment`)
+ - Revision (`revision`)
+ - Navigation menu (`nav_menu_item`)
+
+### Menus
+
+Menu items are stored as `nav_menu_item` posts, however, the menu itself is a term in a custom taxonomy that contains `nav_menu_item` posts.
+
+### Revisions
+
+A post of type `revision`, revisions are historical copies of posts, and are tied to their original post via the post parent field. To get a posts revisions, grab all its children of type `revision`
+
 ### Uploaded Files & Images
 
 When you upload a file, WordPress does not reference the image or file using its URL, it uses an attachment. Attachments are posts of type `attachment`, and are referred to by their post ID. For example, when you set a featured image on a post, it stores the post ID of the image you chose in that posts meta.
