@@ -20,3 +20,7 @@ A unit test might check:
 
  - [PHPUnit](https://phpunit.de/)
  - [PHPSpec](http://phpspec.net/)
+
+# Helpful Projects
+
+ - [John P Blochs WP Unit Test Starter project](https://github.com/johnpbloch/wp-unit-test-project)
