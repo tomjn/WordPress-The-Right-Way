@@ -35,7 +35,6 @@
        * [Behaviour Testing](testing/theory/behaviour_testing.md)
    * [Test Driven Development](testing/tdd.md)
    * [WP_UnitTestCase](testing/wp_unittestcase.md)
-   * [More Unit Test Examples](testing/examples.md)
 * [Servers And Deployment](servers_and_deployment/README.md)
    * [WP CLI](servers_and_deployment/wp_cli.md)
    * [Composer](servers_and_deployment/composer.md)
