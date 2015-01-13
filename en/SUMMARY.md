@@ -41,7 +41,6 @@
    * [Composer](servers_and_deployment/composer.md)
    * [Migrations](servers_and_deployment/migrations.md)
 * [Security](ssl/README.md)
-* [Resources](resources/README.md)
 * [Community](community/README.md)
 * [Credits](credits/README.md)
 
