@@ -20,3 +20,4 @@ Look at your local WordCamp if they are holding a Contributor day. Alternatively
  - .org Support Forums
  - IRC Channels
  - WordPress Stack Exchange
+ - WordPress Slack
