@@ -8,7 +8,7 @@ Meta data is data with a key/name and a value, attached to another piece of data
 
 ## Post types
 
-Posts, pages, attachments, and menus are all different kinds of posts. You can register your own post types. Remember to flush permalinks (manually: Dashboard > Settings > Permalinks > Save Changes or programatically via [flush_rewrite_rules](http://codex.wordpress.org/Function_Reference/flush_rewrite_rules)) when you change your post types or you'll get 404s. Never flush permalinks on every page load, it's expensive!
+Posts, pages, attachments, and menus are all different kinds of posts. You can register your own post types. Remember to flush permalinks (manually: Dashboard > Settings > Permalinks > Save Changes or programmatically via [flush_rewrite_rules](http://codex.wordpress.org/Function_Reference/flush_rewrite_rules)) when you change your post types or you'll get 404s. Never flush permalinks on every page load, it's expensive!
 
 Posts also have post meta.
 
