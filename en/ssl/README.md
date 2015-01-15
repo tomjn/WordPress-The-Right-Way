@@ -59,7 +59,7 @@ All big clients deserve an SSL certificate. If you're running an e-commerce site
 
 ### Admin Only SSL
 
- - If your site isn't an ecommerce site, but you have users who visit the backend, their logged in sessions should be sent over a https connection.
+ - If your site isn't an ecommerce site, but you have users who visit the backend, their logged in sessions should be sent over an https connection.
  - Explain how
 
 ## Myths
