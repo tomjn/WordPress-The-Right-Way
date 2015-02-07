@@ -29,7 +29,7 @@ With [zero-configuration debugging](http://confluence.jetbrains.com/display/PhpS
 
 ### Browser Web Inspectors
 - [Chrome DevTools](http://discover-devtools.codeschool.com/) for Google Chrome
-- [Firebug](http://getfirebug.com/) for Mozzila Firefox
+- [Firebug](http://getfirebug.com/) for Mozilla Firefox
 - [F12 developer tools](http://msdn.microsoft.com/library/ie/bg182326) for Internet Explorer
 - [Opera Dragonfly](http://www.opera.com/dragonfly/) for Opera
 
