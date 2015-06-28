@@ -1,6 +1,6 @@
 # WordPress The Right Way
 
-This book is a condensed resource of best practices for and by WordPress developers.
+This book is a condensed resource of best practices for and by WordPress developers, intended to fast track developers past common mistakes and painful problems.
 
 This is a living document and will continue to be updated with more helpful information and examples as they become available.
 
