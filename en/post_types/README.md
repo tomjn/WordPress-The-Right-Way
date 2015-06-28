@@ -1,6 +1,20 @@
 # Data
 
-A description of the WordPress Data Model:
+There are multiple data types in WordPress, but the basic data types stored in the database are:
+
+ - Post
+ - Comments
+ - Terms
+ - User
+ - Blogs
+ - Network
+ - Links
+ - Options
+ - Site Options
+
+Some of these data types can have additional data attached to them in the form of meta data, some of them have types and statuses.
+
+There are also roles and capabilities, which are not considered content and apply exclusively to users.
 
 ## Meta
 
@@ -69,3 +83,25 @@ Transients are stored as options and are used to cache things temporarily
 ## Object Cache
 
 By default WordPress will use in memory caching that does not persist between page loads. There are [plugins available](http://codex.wordpress.org/Class_Reference/WP_Object_Cache#Persistent_Cache_Plugins) that extend this to use APC or Memcache amongst others.
+
+## Data Overview
+
+Here's a table showing the full spectrum of data types in WordPress that are stored in the database: 
+
+                  |Post                   |Comments             |Term|User|Blogs|Network|Links|Options|Site Options
+------------------|-----------------------|---------------------|--------|----|----|-----|-------|-----|----|----
+Description       |Content, e.g. articles |Commentary on a post |A type of objects, for classifying |Users and Authors      |A website |A collection of websites |Links to websites|key value pairs|Network-wide key value pairs
+Supported         |Yes                    |Yes                  |Yes |Yes |Yes |Multisite |Deprecated|Yes|Yes
+Meta              |Custom fields          |Comment meta         |Planned |User Meta |Options |Site Options |No|No|No
+Meta Access       |`get_post_meta`        |`get_comment_meta`   |Planned |get_user_meta |get_option |get_site_option |n/a|n/a|n/a
+Type              |Post type              |Comment type         |Taxonomy |Roles and Capabilities |No |subdomain or subdir |link_category taxonomy|n/a|n/a
+Type registration |`register_post_type`   |defined on use       |`register_taxonomy` |`add_role add_cap` |n/a |wp-config.php DEFINE |n/a|n/a|n/a
+Taxonomy UI?      |Yes                    |No                   |Yes |No |No |No |only link_category|n/a|n/a
+Default Types     |post page attachment nav_menu nav_menu_item |none pingback trackback |cat tag |admin editor author contributor subscriber |n/a |SUBDOMAIN_INSTALL true/false |n/a|n/a|n/a
+Query Class       |`WP_Query`             |`WP_Comment_Query`   |`get_terms` |`WP_User_Query` |`wp_get_sites` |`wp_get_sites` |`get_links`|`get_option`|`get_site_option`
+Has Archives      |Yes                    |No |Per blog |Yes |No |No |No|No|No
+Has Widget        |Recent Posts           |Recent Comments |Categories and Tags |No |No |No |Bookmarks|No|No
+Data Availability |Per blog               |Per blog |Per blog |Per install |Per network |Per install |Per blog|Per blog|Per network
+Set current       |`setup_postdata`       |n/a|n/a |n/a |switch_to_blog |no native function |n/a|n/a|n/a
+Database Table    |`wp_posts`             |`wp_comments` |`wp_terms` `wp_term_relationships` `wp_term_taxonomy` |`wp_users` |`wp_blogs` |`wp_site` |`wp_links`|`wp_options`|`wp_site_options`
+Meta Table        |`wp_postmeta`          |`wp_commentmeta` |Planned |`wp_usermeta` |`wp_options` |`wp_sitemeta` |n/a|n/a|n/a
