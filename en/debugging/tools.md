@@ -35,6 +35,8 @@ With [zero-configuration debugging](http://confluence.jetbrains.com/display/PhpS
 
 ## Prevention
 
-### [PHP Mess Detector](http://phpmd.org/)
+There are a number of tools dedicated to analysing code and catching semantic mistakes, or pointing out problems in code.
 
-### SCheck
+[PHP Mess Detector](http://phpmd.org/) for example, will highlight long variable names, npath and cyclomatic complexity, classes that are too large, unused variables, and other problems. [SCheck](https://github.com/facebook/pfff/wiki/Scheck) is a tool provided by Facebook, and performs similar checks, such as finding dead statements and unused classes.
+
+If you can't type hint, you can make use of a tool such as [phantm](https://github.com/colder/phantm/) to infer types and find clashes. Many others exist though, and integrate with your editor/IDE, so look around
