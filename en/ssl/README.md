@@ -2,15 +2,27 @@
 
 ## Salts
 
- - A mention on rainbow tables and why salts are necessary and their purpose
- - The keys and salts in `wp-config.php`
- - The API wordpress.org provides for adding them
+Your passwords and cookies are stored with salts applied. Salts are strings of data that are kept secret, and hashed together with important data so that it's harder to guess. This way a hacker can't just run through every password and generate a rainbow table of all possible results and brute force every website. Instead they need to generate a new table for every site they target after acquiring the secret salts used. There is an API to provide salts and secret keys at wordpress.org, which you can then copy paste into your `wp-config.php`.
+
+## Escaping
+
+When outputting data, you should escape it. For example, if you output a css class, you should use `esc_attr`, otherwise, an attacker could sneak in the value `classname"><script>alert('hello');</script><span` and run arbitrary code on your site.
+
+An important part of escaping however, is to escape as late as possible. If you escape a variable once, then use it 5 times, that variable may be modified at any point between escaping and output, so always escape at the moment of output.
+
+ - Sanitise early
+ - Escape Late
+ - Escape Often
 
 ## Nonces
 
- - Not the British variety
- - Try to explain Cross site reference attacks
- - Add notes on how to use nonces effectively
+In the days of MySpace, a user could add an image to their profile, and set the `src` tag as `/logout.php`. Any user who visited their profile would be immediatley logged out. This is an example of a CSRF attack or Cross Site Reference attack.
+
+In order to get around this, we use nonces. Nonces are small tokens that can be passed around to validate an action. For example, a form may contain a nonce, which is then checked for when processed. This makes sure that all form submissions came from the form, and not a malicious or unintended script.
+
+@todo: Add notes on how to use nonces effectively
+
+*Note:* In the United Kingdom, a nonce is a name for a child sex offender, be careful of using the word out of context
 
 ## The Location of `wp-config`
 
@@ -52,7 +64,7 @@
 
 ## SSL
 
-All big clients deserve an SSL certificate. If you're running an e-commerce site, this is especially true, and your entire site should be SSL for all logged in users.
+All big clients deserve an SSL certificate. If you're running an e-commerce site, this is especially true, and your entire site should be using SSL for all logged in users.
 
  - A note on public wifi, unsecured wifi, and snooping
  - Maybe mention firesheep?
