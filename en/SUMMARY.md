@@ -24,8 +24,6 @@
 * [Templates](templates/README.md)
 * [JavaScript](javascript/README.md)
 * [Widgets](widgets/README.md)
-   * [A Basic Widget](widgets/a_basic_widget.md)
-   * [Javascript](widgets/javascript.md)
 * [I18n](i18n/README.md)
 * [Multisite](multisite/README.md)
 * [Testing](testing/README.md)
