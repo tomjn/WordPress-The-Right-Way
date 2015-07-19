@@ -36,7 +36,7 @@ In order to get around this, we use nonces. Nonces are small tokens that can be 
 ## User ID 1
 
  - Don't call it 'admin'
- - Don't give it administrator privilledges
+ - Don't give it administrator priviledges
 
 ## Roles and Capabilities
 
@@ -51,8 +51,7 @@ In order to get around this, we use nonces. Nonces are small tokens that can be 
 
 ## Custom Password Reset Code
 
- - Some people write their own password reset facilities
- - This is bad
+ - Some people write their own password reset facilities. This is bad
  - If you really must, make it a forgotten password link, don't make it actually show your password
 
 ## timthumb.php
@@ -76,7 +75,7 @@ All big clients deserve an SSL certificate. If you're running an e-commerce site
 
 ## Myths
 
-There are a lot of feel good security fixes that float around, that do nothing to help your security, waste your time, and sometimes increase the risk. Here are a few
+There are a lot of feel good security fixes that float around, that do nothing to help your security, waste your time, and sometimes increase the risk. Here are a few:
 
 ### Hiding the Admin and Login URLs
 
