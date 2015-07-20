@@ -42,7 +42,7 @@ The second, installs the server software directly into your operating system. Th
 
 Microsoft Internet Information Services is the server software that powers Windows based servers. Variants of it come with Windows if you install the appropriate components, but knowledge of IIS setup in the WordPress community is rare. Most remote servers run an Apache or Nginx setup, and developer knowledge is geared in that direction.
 
-IIS is not be the easiest route to take.
+IIS is not the easiest route to take.
 
 ## Version Control
 
