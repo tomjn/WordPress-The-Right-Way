@@ -1,4 +1,4 @@
-# WordPress The Right Way
+# WP The Right Way
 
 This book is a condensed resource of best practices for and by WordPress developers, intended to fast track developers past common mistakes and painful problems.
 
