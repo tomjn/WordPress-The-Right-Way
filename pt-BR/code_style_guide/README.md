@@ -1,24 +1,16 @@
-# Code Style Guide
+# Guia de Código
 
-## Clean Code
+## Código Limpo
 
-It's important to keep code readable and maintainable. This prevents small but critical errors from becoming hidden in your code, while making whole classes of bugs incredibly obvious ( missing closing braces are easy to spot when you indent consistently ).
+É importante manter o código legível e de fácil manutenção. Isso previne que pequenos erros, tornem-se críticos a ponto de você perder horas de trabalho, para perceber que esqueceu de adicionar um ";" na Linha X. É recomendável usar o mesmo "Code Standard" que todos usam. Mas se você se sente mais confortável, usando o padrão PSR, não há problema algum nisso, com tanto que use-a de maneira consistente em suas aplicações.
 
-While it's best to use the same standard as everybody else, if you're more comfortable using a PSR standard, then use that. If you do though, do it consistently.
+### Indentação
 
-### Indenting
+Indentação no WordPress é feito usando "tabs", representado por 4 espaços. Indentação é muito importante para um código mais legível, e cada declaração deve estar em sua própria linha. Sem a indentação, fica mais díficil de entender o código, e os erros tornam-se mais frequentes.
 
-Indenting in WordPress is done using tabs, representing 4 spaces visually. Indenting is important for readable code, and each statement should be on its own line. Without indenting, it becomes very difficult to understand what's happening, and mistakes are easier to make. This also makes support requests on the forums and stack exchange difficult to answer.
+Dê uma olhada em [Editor Config](http://editorconfig.org). Ele é uma ótima maneira de assegurar de que todos os membros do time, estão seguindo UM mesmo padrão.
 
-A good editor will auto-indent for you, most can re-indent a file if you've older code that needs fixing.
-
-A good way to ensure that all members on a team are using the same
-styles is to use [Editor Config](http://editorconfig.org). It contains
-plugins for different editors, so everyone can use their favorite
-editor.
-
-For instance, the following `.editorconfig` file enforces the above
-rule, indentation as tabs of width 4 spaces.
+O seguinte arquivo `.editorconfig` reforça as regras acima, com indentação de largura de 4 espaços.
 
 ```ini
 [*.php]
@@ -26,11 +18,12 @@ indent_style = tabs
 indent_size = 4
 ```
 
-### PHP Tag Spam
+### Tag Spam do PHP
 
-The `<?php` and `?>` tags should be used sparingly. For example:
+As tags `<?php` and `?>` devem ser usadas separadamente. Por exemplo:
 
 ```php
+<?php // bad ?>
 <?php while( have_posts() ) { ?>
     <?php the_post(); ?>
     <?php the_title(); ?>
@@ -38,10 +31,11 @@ The `<?php` and `?>` tags should be used sparingly. For example:
     <?php the_content(); ?>
 <?php } ?>
 ```
-Would be easier to read as:
+Seria mais fácil de ler:
 
 ```php
 <?php
+// good
 while( have_posts() ) {
     the_post();
     the_title();
@@ -52,19 +46,15 @@ while( have_posts() ) {
 } ?>
 ```
 
-A good guideline is to calculate what needs to be displayed, then displays it all in one go rather than mixing the two.
-
 ### Linting
 
-A lot of editors support or have built in syntax checkers. These are called Linters. When using a good editor, syntax errors are highlighted or pointed out.
+Muitos editores suportam ou já possuem um verificador de sintaxes. Esses verificadores são chamados de Linters, quando usado com um bom editor, erros de sintaxe são destacados e depurados. Por exemplo, no PHPStorm, é dado a um erro de sintaxe um destaque vermelho.
 
-For example, in PHPStorm, a syntax error is given a red underline.
+## Padrões de Código
 
-## Coding Standards
+WordPress segue um conjunto de padrões. Esses padrões são diferentes do padrão PSR. Por exemplo, WordPress usa tabs ao invés de espaços, e abre o parentêses em uma nova linha.
 
-WordPress follows a set of coding standards. These differ from the PSR standards. For example, WordPress uses tabs rather than spaces, and places the opening bracket on the same line.
-
-The WordPress Contributor Handbook covers the coding standards in more details. Click below to read more:
+O Manual do WordPress para contribuidores, aborda os padrões de código, mais detalhadamente. Abaixo estão algumas referências para estudo.
 
 - [HTML Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/html/)
 
@@ -77,6 +67,6 @@ The WordPress Contributor Handbook covers the coding standards in more details. 
 
 #### PHP Code Sniffer & PHP CS Fixer
 
-PHP Code Sniffer is a tool that finds violations of the coding standard. Many editors integrate support, including support for a second tool that fixes those violations automatically.
+O PHP Code Sniffer é uma ferramente responsável por verificar violações nos padrões de código. Atualmente muitos editores, trazem com eles essa função. E o PHP CS Fixer, corrigi automaticamente essas violações para você.
 
-To use this, you will need the WordPress Coding Standards definition. [You can find it here, along with PHPStorm instructions](https://gist.github.com/Rarst/1370155).
+Para usar essas ferramentas, você precisará da definição dos Padrões de Código do WordPress. [Você pode encontra-la aqui, junto com as instruções do PHPStorm](https://gist.github.com/Rarst/1370155)
