@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Getting Started](getting_started/README.md)
-* [Code Style Guide](code_style_guide/README.md)
+* [Começando](getting_started/README.md)
+* [Guia de Código](code_style_guide/README.md)
 * [Debugging](debugging/README.md)
    * [Error Logging](debugging/errorlogging.md)
    * [Handling Errors](debugging/handlingerrors.md)
