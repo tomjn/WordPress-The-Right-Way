@@ -10,7 +10,6 @@
 
 この本の編集は、テキストエディタでマークダウンファイルのアップデートするか、[Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md)でリポジトリを開いて編集することで可能です。デスクトップアプリではライブプレビューも可能です。
 
-[![Build Status](https://www.gitbook.io/button/status/book/tarendai/wordpress-the-right-way)](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity)
 
 ## ライセンス
 
