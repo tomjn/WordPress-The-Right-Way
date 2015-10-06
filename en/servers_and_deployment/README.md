@@ -16,7 +16,7 @@ Make sure your local environment is as similar to your production server as poss
 
 Consider using a [staging server](https://en.wikipedia.org/wiki/Staging_site) to help with this.
 
-If you're copying a database from development to production (or vice-versa), you'll need to change the URLs. See the [*Migrations*] (https://github.com/Tarendai/WordPress-The-Right-Way/blob/master/en/servers_and_deployment/migrations.md)section in this chapter.
+If you're copying a database from development to production (or vice-versa), you'll need to change the URLs. See the [*Migrations*](https://github.com/Tarendai/WordPress-The-Right-Way/blob/master/en/servers_and_deployment/migrations.md) section in this chapter.
 
 ## Use Version Control
 
