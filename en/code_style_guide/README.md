@@ -52,7 +52,7 @@ while( have_posts() ) {
 } ?>
 ```
 
-A good guideline is to calculate what needs to be displayed, then displays it all in one go rather than mixing the two.
+A good guideline is to calculate what needs to be displayed, then display it all in one go rather than mixing the two.
 
 ### Linting
 
