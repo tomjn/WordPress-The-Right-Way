@@ -1,15 +1,17 @@
-# WordPress The Right Way
+# WordPress Do Jeito Certo
 
-This book is a condensed resource of best practices for and by WordPress developers, intended to fast track developers past common mistakes and painful problems.
+Este livro possui fontes sólidas, das melhores práticas já feitas pelos desenvolvedores WordPress, com a intenção de ajudar a depurar erros mais comuns e dolorosos feito pelos desenvolvedores.
 
-This is a living document and will continue to be updated with more helpful information and examples as they become available.
+Este documento continuará sendo atualizado, com mais informações e exemplos úteis sempre que forem disponíveis.
 
-## How to Contribute
+## Como contribuir?
 
-[You can contribute on GitHub](https://github.com/Tarendai/WordPress-The-Right-Way). Changes will be [pushed to Gitbook.io automatically](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) when the [main repository](https://github.com/Tarendai/WordPress-The-Right-Way) changes.
+[Vocês pode contribuir no Github](https://github.com/Tarendai/WordPress-The-Right-Way/pt). As mudanças serão [feitas no Gitbook.io automaticamente](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) quando o [repositório principal](https://github.com/Tarendai/WordPress-The-Right-Way) mudar.
 
 Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
 
-## License
+Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto abrindo o repositório na [aplicação para desktop do Gitbook](https://github.com/GitbookIO/editor/blob/master/README.md). O aplicativo para desktop, dará a você opções de `live preview`.
+
+## Licença
 
 [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated
