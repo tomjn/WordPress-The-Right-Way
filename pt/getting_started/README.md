@@ -25,7 +25,7 @@ Tenha certeza de que você possui conhecimentos sólidos nos tópicos abordados 
 
 É importante possuir um `localhost`. A época em que tinhamos de fazer `upload` da aplicação em produção, esperando que o melhor aconteça já é passado, hoje felizmente possuimos algo chamado `Local Web Server` ou Ambiente de Desenvolvimento Local.
 
-Com ambientes locais você pode trabalhar mais rapidamente, sem ficar fazendo `Download e Upload` de arquivos, ficando refém de uma internet problemática, ou esperar por todas as páginas carregarem. Com um `localhost`, você pode trabalhar de um trêm, ou de um túnel, sem estar conectado a `Wifi` ou Plano de Dados, e testar a aplicação antes de fazer `Deploy` em produção.
+Com ambientes locais você pode trabalhar mais rapidamente, sem ficar fazendo `download e upload` de arquivos, ficando refém de uma internet problemática, ou esperar por todas as páginas carregarem. Com um `localhost`, você pode trabalhar de um trêm, ou de um túnel, sem estar conectado a `Wifi ou Plano de Dados`, e testar a aplicação antes de fazer `deploy` em produção.
 
 Aqui estão algumas opções para configurar seu `localhost`. As duas opções mais populares são as/os:
 
@@ -34,7 +34,7 @@ Aqui estão algumas opções para configurar seu `localhost`. As duas opções m
 
 O primeiro tipo de ambiente, geralmente envolve terceiros, tais como [Vagrant](https://www.vagrantup.com), que oferece uma "máquina virtual" pré-configurada e consistente para trabalhar.
 
-O segundo tipo instala um programa de servidor diretamente no sistema operacional. Existem várias ferramentas para tornar isto mais fácil, tais como `WAMP, MAMP, XAMPP, VERTRIGO`, etc... Mas seu ambiente será único e mais difícil de depurar. Estes ambientes são chamados de `LAMP`, que traz consigo `Linux, Apache, MySQL e PHP`.
+O segundo tipo instala um programa de servidor diretamente no sistema operacional. Existem várias ferramentas para tornar isto mais fácil, tais como `WAMP, MAMP, XAMPP e ou Vertrigo`. Mas seu ambiente será único e mais difícil de depurar. Estes ambientes são chamados de `LAMP`, que traz consigo `Linux, Apache, MySQL e PHP`.
 
 ### IIS
 
@@ -45,9 +45,7 @@ Microsoft Internet Information Services é um programa de servidor que roda em s
 Uma parte vital do trabalho em grupo, organização de tarefas e projetos "Open Source", é o uso de um Controlador de Versão. Ele é sistema que monitora as mudanças do seu código em tempo real, e permite, aos desenvolvedores (de sua equipe ou comunidade) a colaborarem e aprimorarem sua aplicação.
 
 ### Git
-
 Criado por Linus Torvalds o criador do Linux, [Git](http://git-scm.com/) é um dos controladores de versão mais populares hoje em dia.
 
 ### Subversion
-
-Também conhecido como SVN é um outro Controlador de Versão muito popular, ele é usado nos Plugins e Repositórios do [WordPress](https://wordpress.org).
+Também conhecido como SVN é um outro controlador de versão muito popular, ele é usado nos plugins e repositórios do [WordPress](https://wordpress.org).
