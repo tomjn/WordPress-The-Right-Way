@@ -35,7 +35,7 @@
    * [WP CLI](servers_and_deployment/wp_cli.md)
    * [Composer](servers_and_deployment/composer.md)
    * [Migrations](servers_and_deployment/migrations.md)
-* [Securança](ssl/README.md)
+* [Segurança](ssl/README.md)
 * [Comunidade](community/README.md)
 * [Créditos](credits/README.md)
 
