@@ -14,4 +14,4 @@ Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto a
 
 ## Licença
 
-[Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated
+[Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
