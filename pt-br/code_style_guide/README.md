@@ -1,8 +1,6 @@
-# Guia de Código
+# Guia de estilo de código
 
-## Código Limpo
-
-É importante manter o código legível e de fácil manutenção. Isso previne que pequenos erros, tornem-se críticos a ponto de você perder horas de trabalho, para perceber que esqueceu de adicionar um ";" na Linha X. É recomendável usar o mesmo "Code Standard" ao decorrer de toda a sua aplicação. Mas se você se sente mais confortável, usando o padrão PSR, não há problema algum nisso, com tanto que use-a de maneira consistente em suas aplicações.
+É importante manter o código legível e de fácil manutenção. Isso previne que pequenos erros, tornem-se críticos a ponto de você perder horas de trabalho, para perceber que esqueceu de adicionar um ";" na Linha X. É recomendável usar o mesmo "Code Standard" ao decorrer de toda a sua aplicação. Mas se você se sente mais confortável, usando o padrão PSR, não há problema algum nisso, com tanto que a use de maneira consistente.
 
 ### Indentação
 
@@ -50,9 +48,9 @@ while( have_posts() ) {
 
 Muitos editores suportam ou já possuem um verificador de sintaxes. Esses verificadores são chamados de Linters, quando usado com um bom editor, erros de sintaxe são destacados e depurados mais facilmente. Por exemplo, no PHPStorm, é dado a um erro de sintaxe um destaque vermelho.
 
-## Padrões de Código
+## Padrões do WordPress
 
-WordPress segue um conjunto de padrões. Esses padrões são diferentes do padrão PSR. Por exemplo, WordPress usa tabs ao invés de espaços, e abre o parentêses em uma nova linha.
+WordPress segue um conjunto de padrões. Esses padrões são diferentes do padrão PSR. Por exemplo, WordPress usa tabs ao invés de espaços, e abre os parentêses em uma nova linha.
 
 O Manual do WordPress para contribuidores, aborda os padrões de código, mais detalhadamente. Abaixo estão algumas referências para estudo.
 
@@ -67,6 +65,6 @@ O Manual do WordPress para contribuidores, aborda os padrões de código, mais d
 
 #### PHP Code Sniffer & PHP CS Fixer
 
-O PHP Code Sniffer é uma ferramente responsável por verificar violações nos padrões de código. Atualmente muitos editores, trazem com eles essa função. E o PHP CS Fixer, corrigi automaticamente essas violações para você.
+O PHP Code Sniffer é uma ferramente responsável por verificar violações no código. Atualmente muitos editores, trazem com eles essa função. E o PHP CS Fixer, corrigi automaticamente essas violações para você.
 
-Para usar essas ferramentas, você precisará da definição dos Padrões de Código do WordPress. [Você pode encontra-la aqui, junto com as instruções do PHPStorm](https://gist.github.com/Rarst/1370155)
+Para usar essas ferramentas, você precisará da definição dos `Padrões de Código` do WordPress. [Você pode encontra-los aqui, junto com as instruções do PHPStorm](https://gist.github.com/Rarst/1370155)
