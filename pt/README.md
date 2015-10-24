@@ -1,6 +1,6 @@
 # WordPress Do Jeito Certo
 
-Este livro possui fontes sólidas, das melhores práticas já feitas pelos desenvolvedores WordPress, com a intenção de ajudar a depurar erros mais comuns e dolorosos feito pelos desenvolvedores.
+Este livro possui fontes sólidas, das melhores práticas já feitas pelos desenvolvedores WordPress, com a intenção de ajudar a depurar os erros mais comuns e dolorosos feito por nós meros mortais.
 
 Este documento continuará sendo atualizado, com mais informações e exemplos úteis sempre que forem disponíveis.
 
