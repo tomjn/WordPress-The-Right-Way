@@ -6,9 +6,9 @@ Este documento continuará sendo atualizado, com mais informações e exemplos �
 
 ## Como contribuir?
 
-[Vocês pode contribuir no Github](https://github.com/Tarendai/WordPress-The-Right-Way/pt). As mudanças serão [feitas no Gitbook.io automaticamente](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) quando o [repositório principal](https://github.com/Tarendai/WordPress-The-Right-Way) mudar.
+Vocês pode contribuir em nosso repositório no [Github](https://github.com/Tarendai/WordPress-The-Right-Way). As mudanças serão feitas no [Gitbook.io](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) automaticamente quando o [repositório principal](https://github.com/Tarendai/WordPress-The-Right-Way) mudar.
 
-Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto abrindo o repositório na [aplicação para desktop do Gitbook](https://github.com/GitbookIO/editor/blob/master/README.md). O aplicativo para desktop, dará a você opções de `live preview`.
+Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto abrindo o repositório na aplicação para desktop do [Gitbook](https://github.com/GitbookIO/editor/blob/master/README.md). O aplicativo para desktop, dará a você opções de `live preview`.
 
 ## Licença
 
