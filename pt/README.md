@@ -8,8 +8,6 @@ Este documento continuará sendo atualizado, com mais informações e exemplos �
 
 [Vocês pode contribuir no Github](https://github.com/Tarendai/WordPress-The-Right-Way/pt). As mudanças serão [feitas no Gitbook.io automaticamente](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) quando o [repositório principal](https://github.com/Tarendai/WordPress-The-Right-Way) mudar.
 
-Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
-
 Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto abrindo o repositório na [aplicação para desktop do Gitbook](https://github.com/GitbookIO/editor/blob/master/README.md). O aplicativo para desktop, dará a você opções de `live preview`.
 
 ## Licença
