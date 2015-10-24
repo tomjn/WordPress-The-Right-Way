@@ -48,7 +48,7 @@ while( have_posts() ) {
 
 Muitos editores suportam ou já possuem um verificador de sintaxes. Esses verificadores são chamados de Linters, quando usado com um bom editor, erros de sintaxe são destacados e depurados mais facilmente. Por exemplo, no PHPStorm, é dado a um erro de sintaxe um destaque vermelho.
 
-## Padrões de Código
+## Padrões do WordPress
 
 WordPress segue um conjunto de padrões. Esses padrões são diferentes do padrão PSR. Por exemplo, WordPress usa tabs ao invés de espaços, e abre os parentêses em uma nova linha.
 
