@@ -23,7 +23,7 @@ Muitos desenvolvedores de plugins e temas preferem remover o jQuery que vem por 
 
 ## Modificando o Core
 
-É tentador modificar partes do `Core`, removendo ou adicionando funcionalidades, mas isso NUNCA deve ser feito. Quando você realizar a atualização do WordPress para uma versão mais atual, todas as suas modificações serão perdidas. Ao invés de mudar o `Core`, use os famosos `Hooks, Actions e Filters` para modificar as funcionalidades da sua aplicação.
+É tentador modificar partes do `Core`, removendo ou adicionando funcionalidades, mas isso NUNCA deve ser feito. Quando você realizar a atualização do WordPress, todas as suas modificações serão perdidas. Ao invés de mudar o `Core`, use os famosos `Hooks, Actions e Filters` para modificar as funcionalidades da sua aplicação.
 
 ## Mais Informações
 
