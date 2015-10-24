@@ -4,7 +4,7 @@
 * [Por onde começar?](getting_started/README.md)
 * [Padrões de Código](code_style_guide/README.md)
 * [Debugging](debugging/README.md)
-   * [Log de Erros](debugging/errorlogging.md)
+   * [Logs](debugging/errorlogging.md)
    * [Tratamento de Erros](debugging/handlingerrors.md)
    * [Ferramentas](debugging/tools.md)
    * [wp-config.php](debugging/wp-configphp.md)
