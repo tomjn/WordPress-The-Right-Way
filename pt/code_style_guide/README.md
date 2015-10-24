@@ -69,4 +69,4 @@ O Manual do WordPress para contribuidores, aborda os padrões de código, mais d
 
 O PHP Code Sniffer é uma ferramente responsável por verificar violações no código. Atualmente muitos editores, trazem com eles essa função. E o PHP CS Fixer, corrigi automaticamente essas violações para você.
 
-Para usar essas ferramentas, você precisará da definição dos Padrões de Código do WordPress. [Você pode encontra-los aqui, junto com as instruções do PHPStorm](https://gist.github.com/Rarst/1370155)
+Para usar essas ferramentas, você precisará da definição dos `Padrões de Código` do WordPress. [Você pode encontra-los aqui, junto com as instruções do PHPStorm](https://gist.github.com/Rarst/1370155)
