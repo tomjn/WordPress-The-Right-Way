@@ -22,6 +22,8 @@ The `WP_Error` object is a catch all error message object returned by some APIs.
 
 This is a helpful method to simplify error checking. It checks if a returned value was a `WP_Error` object, and also checks for a handful of other error values. It returns a true or false value, allowing checks such as these:
 
+This is a helpful method to simplify error checking. It checks if a returned value was a `WP_Error` object, but does not check for other error values. It's shorthand for `if ( get_class( $variable ) == 'WP_Error' )`. For example:
+
 ```php
 if ( !is_wp_error( $value ) ) {
     // do things
