@@ -1,11 +1,11 @@
 * [English](en)
 * [日本語 (にほんご)](jp)
+* [Português](pt-br)
 
 <!--
 * [Deutsch](de)
 * [Español](es)
 * [Français](fr)
-* [Português](pt-br)
 * [Italiano](it)
 * [العربية](ar)
 * [azərbaycan dili](az)
