@@ -1,7 +1,5 @@
 # Guia de estilo de código
 
-## Código Limpo
-
 É importante manter o código legível e de fácil manutenção. Isso previne que pequenos erros, tornem-se críticos a ponto de você perder horas de trabalho, para perceber que esqueceu de adicionar um ";" na Linha X. É recomendável usar o mesmo "Code Standard" ao decorrer de toda a sua aplicação. Mas se você se sente mais confortável, usando o padrão PSR, não há problema algum nisso, com tanto que a use de maneira consistente.
 
 ### Indentação
