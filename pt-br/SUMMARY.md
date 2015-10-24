@@ -2,7 +2,7 @@
 
 * [Introdução](README.md)
 * [Por onde começar?](getting_started/README.md)
-* [Padrões de Código](code_style_guide/README.md)
+* [Padrão de Código](code_style_guide/README.md)
 * [Debugging](debugging/README.md)
    * [Logs](debugging/errorlogging.md)
    * [Tratamento de Erros](debugging/handlingerrors.md)

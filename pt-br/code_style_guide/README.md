@@ -1,4 +1,4 @@
-# Guia de Código
+# Padrão de Código
 
 ## Código Limpo
 
