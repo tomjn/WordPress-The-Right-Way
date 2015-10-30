@@ -70,7 +70,7 @@ The WordPress Contributor Handbook covers the coding standards in more details. 
 
 - [PHP Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/php/)
 
-- [Javascript Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
+- [JavaScript Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
 
 - [CSS Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/css/)
 

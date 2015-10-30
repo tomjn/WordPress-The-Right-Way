@@ -16,7 +16,7 @@
 * [JavaScript](javascript/README.md)
 * [ウィジェット](widgets/README.md)
    * [基本的なウィジェット](widgets/a_basic_widget.md)
-   * [Javascript](widgets/javascript.md)
+   * [JavaScript](widgets/javascript.md)
 * [I18n](i18n/README.md)
 * [マルチサイト](multisite/README.md)
 * [テスト](testing/README.md)
