@@ -58,7 +58,7 @@ O Manual do WordPress para contribuidores, aborda os padrões de código, mais d
 
 - [PHP Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/php/)
 
-- [Javascript Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
+- [JavaScript Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
 
 - [CSS Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/css/)
 
