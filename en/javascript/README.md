@@ -1,10 +1,10 @@
-# Javascript
+# JavaScript
 
-WordPress comes with dependency management and enqueueing for Javascript files. Don't use raw `<script>` tags to embed Javascript.
+WordPress comes with dependency management and enqueueing for JavaScript files. Don't use raw `<script>` tags to embed JavaScript.
 
 ## Registering and Enqueueing
 
-Javascript files should be registered. Registering makes the dependency manager aware of the script. To embed a script onto a page, it must be enqueued.
+JavaScript files should be registered. Registering makes the dependency manager aware of the script. To embed a script onto a page, it must be enqueued.
 
 Let's register and enqueue a script.
 
@@ -138,7 +138,7 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-And the accompanying Javascript:
+And the accompanying JavaScript:
 
 ```javascript
 ( function( $, plugin ) {

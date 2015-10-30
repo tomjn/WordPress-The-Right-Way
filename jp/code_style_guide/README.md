@@ -62,7 +62,7 @@ WordPressでは独自のコーディング規約に従っています。これ�
 
 - [PHPコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/php/)
 
-- [Javascriptコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
+- [JavaScriptコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
 
 - [CSSコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/css/)
 

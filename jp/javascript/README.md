@@ -1,6 +1,6 @@
-# Javascript
+# JavaScript
 
-WordPressにはJavaScriptのための依存マネージャーとエンキューの機能が組み込まれています。そのままのJavascriptを埋め込む`<script>`タグは使ってはいけません。
+WordPressにはJavaScriptのための依存マネージャーとエンキューの機能が組み込まれています。そのままのJavaScriptを埋め込む`<script>`タグは使ってはいけません。
 
 ## 登録とエンキュー
 
