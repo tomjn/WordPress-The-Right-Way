@@ -10,7 +10,7 @@ Você pode dar uma olhada nas próximas conferências através do [WordCamp Cent
 
 ## Dias do Contribuidor
 
-Os "Dias de Contribuidor", acontecem normalmente após os WordCamps (mas eles podem ser independentes), são eventos criados para ajudar você a contribuir mais para o WordPress. Os benefícios em contribuir para o WordPress são incontáveis, tanto para o lado empreendedor, expondo seu nome pela comunidade, quanto para desenvolvedores sozinhos, buscando melhorar suas habilidades de trabalho em equipe e massificar seus projetos.
+Os "Dias de Contribuidor", acontecem normalmente após os WordCamps (mas eles podem ser independentes), são eventos criados para ajudar você a contribuir mais para o WordPress. São vários os benefícios de contribuir com o WordPress, tanto para o lado empreendedor, expondo seu nome pela comunidade, quanto para desenvolvedores sozinhos, buscando melhorar suas habilidades de trabalho em equipe e massificar seus projetos.
 
 Você não precisa ser um desenvolvedor profissional para contribuir para o WordPress. Eles procuram por uma grande variedade de habilidades, como suporte, review de temas e acessibilidade web.
 
