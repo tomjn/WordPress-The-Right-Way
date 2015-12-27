@@ -1,12 +1,12 @@
 # JavaScript
 
-O WordPress possui um gerenciador de dependencia, que lhe permite controlar os `imports` do JavaScript. Não use a tag `<script>` para fazer `embeds` de scripts, ao invés disso, crie um arquivo separado e o importe.
+O WordPress possui um gerenciador de dependência, que lhe permite controlar os *imports* do JavaScript. Não use a tag `<script>` para fazer *embeds* de scripts, ao invés disso, crie um arquivo separado e o importe.
 
 ## Registrando e Importando
 
-Você precisa registra-los para que o gerenciador de dependencia do WordPress, esteja ciente dos arquivos que você está importando. Para adicionar um script na página, você precisará importa-lo antes.
+Os *scripts* devem ser registrados, isso facilita o trabalho do gerenciador de dependência, pois quando você registra o arquivo, você anuncia a sua existência para o *WordPress*. Para fazer um *embed* de um *script* na página, ele deve ser importado primeiro.
 
-Vamos registrar e importar os scripts.
+Vamos registrar e importar um script.
 
 ```php
 // Use the wp_enqueue_scripts function for registering and enqueueing scripts on the front end.
@@ -31,17 +31,17 @@ function register_and_enqueue_a_script() {
 ```
 
 ### Pro-Tips:
-- Os scripts devem ser importados apenas quando necessário; envolva apropriadamente a função `wp_enqueue_script()` com condicionais.
-- Quando você for importar javascript na Interface do Admin, use o hook `admin_enqueue_scripts`.
-- Se for adicionar scripts para a tela de login, use o hook `login_enqueue_scripts`.
+- Os scripts devem ser importados apenas quando necessário; Envolvendo a função `wp_enqueue_script()` usando condicionais para controle.
+- Quando você for importar seus *scripts* no Painel do Admin, use o *hook* `admin_enqueue_scripts`.
+- Se for adicionar scripts para a tela de login, use o *hook* `login_enqueue_scripts`.
 
-## Localização
+## Localizing
 
-A localização de um script permite a você passar variáveis ​​do PHP para JS. Isso normalmente é usado para internacionalização das *strings* (daí localização), mas há uma abundância de outros usos para esta técnica.
+A *localizing* um script permite a você, passar variáveis ​​do PHP para JavaScript. Isso normalmente é usado para internacionalização de *strings*, mas existem muitas outras meneiras de usarmos esta técnica.
 
-De um ponto de vista técnico, localizar um script significa que haverá uma nova tag `<script>` adicionada antes do script registrado, que contém o objeto `_global_` JavaScript com o nome que você especificou no segundo argumento. Isso significa também que se você adicionar um outro script, que possui esse outro script como dependência, então você poderá usar este objeto global nesse novo script sem problemas. WordPress resolve encadeamento de dependências muito bem.
+De um ponto de vista técnico, localizar um script significa que haverá uma nova tag `<script>` adicionada antes do seu script registrado, que contém o objeto JavaScript `_global_` com o nome que você especificou no segundo argumento. Isso significa também que se você adicionar um outro *script*, que possui esse mesmo *script* como dependência, você poderá usar este mesmo objeto neste novo *script* sem problemas. O WordPress trabalha muito bem com encadeamento de dependências.
 
-Vamos localizar um novo script.
+Vamos *localize* um script.
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
@@ -66,7 +66,7 @@ function register_localize_and_enqueue_a_script() {
 ```
 
 
-No arquivo de javascript, os dados estão disponíveis no nome do objeto especificado durante a localização.
+No arquivo de javascript, os dados estão disponíveis no nome do objeto especificado enquanto localiza.
 
 ```javascript
 ( function( $, plugin ) {
@@ -74,13 +74,13 @@ No arquivo de javascript, os dados estão disponíveis no nome do objeto especif
 } )( jQuery, scriptData || {} );
 ```
 
-## Des-registrar / Des-importar
+## Cancelamento do registro e ou importe
 
-Scripts podem ter seus registros cancelados via `wp_deregister_script()` e `wp_dequeue_script()`.
+Você pode cancelar um registro ou um importe de script através das funções `wp_deregister_script()` e `wp_dequeue_script()`.
 
 ## AJAX
 
-WordPress oferece um ponto de extremidade do lado do servidor fácil para as chamadas AJAX, localizado em `wp-admin/admin-ajax.php`. Vamos configurar um `endpoint` no lado do servidor para manipulação AJAX.
+WordPress tem suporte para chamadas AJAX do lado do servidor, localizado em `wp-admin/admin-ajax.php`. Vamos configurar um *endpoint* no lado do servidor para manipulação AJAX.
 
 ```php
 // Triggered for users that are logged in.
@@ -136,7 +136,7 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-E logo em seguida vem o JavaScript:
+Em seguida vem o JavaScript:
 
 ```javascript
 ( function( $, plugin ) {
@@ -169,9 +169,9 @@ E logo em seguida vem o JavaScript:
 } )( jQuery, scriptData || {} );
 ```
 
-`ajax_url` representa o ponto final AJAX admin, que é automaticamente definida na página carregada pela Interface do Admin, mas não no front-end.
+`ajax_url` representa o *endpoint* do admin via AJAX, que é automaticamente definida na página do Admin, mas não no front-end.
 
-Vamos localizar nosso script para incluir o URL admin:
+Vamos localizar nosso script para incluir a URL do admin:
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
@@ -184,7 +184,7 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-## O JavaScript do lado do WP AJAX
+## Usando JavaScript com WP AJAX
 
 Existe várias maneira de fazermos isto. A maneira mais comum é usar `$.ajax()`. É claro que existem atalhos disponíveis como `$.post()` e `$.getJSON()`.
 
@@ -225,9 +225,9 @@ Aqui esta um exemplo padrão.
 
 Perceba que o exemplo acima usa `_ajax_nonce` para verificar o valor NONCE, o qual você terá de definir sozinho, quando for localizar um script. Apenas adicione `'_ajax_nonce' => wp_create_nonce( "some_value" ),` no *array* do script. Você então poderá adicionar um marcador nos seus *callbacks* no PHP que se parecem um pouco com isso `check_ajax_referer( "some_value" )`.
 
-## AJAX em um clique
+## Trabalhando com AJAX e Eventos
 
-Na verdade é muito simples executar uma requisição AJAX por cliques (ou qualquer outro tipo de interação do usuário) em algum elemento. Apenas envolva o seu `$.ajax()` ou um método similar. Você tem a possibilidade de adicionar um delay também.
+Na verdade é muito simples executar uma requisição AJAX por cliques (ou qualquer outro tipo de interação do usuário) em algum elemento. Apenas envolva o seu `$.ajax()` ou algum método similar. Você tem a possibilidade de adicionar um delay na requisição.
 
 ```javascript
 $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
@@ -241,7 +241,7 @@ $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
 
 ## Multiplos callbacks para uma única requisição AJAX
 
-Você pode acabar caindo numa situação na qual multiplas coisas acontecem depois de uma requisição AJAX finaliza. Felizmente jQuery retorna um objeto onde você pode armazenar todos os seus callbacks.
+Você pode acabar caindo numa situação na qual multiplas coisas acontecem depois de uma requisição AJAX é finalizada. Felizmente jQuery retorna um objeto, onde você pode armazenar todos os seus callbacks.
 
 ```javascript
 /*globals jQuery, $, scriptData */
@@ -279,9 +279,9 @@ Você pode acabar caindo numa situação na qual multiplas coisas acontecem depo
 } )( jQuery, scriptData || {} );
 ```
 
-## Callbacks de Encadeamento
+## Encadeamento de Callbacks
 
-Um cenário comum (a respeito de como muitas vezes ela é necessária e como é fácil), é o encadeamento de callbacks quando um pedido de AJAX é finalizado.
+Um cenário comum (a respeito de como muitas vezes ela é necessária e como ela é simples), é o encadeamento de callbacks quando uma requisição AJAX é finalizada.
 
 Vamos dar uma olhada no problema primeiro:
 
@@ -289,9 +289,9 @@ Vamos dar uma olhada no problema primeiro:
 > O callback (B) não sabe que deve esperar por (A).
 > Você não pode ver o problema na sua instalação local se (A) terminar rapidamente.
 
-A grande questão é quando nós devemos esperar o (A) finalizar para só então inicializarmos o processo de (B).
+A grande questão é, quando nós devemos esperar (A) finalizar para só então, inicializarmos o processo de (B).
 
-A resposta é o carregamento é "adiada" e ["promessas"]( http://en.wikipedia.org/wiki/Futures_and_promises ), também conhecido como "futuros".
+A resposta é que o processo é "adiado" carregando suas ["promessas"]( http://en.wikipedia.org/wiki/Futures_and_promises ), também conhecido como "futuros".
 
 Veja um exemplo:
 
