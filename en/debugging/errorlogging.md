@@ -30,4 +30,4 @@ Depending on what was defined in your `php.ini`, PHP will have an error reportin
 
 Never use the `@` operator. It's used to hide errors and warnings in code, but it doesn't do what people expect it to do.
 
-`@` works by settings the error reporting level on a command so that no error is logged. It doesn't prevent the error from happening, which is what people expect it to do. This can mean fatal errors are not caught or logged. Avoid using the `@` operator, and treat all instances of it with suspicion.
+`@` works by setting the error reporting level on a command so that no error is logged. It doesn't prevent the error from happening, which is what people expect it to do. This can mean fatal errors are not caught or logged. Avoid using the `@` operator, and treat all instances of it with suspicion.
