@@ -20,11 +20,13 @@ There are also roles and capabilities, which are not considered content and appl
 
 Meta data is data with a key/name and a value, attached to another piece of data. Some people will know them as custom fields. Others will know them as user meta.
 
+Post Meta ( or Custom fields ) are normally shown in the post edit screen, but if the post meta's key/name begins with an underscore, that field is hidden. This way features such as featured images can be built with their own user interfaces.
+
 ## Post types
 
-Posts, pages, attachments, and menus are all different kinds of posts. You can register your own post types. Remember to flush permalinks (manually: Dashboard > Settings > Permalinks > Save Changes or programmatically via [flush_rewrite_rules](http://codex.wordpress.org/Function_Reference/flush_rewrite_rules)) when you change your post types or you'll get 404s. Never flush permalinks on every page load, it's expensive!
+Posts, pages, attachments, and menus are all different kinds of posts. You can also register your own post types, and these are referred to as custom post types. Remember to flush permalinks (manually: Dashboard > Settings > Permalinks > Save Changes or programmatically via [flush_rewrite_rules](http://codex.wordpress.org/Function_Reference/flush_rewrite_rules)) if you modify or add a post type. If you do not do this, some links will generate 404 errors.
 
-Posts also have post meta.
+*Warning: Developers sometimes attempt to work around the rewrite rules by flushing rewrite rules on the `init` action using the `flush_rewrite_rules`, but this is a mistake. It can lead to unexpected behaviours, and has a large negative performance impact. Rewrite rules are expensive to build.
 
 ### Default Post Types
 
@@ -50,7 +52,7 @@ When you upload a file, WordPress does not reference the image or file using its
 
 If a file is uploaded whilst editing a post (rather than in the Media Library itself), it's `post_parent` field is set to that of the post.
 
-WordPress generates and saves resized versions of the original at the time of upload, for better performance. They can be cropped and manipulated independently and the dimensions and filenames are stored in the attachment postmeta.
+WordPress generates and saves resized versions of the original at the time of upload for better performance. They can be cropped and manipulated independently and the dimensions and filenames are stored in the attachment postmeta.
 
 The default image sizes are configured in Dashboard > Settings > Media. If you need more, you can use [add_image_size](http://codex.wordpress.org/Function_Reference/add_image_size) and also control cropping. You can request a specific size of image using the attachment ID and the image size name (e.g. 'medium', 'large'.)
 
