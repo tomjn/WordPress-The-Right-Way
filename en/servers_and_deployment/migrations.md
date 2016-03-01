@@ -4,6 +4,14 @@ There are a number of things to take note of when moving sites from server to se
 
 Since server moves and domain changes are a large topic, we're going to cover only the most important things.
 
+## Imports and Exports
+
+When performing imports and exports, there are a lot of pitfalls as your site increases in size. To avoid problems, do the following:
+
+ - **Use WP CLI** to run imports and exports. The admin UI is limited by the PHP time limits, if your import or export doesn't finish within the available time, it can fail. Running in a terminal using WP CLI gives you unlimited time to do it 
+ - **Ask the exporter to generate in 5MB chunks**. This reduces the memory requirements of each individual import, and gives a lot more flexibility
+ - **Disable image resizing**. This speeds up importing of images, letting you manually resize in bulk once the content is imported.
+
 ## Server Moves
 
 On a new server, the environment may not match the old environment, and so you should look out for:
