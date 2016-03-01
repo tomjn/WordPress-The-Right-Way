@@ -79,4 +79,4 @@ The WordPress Contributor Handbook covers the coding standards in more details. 
 
 PHP Code Sniffer is a tool that finds violations of the coding standard. Many editors integrate support, including support for a second tool that fixes those violations automatically.
 
-To use this, you will need the WordPress Coding Standards definition. [You can find it here, along with PHPStorm instructions](https://gist.github.com/Rarst/1370155).
+To use this, you will need the [WordPress Coding Standards definition](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
