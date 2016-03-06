@@ -19,7 +19,7 @@ Administration and AJAX requests follow a similar but lighter process. This diag
 
 ## Deregistering jQuery
 
-Many plugin & theme developers attempt to unregister the jQuery that comes with core, and add their own copy, normally the jQuery on the Google CDN. Do not do this, it can cause compatability issues.
+Many plugin and theme developers attempt to unregister the jQuery that comes with core, and add their own copy, normally the jQuery on the Google CDN. Do not do this, it can cause compatability issues.
 
 Instead use the copy of jQuery that comes with WordPress and aim for the version used in the latest WordPress when testing. This ensures maximum compatability across plugins.
 
