@@ -21,6 +21,8 @@ A unit test might check:
  - [PHPUnit](https://phpunit.de/)
  - [PHPSpec](http://phpspec.net/)
 
-# Helpful Projects
+# Helpful Projects and Further Reading
 
  - [John P Blochs WP Unit Test Starter project](https://github.com/johnpbloch/wp-unit-test-project)
+ - [WP Mock](https://github.com/10up/wp_mock)
+ - [Writing Unit Tests for WordPress](http://greg.harmsboone.org/blog/2014/01/01/writing-unit-tests-for-wordpress)
