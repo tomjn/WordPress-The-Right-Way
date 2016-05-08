@@ -11,8 +11,7 @@ The age old adage still applies: **prevention is better than cure**
 
 Installing the plugin [Developer](https://wordpress.org/plugins/developer/) from the WordPress repository will give you quick access to a broad range of debugging tools. The following debugging plugins are quite useful:
 
- - [Developer](https://wordpress.org/plugins/log-deprecated-notices/).
- - [Log Deprecated Notices](http://wordpress.org/plugins/developer) Logs usage of deprecated functions.
+ - [Log Deprecated Notices](https://wordpress.org/plugins/log-deprecated-notices/) Logs usage of deprecated functions.
  - [Debug Bar](http://wordpress.org/plugins/debug-bar) Provides an interface for debugging PHP Notices/Warnings/Errors, reviewing SQL Queries, analysing caching behaviour and much more. It's also extendable with plugins.
  - [Debug Console](https://wordpress.org/plugins/debug-bar-console/) The Debug Console for example is really useful.
  - [Query Monitor](https://wordpress.org/plugins/query-monitor/) View debugging and performance information on database queries, hooks, conditionals, HTTP requests, redirects and more.
