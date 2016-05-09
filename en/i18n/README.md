@@ -2,11 +2,7 @@
 
 When talking about I18n here, we're going to talk about translation strings in user interfaces and on the frontend. For content in multiple languages or language pickers for users, you will need to install a plugin to provide the editing tools for posts and other content types.
 
-At any point, you can manually set the language WordPress uses by adding the `WP_LANG` constant to `wp-config.php`, e.g.:
-
-```
-define ('WPLANG', 'zh_CN');
-```
+At any point, you can manually set the language WordPress uses by user or overriding the `WPLANG` option. Older tutorials will recommend the `WP_LANG` constant, but this has been deprecated
 
 However you will need to make sure the necessary language files are in place in your `wp-content/languages` folder before the change takes full effect.
 
