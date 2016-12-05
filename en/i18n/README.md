@@ -8,6 +8,34 @@ However you will need to make sure the necessary language files are in place in 
 
 Translation work falls under the Polyglots group at contributor days. If you're interested in translating WordPress Core, [you should read the official translators handbook](https://make.wordpress.org/polyglots/handbook/) to find out how
 
+## Securing Translation Files
+
+It's important to use the escaping functions for translation, but you can save typing out `echo esc_html( __( '','' ) )` by using the helper functions:
+
+ - `esc_html__` instead of `__`
+ - `esc_attr__` instead of `__`
+ - etc
+ 
+There are also an extended set of functions that simplify this further by adding `e` to the function name:
+
+ - `esc_html_e`
+ - `esc_attr_e`
+ 
+These will output on their own, so an `echo` statement isn't needed.
+
+## Translation API Abuse
+
+The `esc_html_e` helper functions are sometimes misused as a susbtitute for `echo esc_html`. Always use the second parameter that sets the translation domain. If you don't it could have unanticipated side effects as your strings are mistranslated:
+
+```php
+// Good:
+echo esc_html('date');
+// Great:
+esc_html_e( 'date', 'mytheme' );
+// Bad:
+esc_html_e( 'date' );
+```
+
 ## Setting the Admin language
 
 On installation WordPress asks you to select a language, but you may want to set different languages for the front end back end. For example a German website ran by an English speaker may want the admin area to be in their native language.
