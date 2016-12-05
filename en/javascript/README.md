@@ -2,8 +2,9 @@
 
 Javascript is the future of WordPress, but there are a number of things to keep in mind.
 
-While there's a lot of things that should always be done, there are two approaches to using WordPress javascript the right way.
+While there's a lot of things that should always be done, there are three approaches to using WordPress javascript the right way.
 
+ - **The Wrong Way** - Sending AJAX requests to files in your theme or page templates, then including them in your header with a manually coded tag
  - **The Old Way** - Using the WP AJAX API for requests
  - **The Best Way** - Building your admin UI in Javascript instead of PHP, and powering it with the REST API.
  
@@ -15,7 +16,7 @@ At the time of writing, the REST API and the content endpoints are the future, a
  - More secure interfaces by avoiding the need for escaping with Javascript templating and reactive libraries
  - Faster admin screens whose sole job is to bootstrap the JS UI
 
-While information on these are compiled, information about the *old way* is preserved below.
+While information on these are compiled, information is preserved below.
 
 ## Registering and Enqueueing
 
