@@ -8,9 +8,18 @@ However you will need to make sure the necessary language files are in place in 
 
 Translation work falls under the Polyglots group at contributor days. If you're interested in translating WordPress Core, [you should read the official translators handbook](https://make.wordpress.org/polyglots/handbook/) to find out how
 
-## Securing Translation Files
+## Securing Language Files
 
-It's important to use the escaping functions for translation, but you can save typing out `echo esc_html( __( '','' ) )` by using the helper functions:
+Language files have 2 major attack vectors:
+
+ - Unescaped translation strings containing javascript tags
+ - n-plurals
+ 
+### Embedded Security Risks
+
+It's important to use the escaping functions with the translation API to verify that dangerous content isn't inserted. It's possible to do by placing language files for a particular translation domain inside a WordPress install
+
+You can save typing out `echo esc_html( __( '','' ) )` by using the helper functions:
 
  - `esc_html__` instead of `__`
  - `esc_attr__` instead of `__`
@@ -23,7 +32,7 @@ There are also an extended set of functions that simplify this further by adding
  
 These will output on their own, so an `echo` statement isn't needed.
 
-## Translation API Abuse
+#### Translation API Abuse
 
 The `esc_html_e` helper functions are sometimes misused as a susbtitute for `echo esc_html`. Always use the second parameter that sets the translation domain. If you don't it could have unanticipated side effects as your strings are mistranslated:
 
@@ -35,6 +44,14 @@ esc_html_e( 'date', 'mytheme' );
 // Bad:
 esc_html_e( 'date' );
 ```
+
+### n-plurals
+
+A relatively unknown part of the translation format is the `n-plurals` field. This determines the way plural forms work in a language for a particular file.
+
+Because of its complexity, and for performance reasons, WordPress loads this field as a string, wraps it in a function, and passes the result to `eval`. Because of this, it's very easy to craft a language file with a primitive PHP shell.
+
+The only way to mitigate this is code review/manual inspection.
 
 ## Setting the Admin language
 
