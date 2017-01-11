@@ -18,11 +18,9 @@ restore_current_blog();
 
 Listing blogs in a network is possible, but it's an expensive thing to do.
 
-It can be done using the `wp_get_sites( $args )` function, available since version 3.7 of WordPress. The function accepts an array of arguments specifying the kind of sites you are looking for.
+It can be done using the `get_sites( $args)` function, available since version 4.6 of WordPress. The `get_sites( $args)` function accepts an array or query string of site query parameters specifying the kind of sites you are looking for. For versions 3.7  to 4.6 a similar function `wp_get_sites( $args )` was available. 
 
-The function checks your install and if it finds you have a large network, it stops and returns an empty result. Before using, check if `wp_is_large_network()` returns `true`. WordPress considers an install of 10,000 or more sites to be a large network, but this can be filtered using the `wp_is_large_network` filter.
-
-See the [codex entry for `wp_get_sites`](http://codex.wordpress.org/Function_Reference/wp_get_sites) for more details.
+See the [codex entry for `get_sites`](https://developer.wordpress.org/reference/functions/get_sites/) for more details.
 
 
 ## Domain Mapping
