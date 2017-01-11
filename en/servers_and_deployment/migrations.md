@@ -29,4 +29,23 @@ A new user may decide to use a small SQL command to search for all instances of 
 
 The reason for this is that some data is stored in serialised PHP data structures. These serialised strings contain the length of the URL, and if your URLs length changes, the data structures are no longer valid. This causes issues when you attempt to load your site.
 
-To get around this, a number of tools are available that can look inside the data structures and modify them correctly. We recommend using WP-CLI's [search-replace](http://wp-cli.org/commands/search-replace/) command, but other solutions exist.
+To get around this, a number of tools are available that can look inside the data structures and modify them correctly. 
+
+### Recommended Solution
+
+WP-CLI's [search-replace](http://wp-cli.org/commands/search-replace/) command
+
+### Other Solutions
+
+#### Free
+
+1. [Search Replace DB (PHP Script)](https://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
+2. [Go Live Update URLS (Plugin)](https://wordpress.org/plugins/go-live-update-urls/)
+3. [WP Migrate DB (Plugin)](https://wordpress.org/plugins/wp-migrate-db/)
+4. [Duplicator](https://wordpress.org/plugins/duplicator/)
+
+### Non-free Options
+
+1. [BackupBuddy (Plugin)](https://ithemes.com/purchase/backupbuddy/)
+2. [WP Migrate DB PRO (Plugin)](https://deliciousbrains.com/wp-migrate-db-pro/)
+3. [Duplicator Pro](http://snapcreek.com/duplicator/)
