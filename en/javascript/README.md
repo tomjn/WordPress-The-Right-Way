@@ -40,7 +40,7 @@ function register_and_enqueue_a_script() {
 		'my-script',
 		get_template_directory_uri().'/js/functions.js',
 		array( 'jquery' ),
-		filemtime( get_template_directory().'/js/functions.js',
+		filemtime( get_template_directory().'/js/functions.js' ),
 		true
 	);
 	// Enqueue the script.
