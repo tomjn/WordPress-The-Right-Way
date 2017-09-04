@@ -1,4 +1,4 @@
-# What are Query Variables and Where do They Come From?
+# What Are Query Variables and Where Do They Come From?
 
 Query variables are what gets passed into the main `WP_Query` as arguments. For example:
 
@@ -11,7 +11,7 @@ $query = new WP_Query ( [
 
 Here, `posts_per_page` and `post_type` are query variables.
 
-## Query Variables Work in URLs Too
+## Query Variables Work In URLs Too
 
 You can append query variables on to a URL in WordPress, e.g. 
 
