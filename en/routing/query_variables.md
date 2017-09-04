@@ -41,7 +41,7 @@ If you install Query Monitor, you can see the query variables for the main query
 
 Now that we know how query variables work, we might want to add our own query variable to act as a tag or flag we can watch for in a rewrite rule.
 
-Query variables are whitelisted for security reasons, but we can add extra query variables to the whitelist using the `query_Vars` filter:
+Query variables are whitelisted for security reasons, but we can add extra query variables to the whitelist using the `query_vars` filter:
 
 ```php
 function wpd_query_vars( $query_vars ){
