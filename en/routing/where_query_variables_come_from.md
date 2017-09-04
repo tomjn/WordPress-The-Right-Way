@@ -16,7 +16,7 @@ Here, `posts_per_page` and `post_type` are query variables.
 You can append query variables on to a URL in WordPress, e.g. 
 
  - https://example.com/category/wordpress/
- - https://tomjn.com/category/wordpress/?posts_per_page=5
+ - https://example.com/category/wordpress/?posts_per_page=5
 
 This is because all URLs are made out of query variables. Rewrite rules take a pretty URL, and map it on to an ugly URL made entirely out of query variables. You can see this in action by browsing a WordPress site with permalinks turned off.
 
