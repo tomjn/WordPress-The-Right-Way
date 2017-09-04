@@ -18,7 +18,7 @@
    * [SQL](queries/sql.md)
 * [Routing](routing/README.md)
    * [The Main Loop & Template Loading](routing/the_main_loop_&_template_loading.md)
-   * [Where Query Variables Come From](routing/where_query_variables_come_from.md)
+   * [What are Query Variables and Where do They Come From?](routing/where_query_variables_come_from.md)
    * [Rewrite Rules](routing/rewrite_rules.md)
    * [Clashes, Slugs, & Debugging](routing/clashes,_slugs,_&_debugging.md)
 * [Templates](templates/README.md)
