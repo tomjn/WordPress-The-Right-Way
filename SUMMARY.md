@@ -42,13 +42,4 @@
 * [Widgets](widgets.md)
 * [Community](community.md)
 * [Credits](credits.md)
-* [PT-BR WordPress Do Jeito Certo](pt-br/README.md)
-  * [JavaScript](pt-br/javascript.md)
-  * [Créditos](pt-br/credits.md)
-  * [Summary](pt-br/summary.md)
-  * [Por onde começar?](pt-br/getting_started.md)
-  * [Guia de estilo de código](pt-br/code_style_guide.md)
-  * [Comunidade](pt-br/community.md)
-  * [I18n](pt-br/i18n.md)
-  * [Core](pt-br/core.md)
 
