@@ -1,7 +1,6 @@
 # Table of contents
 
 * [WordPress The Right Way](README.md)
-* [LANGS](langs.md)
 * [PT-BR WordPress Do Jeito Certo](pt-br/README.md)
   * [JavaScript](pt-br/javascript.md)
   * [Créditos](pt-br/credits.md)
