@@ -54,7 +54,7 @@ There are 3 ways to do this:
 
 This diagram explains what happens in each method:
 
-[![WordPress Core Load](../../.gitbook/assets/query_functions%20%282%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/query_functions.png)
+[![WordPress Core Load](../.gitbook/assets/query_functions%20%282%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/query_functions.png)
 
 ### `WP_Query`
 

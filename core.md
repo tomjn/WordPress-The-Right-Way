@@ -15,7 +15,7 @@ At the most basic, the WordPress core loading follows this pattern:
 
 Administration and AJAX requests follow a similar but lighter process. This diagram covers the specifics:
 
-[![WordPress Core Load](../.gitbook/assets/wordpress_core_load%20%283%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/wordpress_core_load.png)
+[![WordPress Core Load](.gitbook/assets/wordpress_core_load%20%283%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/wordpress_core_load.png)
 
 ## Deregistering jQuery
 
