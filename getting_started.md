@@ -1,62 +1,54 @@
-# Getting Started
+# Por onde começar?
 
-## Basic PHP
+## PHP Básico
 
-It's assumed that you have a basic knowledge of PHP. This will include a knowledge of:
+Estamos partindo da ídeia de que você já possui um conhecimento básico de PHP. Incluindo alguns tópicos básicos como:
 
-* [functions](http://www.php.net/manual/en/language.functions.php)
-* [arrays](http://www.php.net/manual/en/language.types.array.php)
-* [variables](http://www.php.net/manual/en/language.variables.php)
-* [loops and conditionals](http://www.php.net/manual/en/language.control-structures.php)
-* [classes and objects](http://www.php.net/manual/en/language.oop5.php)
-* [class inheritance](http://www.php.net/manual/en/language.oop5.inheritance.php)
-* [polymorphism](http://code.tutsplus.com/tutorials/understanding-and-applying-polymorphism-in-php--net-14362)
+* [Functions](http://www.php.net/manual/en/language.functions.php)
+* [Arrays](http://www.php.net/manual/en/language.types.array.php)
+* [Variáveis](http://www.php.net/manual/en/language.variables.php)
+* [Loops e Condições](http://www.php.net/manual/en/language.control-structures.php)
+* [Classes e Objetos](http://www.php.net/manual/en/language.oop5.php)
+* [Herança de Classes](http://www.php.net/manual/en/language.oop5.inheritance.php)
+* [Polimorfismo](http://code.tutsplus.com/tutorials/understanding-and-applying-polymorphism-in-php--net-14362)
 * [POST](http://www.php.net/manual/en/reserved.variables.post.php) and [GET](http://www.php.net/manual/en/reserved.variables.get.php)
-* [variable scope](http://www.php.net/manual/en/language.variables.scope.php)
+* [Escopo de variáveis](http://www.php.net/manual/en/language.variables.scope.php)
 
-If you don't have a good grasp of those concepts, you should make sure you have a firm understanding before continuing.
+Tenha certeza de que você possui conhecimentos sólidos nos tópicos abordados acima antes de continuar, também estamos assumindo que você possui um editor de texto que suporte o PHP, recomenda-se que seu editor possua as seguintes "features".
 
-It's also assumed you have a code editor that has PHP syntax highlighting, although these will be beneficial:
+* Idêntação automática
+* Preenchimento automático
+* Fechamento automático de parênteses
+* Verificador de sintaxe
 
-* Auto Indenting
-* Auto-completion
-* Brace matching
-* Syntax checking
+## Ambientes de Desenvolvimento Local \(Localhost\)
 
-## Local Development Environments
+É importante possuir um `localhost`. A época em que tinhamos de fazer `upload` da aplicação em produção, esperando que o melhor aconteça já é passado, hoje felizmente possuimos algo chamado `Local Web Server` ou Ambiente de Desenvolvimento Local.
 
-It's important to have a local development environment. Gone are the old days of changing a PHP file then updating it on the live server and hoping for the best.
+Com ambientes locais você pode trabalhar mais rapidamente, sem ficar fazendo `download e upload` de arquivos, ficando refém de uma internet problemática, ou esperar por todas as páginas carregarem. Com um `localhost`, você pode trabalhar de um trêm, ou de um túnel, sem estar conectado a `Wifi ou Plano de Dados`, e testar a aplicação antes de fazer `deploy` em produção.
 
-With a local environment, you can work faster, no more uploading and downloading files, being at the mercy of a dodgy internet connection, or waiting for pages to load from the open web. With a local server stack you can work on a train in a tunnel with no wifi or phone signal, and test your work before deploying it to the live server.
+Aqui estão algumas opções para configurar seu `localhost`. As duas opções mais populares são as/os:
 
-Here are a few options for setting up a local development environment. They fall into two categories:
+* VMs \(Máquinas Virtuais\)
+* LAMPs \(Linux, Apache, MySQL e PHP\)
 
-* Virtual Machines \( including containers \)
-* Native Server Stacks
+O primeiro tipo de ambiente, geralmente envolve terceiros, tais como [Vagrant](https://www.vagrantup.com), que oferece uma "máquina virtual" pré-configurada e consistente para trabalhar.
 
-The first type of environment usually involves projects such as Vagrant based projects or Docker, and gives you a standardised consistent virtual machine to work with.
-
-The second, installs the server software directly into your operating system. There are various tools that make this easy, but your environment will be unique and more difficult to debug. These are sometimes called LAMP stacks, which stands for Linux Apache MySQL PHP.
-
-### Docker and non-Linux
-
-You may be surprised to find out that outside of linux, docker containers still need a Linux host OS. To get around this, macOS and Windows create Alpine linux VMs using the OS provided hypervisor. On macOS this is a Hyperkit VM, and on Windows this is a Hyper-V VM.
+O segundo tipo instala um programa de servidor diretamente no sistema operacional. Existem várias ferramentas para tornar isto mais fácil, tais como `WAMP, MAMP, XAMPP e ou Vertrigo`. Mas seu ambiente será único e mais difícil de depurar. Estes ambientes são chamados de `LAMP`, que traz consigo `Linux, Apache, MySQL e PHP`.
 
 ### IIS
 
-Microsoft Internet Information Services is the server software that powers Windows based servers. Variants of it come with Windows if you install the appropriate components, but knowledge of IIS setup in the WordPress community is rare. Most remote servers run an Apache or Nginx setup, and developer knowledge is geared in that direction.
+Microsoft Internet Information Services é um programa de servidor que roda em servidores Windows. Variantes desse sistema vem com o Windows se você instalar os componentes apropriadamente, mas o conhecimento em desenvolvimento IIS com WordPress na comunidade é raro. A maioria dos servidores hoje, rodam com Apache ou Nginx, e o conhecimento dos desenvolvedores tendem a ser direcionados para tais ferramentas. A curva de aprendizado com IIS é maior, e talvez não traga grandes resultados.
 
-IIS is not the easiest route to take.
+## Controladores de Versão
 
-## Version Control
-
-A vital part of working in teams and contributing is version control. Version control systems track changes over time and allow developers to collaborate and undo changes.
+Uma parte vital do trabalho em grupo, organização de tarefas e projetos "Open Source", é o uso de um Controlador de Versão. Ele é sistema que monitora as mudanças do seu código em tempo real, e permite, aos desenvolvedores \(de sua equipe ou comunidade\) a colaborarem e aprimorarem sua aplicação.
 
 ### Git
 
-Created by Linus Torvalds the creator of Linux, [Git is a popular decentralised system](http://git-scm.com/), if you've ever been on GitHub, you've encountered git.
+Criado por Linus Torvalds o criador do Linux, [Git](http://git-scm.com/) é um dos controladores de versão mais populares hoje em dia.
 
 ### Subversion
 
-Also known as svn, this is a centralised version control system, used for the plugin and theme repositories on WordPress.org.
+Também conhecido como SVN é um outro controlador de versão muito popular, ele é usado nos plugins e repositórios do [WordPress](https://wordpress.org).
 

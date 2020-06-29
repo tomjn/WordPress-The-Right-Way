@@ -1,35 +1,31 @@
 # Core
 
-WordPress core is the code that powers WordPress itself. It is what you get when downloading WordPress from wordpress.org, minus the themes and plugins.
+O `Core` do WordPress é o código que faz com ele funcione. São os primeiros arquivos que você tem logo após fazer o `download` do site oficial, exceto os temas e os plugins.
 
-## Load Process
+## Carregamento de Processos
 
-At the most basic, the WordPress core loading follows this pattern:
+De maneira simples, o `core` do WordPress segue o seguinte padrão de processos:
 
-* Load MU plugins
-* Load activated plugins
-* load theme `functions.php`
-* Run `init` hook
-* Run main query
-* Load template
+* MU Plugins ou Must-Use Plugins
+* Plugins Ativados
+* Carrega as funções do Tema \(functions.php\)
+* Roda o hook inicial
+* Carrega a main query
+* Carrega o template
 
-Administration and AJAX requests follow a similar but lighter process. This diagram covers the specifics:
+Administração e requisições AJAX segue um processo similar porém mais leve. O diagrama abaixo aborda este processo com mais detalhes:
 
-[![WordPress Core Load](.gitbook/assets/wordpress_core_load%20%283%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/wordpress_core_load.png)
+[![Carregando o Core do WordPress](.gitbook/assets/wordpress_core_load%20%282%29.png)](https://github.com/tomjn/wordpress-the-right-way/tree/08f12364c6d37d9e52debefbfb58dba12e229e20/pt-br/assets/wordpress_core_load.png)
 
-## Deregistering jQuery
+## jQuery
 
-Many plugin and theme developers attempt to unregister the jQuery that comes with core, and add their own copy, normally the jQuery on the Google CDN. Do not do this, it can cause compatability issues.
+Muitos desenvolvedores de plugins e temas preferem remover o jQuery que vem por padrão com o WordPress, e acabam por adicionar sua própria versão do mesmo, normalmente é o jQuery do Google CDN. Não faça isso! Caso contrário poderá causar problemas de compatibilidade. Use a versão do jQuery que vem junto com o WordPress. Isso garante maior compatibilidade dentre os plugins.
 
-Instead use the copy of jQuery that comes with WordPress and aim for the version used in the latest WordPress when testing. This ensures maximum compatability across plugins.
+## Modificando o Core
 
-## Modifying Core
+É tentador modificar partes do `Core`, removendo ou adicionando funcionalidades, mas isso NUNCA deve ser feito. Quando você realizar a atualização do WordPress, todas as suas modificações serão perdidas. Ao invés de mudar o `Core`, use os famosos `Hooks, Actions e Filters` para modificar as funcionalidades da sua aplicação.
 
-It's tempting to modify parts of Core to remove or add things, but this must never be done. When WordPress updates, all your changes will be lost.
+## Mais Informações
 
-Instead, use Hooks/Actions and Filters to modify Core behaviour.
-
-## Further Reading
-
-* [Making Sense of Core Load](http://www.rarst.net/wordpress/wordpress-core-load/)
+* [Entendo o carregamento do Core](http://www.rarst.net/wordpress/wordpress-core-load/)
 

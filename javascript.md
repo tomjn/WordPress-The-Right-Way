@@ -1,311 +1,297 @@
 # JavaScript
 
-Javascript is the future of WordPress, but there are a number of things to keep in mind.
+O WordPress possui um gerenciador de dependência, que lhe permite controlar os _imports_ do JavaScript. Não use a tag `<script>` para fazer _embeds_ de scripts, ao invés disso, crie um arquivo separado e o importe.
 
-While there's a lot of things that should always be done, there are three approaches to using WordPress javascript the right way.
+## Registrando e Importando
 
-* **The Worst Way** - Sending AJAX requests to files in your theme or page templates, then including them in your header with a manually coded tag
-* **The Old Way** - Using the WP-Admin AJAX API for requests
-* **The Best Way** - Using the REST API to add endpoint URLs your javascript can talk to.
+Os _scripts_ devem ser registrados, isso facilita o trabalho do gerenciador de dependência, pois quando você registra o arquivo, você declara a existência do _script_ para o _WordPress_.
 
-We consider the Admin AJAX interface a legacy API. For all new development use REST API endpoints.
-
-While this section is expanded and refactored, here is information on using Admin AJAX safely:
-
-## Registering and Enqueueing
-
-WordPress comes with dependency management and enqueueing for JavaScript files. Don't use raw `<script>` tags to embed JavaScript.
-
-JavaScript files should be registered. Registering makes the dependency manager aware of the script. To embed a script onto a page, it must be enqueued.
-
-Let's register and enqueue a script.
+Vamos registrar e importar um script.
 
 ```php
-// Use the wp_enqueue_scripts function for registering and enqueueing scripts on the front end.
+// Usa a função wp_enqueue_scripts para registrar e importar os scripts no Front-End.
 add_action( 'wp_enqueue_scripts', 'register_and_enqueue_a_script' );
 function register_and_enqueue_a_script() {
-    // Register a script with a handle of `my-script`
-    //  + that lives inside the theme folder,
-    //  + which has a dependency on jQuery,
-    //  + where the UNIX timestamp of the last file change gets used as version number
-    //    to prevent hardcore caching in browsers - helps with updates and during dev
-    //  + which gets loaded in the footer
-    wp_register_script(
-        'my-script',
-        get_template_directory_uri().'/js/functions.js',
-        array( 'jquery' ),
-        filemtime( get_template_directory().'/js/functions.js' ),
-        true
-    );
-    // Enqueue the script.
-    wp_enqueue_script( 'my-script' );
+   // Associa uma ID chamada `my-script` para este script em específico.
+   //  + este arquivo está localizado na raiz do tema,
+   //  + que possui como dependência o o jQuery,
+   //  + Um *timestamp* é adicionado toda vez que o arquivo é modificado, isso previne o cache do arquivo durante o desenvolvimento,
+   //  + ele é posicionado no final da página (footer)
+   wp_register_script(
+      'my-script',
+      get_template_directory_uri().'/js/functions.js',
+      array( 'jquery' ),
+      filemtime( get_template_directory().'/js/functions.js',
+      true
+   );
+   // Importamos o script.
+   wp_enqueue_script( 'my-script' );
 }
 ```
 
-Scripts should only be enqueued when necessary; wrap conditionals around `wp_enqueue_script()` calls appropriately.
+### Pro-Tips:
 
-When enqueueing javascript in the admin interface, use the `admin_enqueue_scripts` hook.
+* Os scripts devem ser importados apenas quando necessário; Envolvendo a função `wp_enqueue_script()` usando condicionais para controle do mesmo.
+* Quando você for importar seus _scripts_ no Painel do Admin, use o _hook_ `admin_enqueue_scripts`.
+* Se for adicionar scripts para a tela de login, use o _hook_ `login_enqueue_scripts`.
 
-When adding scripts to the login screen, use the `login_enqueue_scripts` hook.
+## Localização
 
-## Localizing
+A _localização_ é um script que lhe permite passar variáveis\(dados\) ​​do PHP para JavaScript. Isso normalmente é usado para internacionalização de _strings_ \(tradução\), mas existem muitas outras meneiras de usarmos esta técnica.
 
-Localizing a script allows you to pass variables from PHP into JS. This is typically used for internationalization of strings \(hence localization\), but there are plenty of other uses for this technique.
+De um ponto de vista técnico, localizar um script significa que haverá uma nova tag `<script>` adicionada logo antes dos scripts registrados, que contém o objeto `_global_` JavaScript com o nome que você especificou durante a localização no segundo argumento. Isso significa que, se você adicionar um outro _script_ que possui esse mesmo _script_ como dependência, você poderá usar o mesmo objeto `_global_` no novo _script_ sem problemas. O WordPress trabalha muito bem com encadeamento de dependências.
 
-From a technical side, localizing a script means that there will be a new `<script>` tag added right before your registered script, that contains a _global_ JavaScript object with the name you specified during localizing \(the 2nd argument\). This also means that if you add another script later on, that has this script as dependency, then you will be able to use the global object there as well. WordPress resolves chained dependencies just fine.
-
-Let's localize a script.
+Vamos _localizar_ um script.
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
 function register_localize_and_enqueue_a_script() {
-    wp_register_script(
-        'my-script',
-        get_template_directory_uri().'/js/functions.js',
-        array( 'jquery' ),
-        filemtime( get_template_directory().'/js/functions.js' ),
-        true
-    );
-    wp_localize_script(
-        'my-script',
-        'scriptData',
-        // This is the data, which gets sent in localized data to the script.
-        array(
-            'alertText' => 'Are you sure you want to do this?',
-        )
-    );
-    wp_enqueue_script( 'my-script' );
+   wp_register_script(
+      'my-script',
+      get_template_directory_uri().'/js/functions.js',
+      array( 'jquery' ),
+      filemtime( get_template_directory().'/js/functions.js' ),
+      true
+   );
+   wp_localize_script(
+      'my-script',
+      'scriptData',
+      // Estes são os dados, que irão ser mandados para o arquivo JavaScript.
+      array(
+         'alertText' => 'Are you sure you want to do this?',
+      )
+   );
+   wp_enqueue_script( 'my-script' );
 }
 ```
 
-In the javascript file, the data is available in the object name specified while localizing.
+No arquivo de javascript, os dados estão disponíveis através do objeto especificado durante o processo de _localização_.
 
 ```javascript
 ( function( $, plugin ) {
-    alert( plugin.alertText );
+   alert( plugin.alertText );
 } )( jQuery, scriptData || {} );
 ```
 
-## Deregister / Dequeueing
+## Remover os importes e registros padrão do WordPress
 
-Scripts can be deregistered and dequeued via `wp_deregister_script()` and `wp_dequeue_script()`.
+Você pode remover um registro ou um importe através das funções `wp_deregister_script()` e `wp_dequeue_script()`.
 
 ## AJAX
 
-WordPress offers an easy server-side endpoint for AJAX calls, located in `wp-admin/admin-ajax.php`.
-
-Let's set up a server-side AJAX handler.
+WordPress oferece _endpoints_ no servidor para requisições **AJAX**, localizado em `wp-admin/admin-ajax.php`. Vamos configurar um _endpoint_ no servidor para manipulação AJAX.
 
 ```php
-// Triggered for users that are logged in.
-add_action( 'wp_ajax_create_new_post', 'wp_ajax_create_new_post_handler' );
-// Triggered for users that are not logged in.
-add_action( 'wp_ajax_nopriv_create_new_post', 'wp_ajax_create_new_post_handler' );
-
+// É acionado quando o usuário está logado no Painel.
+add_action( array( 'wp_ajax_nopriv_create_new_post', 'wp_ajax_create_new_post' ), 'wp_ajax_create_new_post_handler' );
 function wp_ajax_create_new_post_handler() {
-    // This is unfiltered, not validated and non-sanitized data.
-    // Prepare everything and trust no input
-    $data = $_POST['data'];
+   // Este é um dado que não foi filtrado, validado e tratado.
+   $data = $_POST['data'];
 
-    // Do things here.
-    // For example: Insert or update a post
-    $post_id = wp_insert_post( array(
-        'post_title' => $data['title'],
-    ) );
+   // Faz coisas aqui.
+   // Por exemplo: Insere ou atualiza um post.
+   $post_id = wp_insert_post( array(
+      'post_title' => $data['title'],
+   ) );
 
-    // If everything worked out, pass in any data required for your JS callback.
-    // In this example, wp_insert_post() returned the ID of the newly created post
-    // This adds an `exit`/`die` by itself, so no need to call it.
-    if ( ! is_wp_error( $post_id ) ) {
-        wp_send_json_success( array(
-            'post_id' => $post_id,
-        ) );
-    }
+   // Se tudo der certo, insira qualquer tipo de dado para o callback do JavaScript.
+   // Neste exemplo, wp_insert_post() retorna a ID de último post criado.
+   // Isso adiciona um `exit`/`die` por si só, então não há necessidade de ser chamada.
+   if ( ! is_wp_error( $post_id ) ) {
+      wp_send_json_success( array(
+         'post_id' => $post_id,
+      ) );
+   }
 
-    // If something went wrong, the last part will be bypassed and this part can execute:
-    wp_send_json_error( array(
-        'post_id' => $post_id,
-    ) );
+   // Se alguma coisa der errado, a última parte será passada e só então executada:
+   wp_send_json_error( array(
+      'post_id' => $post_id,
+   ) );
 }
 
 
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
 function register_localize_and_enqueue_a_script() {
     wp_register_script(
-        'my-script',
-        get_template_directory_uri().'/js/functions.js',
-        array( 'jquery' ),
-        filemtime( get_template_directory().'/js/functions.js' ),
-        true
+      'my-script',
+      get_template_directory_uri().'/js/functions.js',
+      array( 'jquery' ),
+      filemtime( get_template_directory().'/js/functions.js' ),
+      true
     );
-    // Send in localized data to the script.
+
+    // Manda os dados do PHP através de variáveis para o JavaScript.
     wp_localize_script(
-        'my-script',
-        'scriptData',
-        array(
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-        )
+      'my-script',
+      'scriptData',
+      array(
+         'ajax_url' => admin_url( 'admin-ajax.php' ),
+      )
     );
+
     wp_enqueue_script( 'my-script' );
 }
 ```
 
-And the accompanying JavaScript:
+Em seguida vem o JavaScript:
 
 ```javascript
 ( function( $, plugin ) {
-    $( document ).ready( function() {
-        $.post(
-            // Localized variable, see example below.
-            plugin.ajax_url,
-            {
-                // The action name specified here triggers
-                // the corresponding wp_ajax_* and wp_ajax_nopriv_* hooks server-side.
-                action : 'create_new_post',
-                // Wrap up any data required server-side in an object.
-                data   : {
-                    title : 'Hello World'
-                }
-            },
-            function( response ) {
-                // wp_send_json_success() sets the success property to true.
-                if ( response.success ) {
-                    // Any data that passed to wp_send_json_success() is available in the data property
-                    alert( 'A post was created with an ID of ' + response.data.post_id );
+   $( document ).ready( function() {
+      $.post(
 
-                // wp_send_json_error() sets the success property to false.
-                } else {
-                    alert( 'There was a problem creating a new post.' );
-                }
+         plugin.ajax_url,
+         {
+            // Os nomes especificados são os `triggers` correspondentes aos hookers
+            // wp_ajax_* e wp_ajax_nopriv_* do lado do servidor.
+            action : 'create_new_post',
+
+            // Encapsula todos os dados do lado do servidor em um objeto.
+            data : {
+               title : 'Hello World'
             }
-        );
-    } );
+         },
+
+         function( response ) {
+            // wp_send_json_success() define a propriedade "sucsess" para verdadeiro
+            if ( response.success ) {
+               // Qualquer dado que passou pela função wp_send_json_sucesess(), está disponível na propriedade "data".
+               alert( 'A post was created with an ID of ' + response.data.post_id );
+
+            // wp_send_json_error() define a propriedade "sucsess" para falso.
+            } else {
+               alert( 'There was a problem creating a new post.' );
+            }
+         }
+
+      );
+   } );
 } )( jQuery, scriptData || {} );
 ```
 
-`ajax_url` represents the admin AJAX endpoint, which is automatically defined in admin interface page loads, but not on the front-end.
+`ajax_url` representa o _endpoint_ do admin via AJAX, que é automaticamente definida na página do Admin, mas não no front-end.
 
-Let's localize our script to include the admin URL:
+Vamos localizar nosso script para incluir a URL do admin:
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
 function register_localize_and_enqueue_a_script() {
-    wp_register_script( 'my-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ) );
-    // Send in localized data to the script.
-    $data_for_script = array( 'ajax_url' => admin_url( 'admin-ajax.php' ) );
-    wp_localize_script( 'my-script', 'scriptData', $data_for_script );
-    wp_enqueue_script( 'my-script' );
+   wp_register_script( 'my-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ) );
+   // Manda os dados do PHP através de variáveis para o JavaScript.
+   $data_for_script = array( 'ajax_url' => admin_url( 'admin-ajax.php' ) );
+   wp_localize_script( 'my-script', 'scriptData', $data_for_script );
+   wp_enqueue_script( 'my-script' );
 }
 ```
 
-## The JavaScript side of WP AJAX
+## JavaScript com WP AJAX
 
-There are several ways to go on this. The most common is to use `$.ajax()`. Of course, there are shortcuts available like `$.post()` and `$.getJSON()`.
+Existe várias maneiras de fazermos isto. A maneira mais comum é usar `$.ajax()`. É claro que existem atalhos disponíveis como `$.post()` e `$.getJSON()`.
 
-Here's the default example.
+Aqui esta um exemplo padrão.
 
 ```javascript
 /*globals jQuery, $, scriptData */
 ( function( $, plugin ) {
-    "use strict";
+   "use strict";
 
-    // Alternate solution: jQuery.ajax()
-    // One can use $.post(), $.getJSON() as well
-    // I prefer defered loading & promises as shown above
-    $.ajax( {
-         url  : plugin.ajaxurl,
-         data : {
-            action      : plugin.action,
-            _ajax_nonce : plugin._ajax_nonce,
-            // WordPress JS-global
-            // Only set in admin
-            postType     : typenow,
-         },
-         beforeSend : function( d ) {
-             console.log( 'Before send', d );
-         }
-    } )
-        .done( function( response, textStatus, jqXHR ) {
-            console.log( 'AJAX done', textStatus, jqXHR, jqXHR.getAllResponseHeaders() );
-        } )
-        .fail( function( jqXHR, textStatus, errorThrown ) {
-            console.log( 'AJAX failed', jqXHR.getAllResponseHeaders(), textStatus, errorThrown );
-        } )
-        .then( function( jqXHR, textStatus, errorThrown ) {
-            console.log( 'AJAX after finished', jqXHR, textStatus, errorThrown );
-        } );
+   // Variação do jQuery.ajax()
+   // Você também pode usar o $.post(), $.getJSON() se quiser
+   // Eu prefiro declarar explicitamente o carregamento & as promessas descritas abaixo
+   $.ajax( {
+       url  : plugin.ajaxurl,
+       data : {
+         action      : plugin.action,
+         _ajax_nonce : plugin._ajax_nonce,
+         // Objeto-Global do WordPress
+         // É mostrado apenas no "admin"
+         postType     : typenow,
+       },
+       beforeSend : function( d ) {
+         console.log( 'Before send', d );
+       }
+   } )
+      .done( function( response, textStatus, jqXHR ) {
+         console.log( 'AJAX done', textStatus, jqXHR, jqXHR.getAllResponseHeaders() );
+      } )
+      .fail( function( jqXHR, textStatus, errorThrown ) {
+         console.log( 'AJAX failed', jqXHR.getAllResponseHeaders(), textStatus, errorThrown );
+      } )
+      .then( function( jqXHR, textStatus, errorThrown ) {
+         console.log( 'AJAX after finished', jqXHR, textStatus, errorThrown );
+      } );
 } )( jQuery, scriptData || {} );
 ```
 
-Note that above example uses `_ajax_nonce` to verify the NONCE value, which you will have to set by yourself when localizing the script. Just add `'_ajax_nonce' => wp_create_nonce( "some_value" ),` to your data array. You can then add a referrer check to your PHP callback that looks like `check_ajax_referer( "some_value" )`.
+Perceba que o exemplo acima usa `_ajax_nonce` para verificar o valor NONCE, o qual você terá de definir sozinho, quando for _localizar_ o script. É só adicionar `'_ajax_nonce' => wp_create_nonce( "some_value" ),` no objeto _array_. Você então poderá adicionar um marcador nos seus _callbacks_ do PHP, que se parecem um pouco com isso `check_ajax_referer( "some_value" )`.
 
-## AJAX on click
+## Trabalhando com AJAX e Eventos
 
-Actually it's pretty simple to execute an AJAX request when some clicks \(or does some other user interaction\) on some element. Just wrap up your `$.ajax()` \(or similar\) call. You can even add a delay like you might be used to.
+Na verdade é muito simples executar uma requisição AJAX por cliques \(ou qualquer outro tipo de interação do usuário\) em algum elemento. Apenas envolva a sua chamada `$.ajax()` \(ou algum de seu similares\). Você pode ainda, adicionar um delay na requisição.
 
 ```javascript
 $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
-    $.ajax( { ... etc ... } )
-        .done( function( ... ) { etc }
-        .fail( function( ... ) { etc }
+   $.ajax( { ... etc ... } )
+      .done( function( ... ) { etc }
+      .fail( function( ... ) { etc }
 
 } )
-    .delay( 500 );
+   .delay( 500 );
 ```
 
-## Multiple callbacks for a single AJAX request
+## Multiplos callbacks para uma única requisição AJAX
 
-You might come into a situation where multiple things have to happen after an AJAX request finished. Gladly jQuery returns an object, where you can attach all of your callbacks.
+Você pode acabar caindo em uma situação da qual multiplas tarefas acontecem depois de que uma requisição AJAX é finalizada. Felizmente jQuery retorna um objeto, onde você pode anexar todos os seus callbacks.
 
 ```javascript
 /*globals jQuery, $, scriptData */
 ( function( $, plugin ) {
-    "use strict";
+   "use strict";
 
-    // Alternate solution: jQuery.ajax()
-    // One can use $.post(), $.getJSON() as well
-    // I prefer defered loading & promises as shown above
-    var request = $.ajax( {
-         url  : plugin.ajaxurl,
-         data : {
-            action      : plugin.action,
-            _ajax_nonce : plugin._ajax_nonce,
-            // WordPress JS-global
-            // Only set in admin
-            postType     : typenow,
-         },
-         beforeSend : function( d ) {
-             console.log( 'Before send', d );
-         }
-    } );
+   // Variação do jQuery.ajax()
+   // Você também pode usar o $.post(), $.getJSON() se quiser
+   // Eu prefiro declarar explicitamente o carregamento & as promessas 
+   var request = $.ajax( {
+       url  : plugin.ajaxurl,
+       data : {
+         action      : plugin.action,
+         _ajax_nonce : plugin._ajax_nonce,
+         // Objeto-Global do WordPress
+         // É mostrado apenas no "admin"
+         postType     : typenow,
+       },
+       beforeSend : function( d ) {
+         console.log( 'Before send', d );
+       }
+   } );
 
-    request.done( function( response, textStatus, jqXHR ) {
-        console.log( 'AJAX callback #1 executed' );
-    } );
+   request.done( function( response, textStatus, jqXHR ) {
+      console.log( 'AJAX callback #1 executed' );
+   } );
 
-    request.done( function( response, textStatus, jqXHR ) {
-        console.log( 'AJAX callback #2 executed' );
-    } );
+   request.done( function( response, textStatus, jqXHR ) {
+      console.log( 'AJAX callback #2 executed' );
+   } );
 
-    request.done( function( response, textStatus, jqXHR ) {
-        console.log( 'AJAX callback #3 executed' );
-    } )
+   request.done( function( response, textStatus, jqXHR ) {
+      console.log( 'AJAX callback #3 executed' );
+   } )
 } )( jQuery, scriptData || {} );
 ```
 
-## Chaining callbacks
+## Encadeamento de Callbacks
 
-A common scenario \(regarding how often it is needed and how easy it then is to hit the mine trap\), is chaining callbacks when an AJAX request finished.
+Um cenário comum \(do qual muitas vezes um _callback_ é necessário e como ele é simples de ser utilizado\), é o encadeamento de callbacks quando uma requisição AJAX é finalizada.
 
-About the problem first:
+Vamos dar uma olhada no problema primeiro:
 
-> AJAX callback \(A\) executes AJAX Callback \(B\) doesn't know that it has to wait for \(A\) You can't see the problem in your local install as \(A\) is finished too fast.
+> O callback \(A\) é executado. O callback \(B\) não sabe que deve esperar por \(A\). Você não pode ver o problema na sua instalação local se \(A\) terminar rapidamente.
 
-The interesting question is how to wait until A is finished to then start B and its processing.
+A grande questão é, quando nós devemos esperar \(A\) finalizar, para só então, inicializarmos o processo de \(B\).
 
-The answer is "deferred" loading and ["promises"](http://en.wikipedia.org/wiki/Futures_and_promises), also known as "futures".
+A resposta é que o processo é "adiado" carregando suas ["promessas"](http://en.wikipedia.org/wiki/Futures_and_promises%20), também conhecido como "futuros".
 
-Here's an example:
+Veja um exemplo:
 
 ```javascript
 ( function( $, plugin ) {
@@ -323,22 +309,22 @@ Here's an example:
                console.info( reason );
            } );
     )
-    // Again, you could leverage .done() as well. See jQuery docs.
+    // Novamente, você poderia utliziar o método .done() se quisesse. Veja a documentação do jQuery.
     .then(
-        // Success
+        // Sucesso
         function( response ) {
             // Has been successful
             // In case of more then one request, both have to be successful
+            // Sucesso! Em caso de mais de uma requisição, ambos deverão ser bem sucedidos.
         },
-        // Fail
+        // Falhou
         function( resons ) {
-            // Has thrown an error
-            // in case of multiple errors, it throws the first one
+            // É jogado um erro, em caso de multiplos erros, é o primeiro que é cuspido.
         },
     );
     //.then( /* and so on */ );
 } )( jQuery, scriptData || {} );
 ```
 
-[_Source: WordPress.StackExchange / Kaiser_](http://wordpress.stackexchange.com/a/118796/385)
+[_Fonte: WordPress.StackExchange / Kaiser_](http://wordpress.stackexchange.com/a/118796/385)
 

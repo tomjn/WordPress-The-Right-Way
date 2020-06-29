@@ -1,24 +1,24 @@
-# Community
+# Comunidade
 
 ## WordCamps
 
-WordCamps are short, 1-2 day conferences that focus on everything WordPress. They are designed to have both a general focus \(on blogging, writing content, marketing websites and the business surrounding WordPress\) and a technical focus \(aimed at developers writing plugins and themes\).
+Os WordCamps são curtos, em média de 1-2 dias de conferência totalmente focados em WordPress. Os encontros dão atenção tanto para \(blog, formatação de conteúdo, marketing de websites e empreendedorismo envolvendo WordPress\) quanto as partes técnicas, de como desenvolver temas e plugins.
 
-There are over 50 WordCamps every year held all over the world in over 40 countries, and are a great way to explore the community. Many WordCamp sessions are placed onto [WordPress.tv](http://wordpress.tv/), and is a great opportunity to help the WordPress community, either by speaking, volunteering, or sponsoring.
+Existem hoje mais de 50 WordCamps acontecendo em mais de 40 países por todo o mundo, e através deles você poderá explorar/conhecer a comunidade e as novas "Trends" em WordPress. Muitas das sessões do WordCamp são transmitidas através do [WordPress.tv](http://wordpress.tv/), e é uma ótima oportunidade para ajudar a Comunidade WordPress, tanto ao falar, ao voluntariado ou patrocinío.
 
-You can find out all upcoming WordCamps at [WordCamp Central](http://central.wordcamp.org/).
+Você pode dar uma olhada nas próximas conferências através do [WordCamp Central](http://central.wordcamp.org/).
 
-## Contributor Days
+## Dias do Contribuidor
 
-Contributor days, usually held after WordCamps \(but can be independent\), are events that are set up to help you contribute to WordPress. The benefits to contributing to WordPress are numerous, both for a business looking to get more exposure in and amongst the WordPress community, to lone developers looking to grow their skills working in a team on a massive project.
+Os "Dias de Contribuidor", acontecem normalmente após os WordCamps \(mas eles podem ser independentes\), são eventos criados para ajudar você a contribuir mais para o WordPress. São vários os benefícios de contribuir com o WordPress, tanto para o lado empreendedor, expondo seu nome pela comunidade, quanto para desenvolvedores sozinhos, buscando melhorar suas habilidades de trabalho em equipe e massificar seus projetos.
 
-You do not need to be code proficient to contribute to WordPress. They are looking for a wide range of skills, like support, theme review, as well as accessibility.
+Você não precisa ser um desenvolvedor profissional para contribuir para o WordPress. Eles procuram por uma grande variedade de habilidades, como suporte, review de temas e acessibilidade web.
 
-Look at your local WordCamp if they are holding a Contributor day. Alternatively, if you're based in the United Kingdom, you can find the latest WordPress Contributor day at [http://www.wpcontributorday.com/](http://www.wpcontributorday.com/).
+De uma olhada em um WordCamp local, e veja se eles estão realizando o "Dia do Contribuidor". Em caso de você viver no Reino Unido, você pode acompanhar os "Dias do Contribuidor" mais recentes através do [http://www.wpcontributorday.com/](http://www.wpcontributorday.com/).
 
-* Local User Groups
-* .org Support Forums
-* IRC Channels
+* Grupos de Usuários Locais
+* .org Foruns de Suporte
+* Canais IRC
 * WordPress Stack Exchange
 * WordPress Slack
 
