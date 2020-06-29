@@ -4,11 +4,11 @@ When developing for WordPress, it's important that your code works, but when it 
 
 This chapter covers:
 
- - How to find out what errors have occurred
- - How to debug the issue
- - Plugins and tools to make your life easier
- - Features in WordPress that make debugging easier
- - How to prevent problems from occurring to begin with and easy automated tools to catch mistakes for you
+* How to find out what errors have occurred
+* How to debug the issue
+* Plugins and tools to make your life easier
+* Features in WordPress that make debugging easier
+* How to prevent problems from occurring to begin with and easy automated tools to catch mistakes for you
 
 But before you continue, a word on White Screens of Death
 

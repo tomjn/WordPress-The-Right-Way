@@ -6,9 +6,10 @@ That viewpoint is confusing, the truth is that such a viewpoint is completely up
 
 This chapter will go into more depth regarding how WordPress breaks down a URL, creates a query, then figures out which template to load.
 
- - An explanation of how rewrite rules generate a query, which loads a template, which displays a page
- - Custom Query variables & routing
- - Adding a rewrite rule
- - Flushing rewrite rules
- - Debugging rewrite rules
- - Clashes & slugs
+* An explanation of how rewrite rules generate a query, which loads a template, which displays a page
+* Custom Query variables & routing
+* Adding a rewrite rule
+* Flushing rewrite rules
+* Debugging rewrite rules
+* Clashes & slugs
+

@@ -10,9 +10,9 @@ When outputting data, you should escape it. For example, if you output a css cla
 
 An important part of escaping however, is to escape as late as possible. If you escape a variable once, then use it 5 times, that variable may be modified at any point between escaping and output, so always escape at the moment of output.
 
- - Sanitise early
- - Escape Late
- - Escape Often
+* Sanitise early
+* Escape Late
+* Escape Often
 
 ## Nonces
 
@@ -22,37 +22,37 @@ In order to get around this, we use nonces. Nonces are small tokens that can be 
 
 @todo: Add notes on how to use nonces effectively
 
-*Note:* In the United Kingdom, a nonce is a name for a child sex offender, be careful of using the word out of context
+_Note:_ In the United Kingdom, a nonce is a name for a child sex offender, be careful of using the word out of context
 
 ## The Location of `wp-config`
 
- - You can move it one level up so it's not in a web accessible location
+* You can move it one level up so it's not in a web accessible location
 
 ## Table prefixes
 
- - Don't use the default wp_
- - Notes on automated attacks
+* Don't use the default wp\_
+* Notes on automated attacks
 
 ## User ID 1
 
- - Don't call it 'admin'
- - Don't give it administrator priviledges
+* Don't call it 'admin'
+* Don't give it administrator priviledges
 
 ## Roles and Capabilities
 
- - What they are
+* What they are
 
 ## Removing vs Hiding Settings Pages
 
- - Hiding things with CSS doesn't make it secure
- - People have dev tools too
- - Automated tools ignore CSS
- - how to remove admin menus and change the capabilities needed to do things
+* Hiding things with CSS doesn't make it secure
+* People have dev tools too
+* Automated tools ignore CSS
+* how to remove admin menus and change the capabilities needed to do things
 
 ## Custom Password Reset Code
 
- - Some people write their own password reset facilities. This is bad
- - If you really must, make it a forgotten password link, don't make it actually show your password
+* Some people write their own password reset facilities. This is bad
+* If you really must, make it a forgotten password link, don't make it actually show your password
 
 ## Myths
 
@@ -60,18 +60,19 @@ There are a lot of feel good security fixes that float around, that do nothing t
 
 ### Hiding the Admin and Login URLs
 
- - Some people try to change the admin and login URLs in hopes it will fool attackers and automated tools
- - WordPress adds in /admin/ and /login/ rewrite rules in the newer versions so moving the files is pointless
- - It can break some functionality in code without necessary care
- - Trying to go to the admin URLs will redirect you to the changed login URL anyway, and if you fix that then the modal box that shows in the admin screen when your session expires will be broken too
+* Some people try to change the admin and login URLs in hopes it will fool attackers and automated tools
+* WordPress adds in /admin/ and /login/ rewrite rules in the newer versions so moving the files is pointless
+* It can break some functionality in code without necessary care
+* Trying to go to the admin URLs will redirect you to the changed login URL anyway, and if you fix that then the modal box that shows in the admin screen when your session expires will be broken too
 
 ### Deactivated Plugins & Themes
 
- - Because of how PHP works, deactivated plugins can still be hit from a users web browser
- - Badly written plugins might do things if the right URL is loaded, even if they're not activated. This is especially true of plugins with their own AJAX endpoints that don't use the WP AJAX API.
+* Because of how PHP works, deactivated plugins can still be hit from a users web browser
+* Badly written plugins might do things if the right URL is loaded, even if they're not activated. This is especially true of plugins with their own AJAX endpoints that don't use the WP AJAX API.
 
 ## Recovering From Attacks
 
- - Take and use regular backups
- - Download a fresh copy of WordPress and extract it over the top of your existing install to make sure that WP Core is unmodified
- - Check your plugins and code against version control
+* Take and use regular backups
+* Download a fresh copy of WordPress and extract it over the top of your existing install to make sure that WP Core is unmodified
+* Check your plugins and code against version control
+

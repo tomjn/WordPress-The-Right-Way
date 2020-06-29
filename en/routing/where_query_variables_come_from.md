@@ -15,15 +15,15 @@ Here, `posts_per_page` and `post_type` are query variables.
 
 You can append query variables on to a URL in WordPress, e.g:
 
- - https://example.com/category/wordpress/
- - https://example.com/category/wordpress/?posts_per_page=5
+* [https://example.com/category/wordpress/](https://example.com/category/wordpress/)
+* [https://example.com/category/wordpress/?posts\_per\_page=5](https://example.com/category/wordpress/?posts_per_page=5)
 
 This is because all URLs are made out of query variables. Rewrite rules take a pretty URL, and map it on to an ugly URL made entirely out of query variables. You can see this in action by browsing a WordPress site with permalinks turned off.
 
 Because all URLs in WordPress are actually query variables on an `index.php` call, these variables are passed directly to the main query. They determine:
 
- - Which posts get loaded
- - If the main query is for an archive or a single page
+* Which posts get loaded
+* If the main query is for an archive or a single page
 
 This means we can control what page WordPress thinks it's on, or modify what it does in the database via the `pre_get_posts` filter.
 
@@ -50,3 +50,4 @@ function wpd_query_vars( $query_vars ){
 }
 add_filter( 'query_vars', 'wpd_query_vars' );
 ```
+

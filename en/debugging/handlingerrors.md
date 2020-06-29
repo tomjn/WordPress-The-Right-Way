@@ -8,9 +8,9 @@ Many functions return error and success values. You should always check these va
 
 Different APIs return different error values, and can include:
 
- - `null` values
- - false
- - `WP_Error` objects
+* `null` values
+* false
+* `WP_Error` objects
 
 WordPress API calls at the time of writing do not throw exceptions. However if you hook into actions such as `save_post` and throw an exception, it may not be caught due to this expectation, so do not throw exceptions unless you're sure you know what you're doing.
 
@@ -33,3 +33,4 @@ if ( !is_wp_error( $value ) ) {
 ```
 
 While this is a useful function, remember, not every API returns the same error value, and you should check first.
+

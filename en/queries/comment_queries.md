@@ -15,12 +15,13 @@ $comments = $comments_query->query( $args );
 
 // Comment Loop
 if ( $comments ) {
-	foreach ( $comments as $comment ) {
-		echo '<p>' . $comment->comment_content . '</p>';
-	}
+    foreach ( $comments as $comment ) {
+        echo '<p>' . $comment->comment_content . '</p>';
+    }
 } else {
-	echo 'No comments found.';
+    echo 'No comments found.';
 }
 ```
 
 Comment queries can find comments of different types across multiple or single posts. Using a comment query can be faster than a raw SQL command thanks to the built cache system.
+

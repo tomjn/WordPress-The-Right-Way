@@ -10,7 +10,7 @@ A quick note on how to do it, and a note on running the JS, so that it doesn't g
 
 How to enqueue a widgets scripts and styles, but only if the widget is on the page
 
-##Events
+## Events
 
 Running code when:
 

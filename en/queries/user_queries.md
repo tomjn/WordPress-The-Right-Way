@@ -14,12 +14,13 @@ $user_query = new WP_User_Query( $args );
 
 // User Loop
 if ( ! empty( $user_query->results ) ) {
-	foreach ( $user_query->results as $user ) {
-		echo '<p>' . $user->display_name . '</p>';
-	}
+    foreach ( $user_query->results as $user ) {
+        echo '<p>' . $user->display_name . '</p>';
+    }
 } else {
-	echo 'No users found.';
+    echo 'No users found.';
 }
 ```
 
 Note that the user query class may not be available yet if your code runs very early.
+

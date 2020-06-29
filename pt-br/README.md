@@ -1,4 +1,4 @@
-# WordPress Do Jeito Certo
+# PT-BR WordPress Do Jeito Certo
 
 Este livro possui fontes sólidas, das melhores práticas já feita pela comunidade [WordPress](https://wordpress.org) para seus desenvolvedores, com a intenção de ajudar a depurar os erros mais comuns e dolorosos feito por nós meros mortais.
 
@@ -12,4 +12,5 @@ Você pode atualizar este livro, tanto pelo editor de arquivos markdown quanto a
 
 ## Licença
 
-[Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
+[Attribution-ShareAlike 4.0 International \(CC BY-SA 4.0\)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
+

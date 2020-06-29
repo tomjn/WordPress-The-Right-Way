@@ -4,10 +4,10 @@ Post queries retrieve posts from the database so that they can be processed or d
 
 As a summary:
 
- - Use the main loop to display the primary content on the page.
- - Use `WP_Query` for secondary requests and queries.
- - If the main loop does not show what you want it to show, change it with `pre_get_posts`.
- - Avoid `query_posts` and `wp_reset_query` at all costs.
+* Use the main loop to display the primary content on the page.
+* Use `WP_Query` for secondary requests and queries.
+* If the main loop does not show what you want it to show, change it with `pre_get_posts`.
+* Avoid `query_posts` and `wp_reset_query` at all costs.
 
 ## The Main Loop
 
@@ -48,13 +48,13 @@ To retrieve posts from the Database, you need to make a post query. All methods 
 
 There are 3 ways to do this:
 
- - `WP_Query` ( best )
- - `get_posts` ( okay )
- - `query_posts` ( avoid at all costs )
+* `WP_Query` \( best \)
+* `get_posts` \( okay \)
+* `query_posts` \( avoid at all costs \)
 
 This diagram explains what happens in each method:
 
-[![WordPress Core Load](../assets/query_functions.png)](../assets/query_functions.png)
+[![WordPress Core Load](../../.gitbook/assets/query_functions%20%282%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/query_functions.png)
 
 ### `WP_Query`
 
@@ -68,13 +68,14 @@ All post queries are wrappers around `WP_Query` objects. A `WP_Query` object rep
 $query->have_posts();
 $query->the_post();
 ```
+
 etc. The functions `have_posts();` and `the_post();` found in most themes are wrappers around the main query object:
 
 ```php
 function have_posts() {
-	global $wp_query;
+    global $wp_query;
 
-	return $wp_query->have_posts();
+    return $wp_query->have_posts();
 }
 ```
 
@@ -88,13 +89,13 @@ $posts = get_posts( $arguments );
 
 While `get_posts` is conceptually simpler than `WP_Query` for novice programmers to understand, it does have a downside. `get_posts` doesn't make extensive use of the object cache in the way that `WP_Query` does, and may not be as performant.
 
-When using this function,  always specify `suppress_filters` as `false`. By default, `get_posts` ignores cache, and will run slower.
+When using this function, always specify `suppress_filters` as `false`. By default, `get_posts` ignores cache, and will run slower.
 
 ### Do not use `query_posts`
 
 `query_posts` is an overly simplistic and problematic way to modify the main query of a page by replacing it with new instance of the query.
 
-It is inefficient (re-runs SQL queries) and will outright fail in some circumstances (especially often when dealing with posts pagination). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. **Do not use `query_posts()`.**
+It is inefficient \(re-runs SQL queries\) and will outright fail in some circumstances \(especially often when dealing with posts pagination\). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. **Do not use `query_posts()`.**
 
 ### Meta Queries and Performance
 
@@ -114,10 +115,10 @@ A common mistake is to call `wp_reset_postdata` after the if statement. This is 
 
 ```php
 if ( $q->have_posts() ) {
-	while( $q->have_posts() ) {
-		$q->the_post();
-	}
-	wp_reset_postdata();
+    while( $q->have_posts() ) {
+        $q->the_post();
+    }
+    wp_reset_postdata();
 }
 ```
 
@@ -149,5 +150,6 @@ These filters can go in a themes `functions.php`, or in a plugin.
 
 ## Further Reading
 
- - [You don't know query](http://www.slideshare.net/andrewnacin/you-dont-know-query-wordcamp-netherlands-2012), a talk by Andrew Nacin
- - [When you should use WP_Query vs query_posts](http://wordpress.stackexchange.com/a/1755/736), Andrei Savchenko/Rarst
+* [You don't know query](http://www.slideshare.net/andrewnacin/you-dont-know-query-wordcamp-netherlands-2012), a talk by Andrew Nacin
+* [When you should use WP\_Query vs query\_posts](http://wordpress.stackexchange.com/a/1755/736), Andrei Savchenko/Rarst
+

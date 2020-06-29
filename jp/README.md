@@ -1,4 +1,4 @@
-# WordPress The Right Way
+# JP WordPress The Right Way
 
 この本はWordPress開発者のためのWordPress開発者によるベストプラクティスを凝縮した資料です。
 
@@ -10,7 +10,7 @@
 
 この本の編集は、テキストエディタでマークダウンファイルのアップデートするか、[Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md)でリポジトリを開いて編集することで可能です。デスクトップアプリではライブプレビューも可能です。
 
-
 ## ライセンス
 
-別途記載はない限り[表示 - 継承 4.0 国際 (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/) です。
+別途記載はない限り[表示 - 継承 4.0 国際 \(CC BY-SA 4.0\)](http://creativecommons.org/licenses/by-sa/4.0/) です。
+
