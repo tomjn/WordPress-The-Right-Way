@@ -1,4 +1,8 @@
-# JavaScript
+# Widgets
+
+Widgets have served WordPress well over the years, but the future is blocks. We advise only to build widgets only when it cannot be avoided. Instead, build blocks. Most widgets can be ported to server rendered blocks.
+
+In the event that you do need to build a widget, here is some useful information:
 
 ## Enqueing a script
 
@@ -10,7 +14,7 @@ A quick note on how to do it, and a note on running the JS, so that it doesn't g
 
 How to enqueue a widgets scripts and styles, but only if the widget is on the page
 
-##Events
+## Events
 
 Running code when:
 

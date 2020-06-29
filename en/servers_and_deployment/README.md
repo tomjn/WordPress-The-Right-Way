@@ -9,7 +9,7 @@ Make sure the development server has error-reporting turned on so you catch anyt
 Make sure your local environment is as similar to your production server as possible (see also *Migrations*.)
 
 - are you running the same PHP version?
-- do you have the same PHP.ini settings?
+- do you have the same `php.ini` settings?
 - do you have the same version of MySQL?
 - do you have the same Apache or Nginx version & configuration?
 - do you have the same version of WordPress with the same plugins enabled?
@@ -33,11 +33,13 @@ WordPress has [theme and plugin editors](http://codex.wordpress.org/Editing_File
 **Avoid using them.**
 
 - The editor is a simple HTML textarea - you get none of the code highlighting, formatting or syntax checking of an IDE or basic text editor, it might seem quicker but it's also much easier to make mistakes.
-- there's no version control, you don't get a list of what you changed and the only protection is your own backups (if you remembered to make any).
+- There's no version control, you don't get a list of what you changed and the only protection is your own backups (if you remembered to make any).
 - A significant error might break WordPress in such a way that you can no longer access the editor itself.
 
 The theme/plugin editor is also a potential security risk: if someone gains access to an administrator account they can edit sensitive files on the server.
 
-You can turn off file editing completely by adding this line to wp-config.php
+You can turn off file editing completely by adding this line to `wp-config.php`
 
-    define( 'DISALLOW_FILE_EDIT', true );
+```php
+define( 'DISALLOW_FILE_EDIT', true );
+```

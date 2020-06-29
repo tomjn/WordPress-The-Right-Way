@@ -6,19 +6,19 @@ WP CLI is a command line tool maintained by numerous experienced WordPress devel
 
 To download WordPress into a folder on the command line, use this command:
 
-```
+```shell
 wp core download
 ```
 
 This will download the latest version of WordPress into the current directory. Next you'll need to create your `wp-config.php`:
 
-```
+```shell
 wp core config --dbname=testing --dbuser=wp --dbpass=securepswd
 ```
 
 Finally, run the install command to set up the database:
 
-```
+```shell
 wp core install --url="example.com" --title="Example Site" --admin_user="exampleadmin" --admin_password="changeme" --admin_email="example@example.com"
 ```
 
@@ -28,7 +28,7 @@ You should now have a fresh new WordPress install ready to log in to.
 
 If you want to create a multisite install, use the `wp core multisite-convert` command:
 
-```
+```shell
 wp core multisite-convert --title="My New Network" --base="example.com"
 ```
 
@@ -38,12 +38,12 @@ You may have content you want to pre-add or migrate to your new install. For thi
 
 Use this command to import:
 
-```
+```shell
 wp import content.wxr
 ```
 
 Use this command to export:
 
-```
+```shell
 wp export
 ```

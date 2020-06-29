@@ -2,7 +2,7 @@
 
 ## WordCamps
 
-WordCamps are short, 1-2 day conferences that focus on everything WordPress. They are designed to have both a general focus (on blogging, writing content, marketing websites and the business surrounding WordPress) and a technical focus (aimed at developers writing plugins and themes). 
+WordCamps are short, 1-2 day conferences that focus on everything WordPress. They are designed to have both a general focus (on blogging, writing content, marketing websites and the business surrounding WordPress) and a technical focus (aimed at developers writing plugins and themes).
 
 There are over 50 WordCamps every year held all over the world in over 40 countries, and are a great way to explore the community. Many WordCamp sessions are placed onto [WordPress.tv](http://wordpress.tv/), and is a great opportunity to help the WordPress community, either by speaking, volunteering, or sponsoring.
 

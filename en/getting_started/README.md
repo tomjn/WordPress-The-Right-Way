@@ -31,12 +31,16 @@ With a local environment, you can work faster, no more uploading and downloading
 
 Here are a few options for setting up a local development environment. They fall into two categories:
 
- - Virtual Machines
+ - Virtual Machines ( including containers )
  - Native Server Stacks
 
-The first type of environment usually involves projects such as Vagrant, and gives you a standardised consistent virtual machine to work with.
+The first type of environment usually involves projects such as Vagrant based projects or Docker, and gives you a standardised consistent virtual machine to work with.
 
 The second, installs the server software directly into your operating system. There are various tools that make this easy, but your environment will be unique and more difficult to debug. These are sometimes called LAMP stacks, which stands for Linux Apache MySQL PHP.
+
+### Docker and non-Linux
+
+You may be surprised to find out that outside of linux, docker containers still need a Linux host OS. To get around this, macOS and Windows create Alpine linux VMs using the OS provided hypervisor. On macOS this is a Hyperkit VM, and on Windows this is a Hyper-V VM.
 
 ### IIS
 
@@ -54,4 +58,4 @@ Created by Linus Torvalds the creator of Linux, [Git is a popular decentralised 
 
 ### Subversion
 
-Also known as svn, this is a centralised version control system, used for the plugin and theme repositories on WordPress.org
+Also known as svn, this is a centralised version control system, used for the plugin and theme repositories on WordPress.org.

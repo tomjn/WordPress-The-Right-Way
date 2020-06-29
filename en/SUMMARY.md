@@ -31,10 +31,12 @@
    * [Behaviour Testing](testing/theory/behaviour_testing.md)
    * [Test Driven Development](testing/tdd.md)
    * [WP_UnitTestCase](testing/wp_unittestcase.md)
+* [Security](security/README.md)
+   * [Standalone PHP Files](security/standalonefiles.md)
+   * [TLS and HTTPS](security/tls-https.md)
 * [Servers And Deployment](servers_and_deployment/README.md)
    * [WP CLI](servers_and_deployment/wp_cli.md)
    * [Migrations](servers_and_deployment/migrations.md)
-* [Security](ssl/README.md)
 * [Community](community/README.md)
 * [Credits](credits/README.md)
 

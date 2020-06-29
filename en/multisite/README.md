@@ -14,11 +14,13 @@ restore_current_blog();
 
 `restore_current_blog` undos the last call to `switch_to_blog`, but only by one step, the calls are not nestable, so always call `restore_current_blog` before calling `switch_to_blog` again.
 
+Keep in mind though, that this changes the data, it does not reload the plugins and theme to match the blog when switching.
+
 ## Listing Blogs in a Network
 
 Listing blogs in a network is possible, but it's an expensive thing to do.
 
-It can be done using the `get_sites( $args)` function, available since version 4.6 of WordPress. The `get_sites( $args)` function accepts an array or query string of site query parameters specifying the kind of sites you are looking for. For versions 3.7  to 4.6 a similar function `wp_get_sites( $args )` was available. 
+It can be done using the `get_sites( $args)` function, available since version 4.6 of WordPress. The `get_sites( $args)` function accepts an array or query string of site query parameters specifying the kind of sites you are looking for. For versions 3.7 to 4.6 a similar function `wp_get_sites( $args )` was available.
 
 See the [codex entry for `get_sites`](https://developer.wordpress.org/reference/functions/get_sites/) for more details.
 
@@ -29,7 +31,9 @@ Domain mapping allows a blog on a multisite install to serve from any domain nam
 
 Often is it helpful - but not necessary, to set the `COOKIE_DOMAIN` constant to an empty string in your `wp-config.php`:
 
- `define('COOKIE_DOMAIN', '');`
+```php
+define( 'COOKIE_DOMAIN', '' );
+```
 
 Otherwise WordPress will always set it to your network’s `$current_site->domain`, which could cause issues in some situations.
 

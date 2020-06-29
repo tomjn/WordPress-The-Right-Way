@@ -88,7 +88,7 @@ By default WordPress will use in memory caching that does not persist between pa
 
 ## Data Overview
 
-Here's a table showing the full spectrum of data types in WordPress that are stored in the database: 
+Here's a table showing the full spectrum of data types in WordPress that are stored in the database:
 
 |                  |Post                   |Comments             |Term|User|Blogs|Network|Links|Options|Site Options
 |------------------|-----------------------|---------------------|--------|----|----|-----|-------|-----|----|----

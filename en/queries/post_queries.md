@@ -2,6 +2,13 @@
 
 Post queries retrieve posts from the database so that they can be processed or displayed on the frontend. This section covers some vital concepts, and methods of generating these queries.
 
+As a summary:
+
+ - Use the main loop to display the primary content on the page.
+ - Use `WP_Query` for secondary requests and queries.
+ - If the main loop does not show what you want it to show, change it with `pre_get_posts`.
+ - Avoid `query_posts` and `wp_reset_query` at all costs.
+
 ## The Main Loop
 
 Every page displayed by WordPress has a main query. This query grabs posts from the database, and is used to determine what template should be loaded.
@@ -28,10 +35,12 @@ This object is told what to fetch using Query Variables. These values are passed
 For example, the query variable 'p' is used to fetch a specific post type, e.g.
 
 ```php
-$posts = get_posts( 'p=12' );
+$posts = get_posts( [ 'p' => 12 ] );
 ```
 
 Fetches the post with ID 12. The full list of options are available on the `WP_Query` codex entry.
+
+_Note: When using `get_posts` always specify `suppress_filters` and use the value `false`, so that caches get used. If you do not set this, there will be a performance penalty. This is not needed for `WP_Query`._
 
 ## Making a Query
 
@@ -39,9 +48,9 @@ To retrieve posts from the Database, you need to make a post query. All methods 
 
 There are 3 ways to do this:
 
- - `WP_Query`
- - `get_posts`
- - `query_posts`
+ - `WP_Query` ( best )
+ - `get_posts` ( okay )
+ - `query_posts` ( avoid at all costs )
 
 This diagram explains what happens in each method:
 
@@ -79,11 +88,13 @@ $posts = get_posts( $arguments );
 
 While `get_posts` is conceptually simpler than `WP_Query` for novice programmers to understand, it does have a downside. `get_posts` doesn't make extensive use of the object cache in the way that `WP_Query` does, and may not be as performant.
 
-### Don't use `query_posts`
+When using this function,  always specify `suppress_filters` as `false`. By default, `get_posts` ignores cache, and will run slower.
+
+### Do not use `query_posts`
 
 `query_posts` is an overly simplistic and problematic way to modify the main query of a page by replacing it with new instance of the query.
 
-It is inefficient (re-runs SQL queries) and will outright fail in some circumstances (especially often when dealing with posts pagination). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. Do not use `query_posts()`.
+It is inefficient (re-runs SQL queries) and will outright fail in some circumstances (especially often when dealing with posts pagination). Any modern WordPress code should use more reliable methods, such as making use of the `pre_get_posts` hook, for this purpose. **Do not use `query_posts()`.**
 
 ### Meta Queries and Performance
 
@@ -112,7 +123,7 @@ if ( $q->have_posts() ) {
 
 ### `wp_reset_query`
 
-When you call `query_posts`, you will need to restore the main query after you've done your work. Failure to do so can lead to a large number of issues and unexpected behavior. You can do this with `wp_reset_query`. Always do this after calling `query_posts`, and only do it when necessary.
+When you call `query_posts`, you will need to restore the main query after you've done your work. Failure to do so can lead to a large number of issues and unexpected behavior. You can do this with `wp_reset_query`. Always do this after calling `query_posts`, and only do it when necessary. This means you should never need to use this function.
 
 ## The `pre_get_posts` Filter
 

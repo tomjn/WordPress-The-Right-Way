@@ -7,9 +7,9 @@ WordPress core is the code that powers WordPress itself. It is what you get when
 At the most basic, the WordPress core loading follows this pattern:
 
  - Load MU plugins
- - Load Activated plugins
- - load theme functions.php
- - Run init hook
+ - Load activated plugins
+ - load theme `functions.php`
+ - Run `init` hook
  - Run main query
  - Load template
 

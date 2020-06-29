@@ -13,7 +13,7 @@ Here, `posts_per_page` and `post_type` are query variables.
 
 ## Query Variables Work In URLs Too
 
-You can append query variables on to a URL in WordPress, e.g. 
+You can append query variables on to a URL in WordPress, e.g:
 
  - https://example.com/category/wordpress/
  - https://example.com/category/wordpress/?posts_per_page=5

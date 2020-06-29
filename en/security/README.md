@@ -54,25 +54,6 @@ In order to get around this, we use nonces. Nonces are small tokens that can be 
  - Some people write their own password reset facilities. This is bad
  - If you really must, make it a forgotten password link, don't make it actually show your password
 
-## timthumb.php
-
- - Don't use it
- - There's an image API for that
- - timthumb was disowned by its creators and is officially no longer supported
- - Banned on a number of managed WordPress hosts
-
-## SSL
-
-All big clients deserve an SSL certificate. If you're running an e-commerce site, this is especially true, and your entire site should be using SSL for all logged in users.
-
- - A note on public wifi, unsecured wifi, and snooping
- - Maybe mention firesheep?
-
-### Admin Only SSL
-
- - If your site isn't an ecommerce site, but you have users who visit the backend, their logged in sessions should be sent over an https connection.
- - Explain how
-
 ## Myths
 
 There are a lot of feel good security fixes that float around, that do nothing to help your security, waste your time, and sometimes increase the risk. Here are a few:
