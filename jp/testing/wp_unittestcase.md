@@ -1,2 +1,0 @@
-# WP\_UnitTestCase
-

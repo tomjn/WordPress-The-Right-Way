@@ -1,4 +1,2 @@
-# Test Driven Development
-
-Explain theory and idea behind TDD
+# テスト駆動開発
 

@@ -1,70 +1,70 @@
-# Constants of wp-config.php
+# wp-config.phpの内容
 
-Currently there are several PHP constants on the `wp-config.php` that will allow you to improve you WordPress code and help you debug.
+`wp-config.php`ファイル上にはPHPのいくつかの定数が今のところ、WordPressのコードを改善したりデバッグの助けになったりします。
 
 ## `WP_DEBUG`
 
-This is an Option included in [WordPress version 2.3.1](http://codex.wordpress.org/Version_2.3.1).
+これは[WordPress バージョン 2.3.1](http://codex.wordpress.org/Version_2.3.1)で含まれるようになったオプションです。
 
-By default this will be set to `false` which will prevent warnings and errors from been shown, but **all WordPress developers should have this option active**.
+デフォルトでは`false`にセットされていて、警告やエラーを表示しないようになっていますが、**すべてのWordPressの開発者はこのオプションを有効にするべきです**。
 
-### Activates the Logs
+### ログの有効化
 
 ```php
 define( 'WP_DEBUG', true );
 ```
 
-### Deactivates the Logs
+### ログの無効化
 
 ```php
 define( 'WP_DEBUG', false );
 ```
 
-_Check that the values must be **bool** instead of **string**_
+_この値は**文字列**ではなく**真偽値**でなくてはなりません。_
 
-A minor patch later the on [Wordpress version 2.3.2](http://codex.wordpress.org/Version_2.3.2), the system allowed us to have a more granular control over the Database error logs.
+[WordPressバージョン 2.3.2](http://codex.wordpress.org/Version_2.3.2)であとからマイナーなパッチが取り込まれ、データベースのエラーログに対するより粒度の細かいコントロールを可能になりました。
 
-Later on in the version 2.5, WordPress raised the [error reporting](http://www.php.net/error-reporting) level to E\_ALL, that will allow to see logs for Notices and Deprecation messages.
+さらにその後、バージョン2.5で[エラーレポーティング](http://www.php.net/error-reporting)のレベルがE\_ALLに引き上げられました。これによりNotices\(注意\)とDeprecation\(非推奨\)メッセージを表示するようになりました。
 
-#### _Notes:_
+#### _メモ:_
 
-If you have this option turned on, you might encounter problems with AJAX requests, this problem is related to Notices been printed on the output of the AJAX response, that **will break XML and JSON**.
+このオプションを有効にするとAJAXリクエストで問題が発生するかもしれません。この問題はAJAXレスポンスの出力にNoticeが表示されてしまい、**XMLとJSONを壊してしまう**ことに関連します。
 
 ### `WP_DEBUG_LOG`
 
-When you use `WP_DEBUG` set to `true` you have access to this constant, and this will allow you to log your notices and warnings to a file.
+`WP_DEBUG`を使い、この定数を`true`にセットすると、NoticeやWarningのログをファイルに記録します。
 
 ### `WP_DEBUG_DISPLAY`
 
-When you use `WP_DEBUG` set to `true` you have access to this constant, with it you can choose to display or not the notices and warnings on the screen.
+`WP_DEBUG`を使いこの定数を`true`にセットするとNoticeやWarningをスクリーンに表示するかどうかを選択できます。
 
-#### Note:
+#### メモ:
 
-If these variables don't produce the output you are expecting check out the [Codex Section about ways to setup your logging](http://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging).
+もしこれらの変数が期待していた出力を産み出さないのであれば、[Codexのロギングセットアップに関するセクション\(英語\)](http://codex.wordpress.org/Editing_wp-config.php#Configure_Error_Logging) [\(日本語\)](http://wpdocs.sourceforge.jp/wp-config.php_%E3%81%AE%E7%B7%A8%E9%9B%86#.E3.82.A8.E3.83.A9.E3.83.BC.E3.83.AD.E3.82.B0.E5.8F.96.E5.BE.97.E3.81.AE.E8.A8.AD.E5.AE.9A)を読むといいでしょう。
 
 ## `SCRIPT_DEBUG`
 
-When you have a WordPress plugin or theme that is including the Minified version of your CSS or JavaScript files by default you are doing it wrong!
+ミニファイされたバージョンのCSSやJavaScriptのファイルをデフォルトでプラグインやテーマに持たせるのはよくありません!
 
-Following the WordPress idea of creating a file for development and its minified version is very good and you should have both files in your plugin, and based on this variable you will enqueue one or the other.
+開発用とミニファイされたバージョンのファイルを作成するというWordPressの考えに従うのはよい方法で、自分のプラグインには両方のファイルを持たせるべきです。その変数をベースにすればどちらかをエンキューさせることができます。
 
-By default this constant will be set to `false`, and if you want to be able to debug CSS or JavaScript files from WordPress you should turn it to `true`.
+デフォルトではこの定数は`false`にセットされていて、WordPressからのCSSやJavaScriptをデバッグしたいときはこれを`true`にするといいでしょう。
 
-### Activates the Logs
+### ログ取得の有効化
 
 ```php
 define( 'SCRIPT_DEBUG', true );
 ```
 
-_Check that the values must be **bool** instead of **string**_
+_この値は**文字列**ではなく**真偽値**でなくてはなりません。_
 
-WordPress default files `wp-includes` and `wp-admin` will be set to its development version if set to `true`.
+`true`にセットすると `wp-includes`と`wp-admin`にあるWordPressのデフォルトファイルは開発バージョンになります。
 
 ## `CONCATENATE_SCRIPTS`
 
-On your WordPress administration you will have all your JavaScript files concatenated in to one single request based on the dependencies and priority of enqueue.
+WordPressの管理画面では、依存性とエンキューの優先度に応じてすべてのJavaScriptファイルが1つのリクエストに連結されます。
 
-To remove this feature all around you can set this constant to `false`.
+この機能を無効にするにはこの定数を`false`に設定します。
 
 ```php
 define( 'CONCATENATE_SCRIPTS', false );
@@ -72,7 +72,7 @@ define( 'CONCATENATE_SCRIPTS', false );
 
 ## `SAVEQUERIES`
 
-When you are dealing with the database you might want to save your queries so that you can debug what is happening inside of your plugin or theme.
+データベースを扱うときには、プラグインやテーマ内で起こっていることをデバッグできるように、クエリーを保存したいと考えることでしょう。
 
 **Make `$wpdb` save Queries**
 
@@ -80,5 +80,5 @@ When you are dealing with the database you might want to save your queries so th
 define( 'SAVEQUERIES', true );
 ```
 
-_**Note:** this will slowdown your WordPress_
+_**メモ:** これtrueにするとWordPressが遅くなります_
 

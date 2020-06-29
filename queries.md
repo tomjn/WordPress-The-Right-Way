@@ -47,7 +47,7 @@ $posts = get_posts( 'p=12' );
 
 このダイアグラムは各メソッドで何が行われているのかを説明しています:
 
-[![WordPress&#x30B3;&#x30A2;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;](../.gitbook/assets/query_functions%20%281%29.png)](https://github.com/tomjn/wordpress-the-right-way/tree/08f12364c6d37d9e52debefbfb58dba12e229e20/jp/assets/query_functions.png)
+[![WordPress&#x30B3;&#x30A2;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;](.gitbook/assets/query_functions%20%281%29.png)](https://github.com/tomjn/wordpress-the-right-way/tree/08f12364c6d37d9e52debefbfb58dba12e229e20/jp/assets/query_functions.png)
 
 #### `WP_Query`
 

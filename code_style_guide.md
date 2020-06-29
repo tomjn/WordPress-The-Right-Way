@@ -1,20 +1,18 @@
-# Code Style Guide
+# コーディングスタイルガイド
 
-## Clean Code
+## きれいなコード
 
-It's important to keep code readable and maintainable. This prevents small but critical errors from becoming hidden in your code, while making whole classes of bugs incredibly obvious \( missing closing braces are easy to spot when you indent consistently \).
+コードは読みやすく、メンテナンスしやすい状態に維持することが重要です。
 
-While it's best to use the same standard as everybody else, if you're more comfortable using a PSR standard, then use that. If you do though, do it consistently.
+### インデント
 
-### Indenting
+WordPressではインデントはタブを使い、見た目は半角スペース4個分になるようにします。インデントはコードの読みやすさにとって重要で、各命令文はそれぞれの行に置くべきです。インデントがないと動作を理解するのがとても難しくなり、ミスも起こりやすくなります。また、フォーラムやStack Excahngeでも答えを得るのが難しくなるでしょう。
 
-Indenting in WordPress is done using tabs, representing 4 spaces visually. Indenting is important for readable code, and each statement should be on its own line. Without indenting, it becomes very difficult to understand what's happening, and mistakes are easier to make. This also makes support requests on the forums and stack exchange difficult to answer.
+良いエディターは自動インデント機能を持っていて、たいていは修正が必要なコードがあればファイルの再インデントが可能です。
 
-A good editor will auto-indent for you, most can re-indent a file if you've older code that needs fixing.
+チームの全員が[Editor Config](http://editorconfig.org)を利用して同じスタイルを使用するようにすると確実でしょう。これには各種エディターのプラグインが含まれていて、各自で自分の好みのエディターを使うことができます。
 
-A good way to ensure that all members on a team are using the same styles is to use [Editor Config](http://editorconfig.org). It contains plugins for different editors, so everyone can use their favorite editor.
-
-For instance, the following `.editorconfig` file enforces the above rule, indentation as tabs of width 4 spaces.
+例えば、以下の `.editorconfig` ファイルは半角スペース4文字分の幅のタブをインデントとして使用する、上記のルールを強制的に適用します。
 
 ```text
 [*.php]
@@ -22,9 +20,9 @@ indent_style = tabs
 indent_size = 4
 ```
 
-### PHP Tag Spam
+### PHPタグスパム
 
-The `<?php` and `?>` tags should be used sparingly. For example:
+`<?php` と `?>` タグは控えめに使うべきです。例えば:
 
 ```php
 <?php while( have_posts() ) { ?>
@@ -35,7 +33,7 @@ The `<?php` and `?>` tags should be used sparingly. For example:
 <?php } ?>
 ```
 
-Would be easier to read as:
+は次のようにしたほうが読みやすいでしょう:
 
 ```php
 <?php
@@ -49,28 +47,28 @@ while( have_posts() ) {
 } ?>
 ```
 
-A good guideline is to calculate what needs to be displayed, then display it all in one go rather than mixing the two.
+良いガイドラインは何を表示すべきかで判断することです。そして2つを混ぜるのではなく、1つのタグ内ですべてを表示させるようにします。
 
-### Linting
+### リント
 
-A lot of editors support or have built in syntax checkers. These are called Linters. When using a good editor, syntax errors are highlighted or pointed out.
+多くのエディターはシンタックスチェックをサポートもしくはビルトインで持っています。これらはリンターと呼ばれています。優れたエディターを使えばシンタックスエラーが強調表示されたり指摘されたりします。
 
-For example, in PHPStorm, a syntax error is given a red underline.
+例えば、PHPStormではシンタックスエラーは赤の下線が付けられます。
 
-## Coding Standards
+## コーディング規約
 
-WordPress follows a set of coding standards. These differ from the PSR standards. For example, WordPress uses tabs rather than spaces, and places the opening bracket on the same line.
+WordPressでは独自のコーディング規約に従っています。これはPSRの規約とは違いがあります。例えば、空白スペースではなくタブを使い、開始ブラケットは同じ行に置きます。
 
-The WordPress Contributor Handbook covers the coding standards in more details. Click below to read more:
+このコーディング規約についてはWordPress貢献者ハンドブックで詳述されています。
 
-* [HTML Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/html/)
-* [PHP Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/php/)
-* [JavaScript Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
-* [CSS Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/css/)
+* [HTMLコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/html/)
+* [PHPコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/php/)
+* [JavaScriptコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/javascript/)
+* [CSSコーディング規約](http://make.wordpress.org/core/handbook/coding-standards/css/)
 
-#### PHP Code Sniffer & PHP CS Fixer
+### PHPコードスニッファーとPHP CSフィクサー
 
-PHP Code Sniffer is a tool that finds violations of the coding standard. Many editors integrate support, including support for a second tool that fixes those violations automatically.
+PHPコードスニッファーはコーディング規約の違反を見つけるツールです。これは多くのエディターでサポートされていて、そうした違反を自動的に修正する2番めのツールのサポートも含まれているます。
 
-To use this, you will need the [WordPress Coding Standards definition](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
+これを使うにはWordPressのコーディング規約定義が必要です。[ PHPStorm用の説明とともにここで見つけることができます。](https://gist.github.com/Rarst/1370155).
 

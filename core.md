@@ -1,35 +1,31 @@
-# Core
+# コア
 
-WordPress core is the code that powers WordPress itself. It is what you get when downloading WordPress from wordpress.org, minus the themes and plugins.
+WordPressコアとは、WordPress自身を動かしているコードのことです。wordpress.orgからWordPressをダウンロードすると取得できるものからテーマとプラグインを取り除いた分になります。
 
-## Load Process
+## 読み込みプロセス
 
-At the most basic, the WordPress core loading follows this pattern:
+todo: コアの読み込みプロセスに関するメモとRarstsのブログ記事への参照
 
-* Load MU plugins
-* Load activated plugins
-* load theme `functions.php`
-* Run `init` hook
-* Run main query
-* Load template
+[![WordPress Core Load](.gitbook/assets/wordpress_core_load%20%281%29.png)](https://github.com/tomjn/wordpress-the-right-way/tree/08f12364c6d37d9e52debefbfb58dba12e229e20/jp/assets/wordpress_core_load.png)
 
-Administration and AJAX requests follow a similar but lighter process. This diagram covers the specifics:
+## jQueryの登録解除
 
-[![WordPress Core Load](.gitbook/assets/wordpress_core_load%20%283%29.png)](https://github.com/tomjn/WordPress-The-Right-Way/tree/d48f16959784ba7a87b9401fb918104b476aaf36/en/assets/wordpress_core_load.png)
+コアに同梱されているjQueryの登録を解除して自分のコピーやGoogle CDNのものを追加しようとするプラグインやテーマの開発者がたくさんいますが、互換性の問題を引き起こす可能性があるので、それはやめましょう。
 
-## Deregistering jQuery
+その代わり、WordPressに同梱されているjQueryのコピーを使い、テスト時には最新のWordPressで使われているバージョンを目標にしましょう。これにより、プラグイン間の互換性を最大化します。
 
-Many plugin and theme developers attempt to unregister the jQuery that comes with core, and add their own copy, normally the jQuery on the Google CDN. Do not do this, it can cause compatability issues.
+## コアファイルの変更
 
-Instead use the copy of jQuery that comes with WordPress and aim for the version used in the latest WordPress when testing. This ensures maximum compatability across plugins.
+何かを追加したり取り除いたりするためにコアの一部を修正したい誘惑に駆られるかもしれませんが、それは絶対にダメです。WordPressがアップデートされるとその変更はすべて失われます。
 
-## Modifying Core
+その代わり、フック/アクションとフィルターを使ってコアの挙動を変更しましょう。
 
-It's tempting to modify parts of Core to remove or add things, but this must never be done. When WordPress updates, all your changes will be lost.
+## .orgでのコアの開発作業
 
-Instead, use Hooks/Actions and Filters to modify Core behaviour.
-
-## Further Reading
-
-* [Making Sense of Core Load](http://www.rarst.net/wordpress/wordpress-core-load/)
+* trunk
+* develop
+* grunt builds develop into trunk
+* Trac
+* code freeze
+* release
 

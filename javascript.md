@@ -1,24 +1,12 @@
 # JavaScript
 
-Javascript is the future of WordPress, but there are a number of things to keep in mind.
+WordPressにはJavaScriptのための依存マネージャーとエンキューの機能が組み込まれています。そのままのJavaScriptを埋め込む`<script>`タグは使ってはいけません。
 
-While there's a lot of things that should always be done, there are three approaches to using WordPress javascript the right way.
+## 登録とエンキュー
 
-* **The Worst Way** - Sending AJAX requests to files in your theme or page templates, then including them in your header with a manually coded tag
-* **The Old Way** - Using the WP-Admin AJAX API for requests
-* **The Best Way** - Using the REST API to add endpoint URLs your javascript can talk to.
+JavaScriptファイルは登録するようにします。登録により依存マネージャーにスクリプトがあることを知らせます。ページにスクリプトを埋め込むにはな必ずエンキューさせます。
 
-We consider the Admin AJAX interface a legacy API. For all new development use REST API endpoints.
-
-While this section is expanded and refactored, here is information on using Admin AJAX safely:
-
-## Registering and Enqueueing
-
-WordPress comes with dependency management and enqueueing for JavaScript files. Don't use raw `<script>` tags to embed JavaScript.
-
-JavaScript files should be registered. Registering makes the dependency manager aware of the script. To embed a script onto a page, it must be enqueued.
-
-Let's register and enqueue a script.
+ではスクリプトの登録とエンキューをしてみましょう。
 
 ```php
 // Use the wp_enqueue_scripts function for registering and enqueueing scripts on the front end.
@@ -34,7 +22,7 @@ function register_and_enqueue_a_script() {
         'my-script',
         get_template_directory_uri().'/js/functions.js',
         array( 'jquery' ),
-        filemtime( get_template_directory().'/js/functions.js' ),
+        filemtime( get_template_directory().'/js/functions.js',
         true
     );
     // Enqueue the script.
@@ -42,19 +30,15 @@ function register_and_enqueue_a_script() {
 }
 ```
 
-Scripts should only be enqueued when necessary; wrap conditionals around `wp_enqueue_script()` calls appropriately.
+スクリプトは必要なときだけエンキューするようにしましょう。`wp_enqueue_script()`の呼び出しを適切に条件分岐でラップしましょう。
 
-When enqueueing javascript in the admin interface, use the `admin_enqueue_scripts` hook.
+## ローカライズ
 
-When adding scripts to the login screen, use the `login_enqueue_scripts` hook.
+スクリプトをローカライズすることにより、PHPからJSに変数を渡すことができるようになります。これは文字列の国際化\(つまりローカライゼーション\)によく利用されますが、他にもたくさんの使い道があります。
 
-## Localizing
+技術的な面では、スクリプトをローカライズするということは登録したスクリプトの直前に新しい `<script>` タグが追加されることを意味していて、ローカライズしているときに指定した名称\(2番めの引き数\)とともに _グローバル_ なJavaScriptのオブジェクトを含んでいることを意味します。これはまた、別のスクリプトをあとから追加したら依存関係にしたがってこのスクリプトを持つということであり、同じようにグローバルなオブジェクトを利用できるということでもあります。WordPressはこうしたチェーンされた依存関係もちゃんと解決します。
 
-Localizing a script allows you to pass variables from PHP into JS. This is typically used for internationalization of strings \(hence localization\), but there are plenty of other uses for this technique.
-
-From a technical side, localizing a script means that there will be a new `<script>` tag added right before your registered script, that contains a _global_ JavaScript object with the name you specified during localizing \(the 2nd argument\). This also means that if you add another script later on, that has this script as dependency, then you will be able to use the global object there as well. WordPress resolves chained dependencies just fine.
-
-Let's localize a script.
+ではスクリプトをローカライズしてみましょう。
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
@@ -78,7 +62,7 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-In the javascript file, the data is available in the object name specified while localizing.
+このJavaScriptファイルの中ではデータは
 
 ```javascript
 ( function( $, plugin ) {
@@ -86,15 +70,15 @@ In the javascript file, the data is available in the object name specified while
 } )( jQuery, scriptData || {} );
 ```
 
-## Deregister / Dequeueing
+## 登録解除 / キューの解除
 
-Scripts can be deregistered and dequeued via `wp_deregister_script()` and `wp_dequeue_script()`.
+スクリプトは`wp_deregister_script()`と`wp_dequeue_script()`によって登録の解除とキューの解除ができます。
 
 ## AJAX
 
-WordPress offers an easy server-side endpoint for AJAX calls, located in `wp-admin/admin-ajax.php`.
+WordPressでは、`wp-admin/admin-ajax.php`にある、AJAX呼び出しのための簡単なサーバーサイドのエンドポイント提供しています。
 
-Let's set up a server-side AJAX handler.
+ではサーバーサイドのAJAXハンドラーをセットアップしてみましょう。
 
 ```php
 // Triggered for users that are logged in.
@@ -150,7 +134,7 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-And the accompanying JavaScript:
+そしてJavaScriptは以下のようになります:
 
 ```javascript
 ( function( $, plugin ) {
@@ -183,9 +167,9 @@ And the accompanying JavaScript:
 } )( jQuery, scriptData || {} );
 ```
 
-`ajax_url` represents the admin AJAX endpoint, which is automatically defined in admin interface page loads, but not on the front-end.
+`ajax_url`は管理画面のAJAXエンドポイントを表していて、管理画面のインターフェースページが読み込まれると自動的に定義されます。
 
-Let's localize our script to include the admin URL:
+次に、管理画面のURLを含んだスクリプトをローカライズしてみましょう:
 
 ```php
 add_action( 'wp_enqueue_scripts', 'register_localize_and_enqueue_a_script' );
@@ -198,11 +182,11 @@ function register_localize_and_enqueue_a_script() {
 }
 ```
 
-## The JavaScript side of WP AJAX
+## WP AJAX のJavaScriptサイド
 
-There are several ways to go on this. The most common is to use `$.ajax()`. Of course, there are shortcuts available like `$.post()` and `$.getJSON()`.
+これを行うにはいくつか方法があります。もっとも一般的なのは `$.ajax()` を使う方法です。もちろん `$.post()` や `$.getJSON()` などのショートカットも利用可能です。
 
-Here's the default example.
+以下はデフォルトの例です。
 
 ```javascript
 /*globals jQuery, $, scriptData */
@@ -237,11 +221,11 @@ Here's the default example.
 } )( jQuery, scriptData || {} );
 ```
 
-Note that above example uses `_ajax_nonce` to verify the NONCE value, which you will have to set by yourself when localizing the script. Just add `'_ajax_nonce' => wp_create_nonce( "some_value" ),` to your data array. You can then add a referrer check to your PHP callback that looks like `check_ajax_referer( "some_value" )`.
+上の例ではNONCE値の検証のため `_ajax_nonce` を使ってることに注意してください。これはスクリプトをローカライズする際に自分でセットする必要があります。データ配列に `'_ajax_nonce' => wp_create_nonce( "some_value" ),`を追加するだけです。すると、PHPコールバックに次のようなリファラーチェックを追加できます: `check_ajax_referer( "some_value" )`
 
-## AJAX on click
+## クリック時のAJAX
 
-Actually it's pretty simple to execute an AJAX request when some clicks \(or does some other user interaction\) on some element. Just wrap up your `$.ajax()` \(or similar\) call. You can even add a delay like you might be used to.
+特定の要素に対するクリック時\(もしくはその他のユーザーインタラクション時\)にAJAXリクエストを実行するのは、実際のところとても簡単です。単に `$.ajax()` \(もしくは類似のものの\)呼び出しをラップするだけです。また、ディレイも追加することができます。
 
 ```javascript
 $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
@@ -253,9 +237,9 @@ $( '#' + plugin.element_name ).on( 'keyup', function( event ) {
     .delay( 500 );
 ```
 
-## Multiple callbacks for a single AJAX request
+## シングルのAJAXリクエストへの複数コールバック
 
-You might come into a situation where multiple things have to happen after an AJAX request finished. Gladly jQuery returns an object, where you can attach all of your callbacks.
+AJAXリクエスト完了後に複数のことをする必要があることがあります。幸いなことにjQueryではオブジェクトを返しますので、すべてのコールバックをアタッチすることができます。
 
 ```javascript
 /*globals jQuery, $, scriptData */
@@ -293,19 +277,17 @@ You might come into a situation where multiple things have to happen after an AJ
 } )( jQuery, scriptData || {} );
 ```
 
-## Chaining callbacks
+## コールバックの連鎖
 
-A common scenario \(regarding how often it is needed and how easy it then is to hit the mine trap\), is chaining callbacks when an AJAX request finished.
+よくある状況としては\(どのくらい頻繁に必要とされるか、メイントラップにどのくらい簡単にひっとするかによりますが\)、AJAXリクエストが完了した時のコールバックの連鎖です。
 
-About the problem first:
+最初の問題:
 
-> AJAX callback \(A\) executes AJAX Callback \(B\) doesn't know that it has to wait for \(A\) You can't see the problem in your local install as \(A\) is finished too fast.
+> AJAXコールバック\(A\)が実行され AJAXコールバック\(B\)が\(A\)を待たなくてはならないことを知らない \(A\)の終了が早すぎてローカルでの問題が見えない
 
-The interesting question is how to wait until A is finished to then start B and its processing.
+Aが終了するまでどのように待ち、Bがどのようにスタートして処理するのかは、興味深い質問です。
 
-The answer is "deferred" loading and ["promises"](http://en.wikipedia.org/wiki/Futures_and_promises), also known as "futures".
-
-Here's an example:
+答えは「遅延」読み込みと「futures」としても知られる「[promises](http://en.wikipedia.org/wiki/Futures_and_promises)\(日[本語の解説](http://ja.wikipedia.org/wiki/Future)\)」です。 以下はその例です:
 
 ```javascript
 ( function( $, plugin ) {

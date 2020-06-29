@@ -1,16 +1,16 @@
 # WordPress The Right Way
 
-This book is a condensed resource of best practices for and by WordPress developers, intended to fast track developers past common mistakes and painful problems.
+この本はWordPress開発者のためのWordPress開発者によるベストプラクティスを凝縮した資料です。
 
-This is a living document and will continue to be updated with more helpful information and examples as they become available.
+これは生きているドキュメントで、役に立つ情報やサンプルなどで常に更新され続けます。
 
-## How to Contribute
+## 参加協力の方法
 
-[You can contribute on GitHub](https://github.com/Tarendai/WordPress-The-Right-Way). Changes will be [pushed to Gitbook.io automatically](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity) when the [main repository](https://github.com/Tarendai/WordPress-The-Right-Way) changes.
+[協力してくださる方はGitHubへお願いします](https://github.com/Tarendai/WordPress-The-Right-Way)。 [メインのリポジトリ](https://github.com/Tarendai/WordPress-The-Right-Way)が変更されると、[Gitbook.io](https://www.gitbook.io/book/tarendai/wordpress-the-right-way/activity)に自動的にプッシュされます。
 
-Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
+この本の編集は、テキストエディタでマークダウンファイルのアップデートするか、[Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md)でリポジトリを開いて編集することで可能です。デスクトップアプリではライブプレビューも可能です。
 
-## License
+## ライセンス
 
-[Attribution-ShareAlike 4.0 International \(CC BY-SA 4.0\)](http://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated
+別途記載はない限り[表示 - 継承 4.0 国際 \(CC BY-SA 4.0\)](http://creativecommons.org/licenses/by-sa/4.0/) です。
 
