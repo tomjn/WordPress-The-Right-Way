@@ -20,6 +20,7 @@ Since we're doing this the right way, we are using the latest version of WordPre
 
 Since WordPress 5.2 a new feature has been implemented known as the "recovery mode". The release notes for this specific feature stated:
 > This administrator-focused update will let you safely fix or manage fatal errors without requiring developer time. It features better handling of the so-called “white screen of death,” and a way to enter recovery mode, which pauses error-causing plugins or themes.
+
 Essentially this mode does two things: it eliminates the white screen and substitutes it with a user friendly error message. This way you, and visitors, know that something went wrong. The second thing is that it will try (if possible) to send a e-mail to the website administrator address, with a magic link that allows you to login to the dashboard of your website to possibly fix the issues. 
 
 For developers this doesn't change much directly: when an error occurs in PHP, it gets logged somewhere, and you can find out what went wrong and where.
