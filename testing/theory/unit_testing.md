@@ -1,20 +1,31 @@
 # Unit Testing
 
-Unit testing tests individual components. Each test runs in isolation, and tests only a single item, such as a function or method. If a unit test involves multiple interacting objects, then you have written an integration test.
+Unit testing tests individual components. Each test runs in isolation, and tests only a single item, such as a function or method. This function or method is considered the _unit_. 
 
-For example, if I have this function:
+An example of a unit test is shown below. This test is describing a system where we may have a database model that represents information about various novels. We are testing to verify that the `getHorrorRating` method of the model works correctly. This method should return an integer between 0 and 5 describing how high that novel rated in the "Horror" genre.
+
+As our example, we pull a Stephen King novel, as King is largely known as a Horror author.
 
 ```php
-function add( $a, $b ) {
-  return $a + $b;
+<?php
+
+use Example\Novel;
+use PHPUnit\Framework\TestCase;
+
+class NovelTest extends TestCase
+{
+    public function test_stephen_king_novel_horror_rating_is_scary(): void
+    {
+
+        $novel = Novel::getByAuthor('Stephen King')->first();
+        
+        $this->assertEquals(5, $novel->getHorrorRating());
+
+    }
 }
 ```
 
-A unit test might check:
-
-* If 5+5 = 10
-* That 2+3 is not 7
-* That 0+0 does not fail
+The test here is limited to the single line with the assertion. Everything else is setup.
 
 ## Tools for Unit Testing
 
