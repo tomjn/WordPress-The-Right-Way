@@ -1,6 +1,6 @@
-# WP\_UnitTestCase
+# Testing WordPress Plugins
 
-Explain the WP\_UnitTestCase
+Explain how to test WordPress Plugins
 
 ## Further Reading
 

@@ -20,7 +20,7 @@ As you can gather from the list above, the steps for TDD are quite simple, at a 
 
 ### Unit Testing
 
-When getting started in TDD, it's almost uniform that you will be introduced to unit testing first. Unit testing is the core of most people's approach to TDD, as it takes the least amount of effort to setup. For PHP, you simply need to install PHPUnit, and start writing tests. There's more of a setup process for WordPress specifically, which you can read more about on the [unit testing](theory/unit_testing.md) pages.
+When getting started in TDD, it's almost uniform that you will be introduced to unit testing first. Unit testing is the core of most people's approach to TDD, as it takes the least amount of effort to setup. For PHP, you simply need to install PHPUnit, and start writing tests. There's more of a setup process for WordPress specifically, which you can read more about on the [unit testing](unit_testing.md) pages.
 
 ### Integration Testing
 
