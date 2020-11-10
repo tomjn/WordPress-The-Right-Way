@@ -1,6 +1,4 @@
-# unit\_testing
-
-## Unit Testing
+# Unit Testing
 
 Unit testing tests individual components. Each test runs in isolation, and tests only a single item, such as a function or method. If a unit test involves multiple interacting objects, then you have written an integration test.
 
@@ -21,7 +19,6 @@ A unit test might check:
 ## Tools for Unit Testing
 
 * [PHPUnit](https://phpunit.de/)
-* [PHPSpec](http://phpspec.net/)
 
 ## Helpful Projects and Further Reading
 
