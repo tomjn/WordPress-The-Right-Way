@@ -46,7 +46,34 @@ Both of these commands must be run from inside a WordPress repository. You can s
 
 ## Writing your tests
 
+By default, with the scaffolding, tests are assumed to be [unit tests](theory/unit\_testing.md). Test files are stored inside the plugin directory in `<plugin root>/tests`. Test files bust be written with the file name format `test-<test name>.php`.
 
+WordPress tests are slightly different than regular PHPUnit tests, as the WordPress test class `WP_UnitTestCase` extends the PHPUnit class `PHPUnit\Framework\TestCase`.
+
+What that does mean, though, is that all of the PHPUnit Test Case methods are available, but so are a few others:
+
+### Helper Methods
+
+* skipWithoutMultisite
+* skipWithMultisite
+* skipTestOnTimeout
+* expectDeprecated
+
+### WordPress Assertions
+
+* assertPostConditions
+* assertWPError
+* assertIXRError
+* assertNotIXRError
+* assertDiscardWhitespace
+* assertSameIgnoreEOL
+* assertEqualsIgnoreEOL
+* assertSameSets
+* assertEqualSets
+* assertSameSetsWithIndex
+* assertEqualSetsWithIndex
+* assertNonEmptyMultidimensionalArray
+* assertQueryTrue
 
 ## Further Reading
 
