@@ -4,7 +4,7 @@ There are any number of ways to unit test WordPress plugins, but the _right_ way
 
 1. [Installing WP-CLI](#installing-wp-cli)
 2. [Scaffolding your Plugin](#scaffolding-your-plugin)
-3. [Writing your tests](writing-your-tests)
+3. [Writing your tests](#writing-your-tests)
 
 ## Installing WP-CLI
 
