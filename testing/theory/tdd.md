@@ -23,9 +23,7 @@ When getting started in TDD, it's almost uniform that you will be introduced to 
 
 Behavior driven development [(Behavior Driven Development)](bdd.md) is a testing methodology that emerged from TDD, with more of a focus on using plain language to write tests. When written out, BDD tests are generally easier to read as sentences than unit tests, or integration tests.
 
-### Integration Testing
-
-_Need more information here_
+BDD tools can sometimes be used to automate integration testing, but are no substitute for a thorough manual QA check.
 
 ## Parallels to the Scientific Method
 
