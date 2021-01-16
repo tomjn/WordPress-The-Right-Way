@@ -9,18 +9,13 @@ As our example, we pull a Stephen King novel, as King is largely known as a Horr
 ```php
 <?php
 
-use Example\Novel;
+use Example\Assertions;
 use PHPUnit\Framework\TestCase;
 
-class NovelTest extends TestCase
-{
-    public function test_stephen_king_novel_horror_rating_is_scary(): void
-    {
-
-        $novel = Novel::getByAuthor('Stephen King')->first();
-        
-        $this->assertEquals(5, $novel->getHorrorRating());
-
+class AssertionsTest extends TestCase {
+    public function test_get_number_returns_5(): void {
+        $assertions = new Assertions();
+        $this->assertEquals(5, $assertions->getNumber());
     }
 }
 ```
@@ -36,4 +31,3 @@ The test here is limited to the single line with the assertion. Everything else 
 * [John P Blochs WP Unit Test Starter project](https://github.com/johnpbloch/wp-unit-test-project)
 * [WP Mock](https://github.com/10up/wp_mock)
 * [Writing Unit Tests for WordPress](http://greg.harmsboone.org/blog/2014/01/01/writing-unit-tests-for-wordpress)
-

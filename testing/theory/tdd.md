@@ -1,22 +1,19 @@
 # Test Driven Development
 
-Test Driven Development is a development process which takes the seemingly counter-intuitive approach of writing tests before writing the code that the tests cover.
+Test Driven Development also known as TDD, is a development process which takes the seemingly counter-intuitive approach of writing tests before writing the code that the tests cover.
 
 The core idea of test driven development is to create failing tests that you are then able to compare your code against, which gives you assurance that your code at least performs the task that it was intended, based on the tests.
-
-Test driven development has been around as long as there has been software development, but [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck) is credited with *rediscovering* it in the early 2000s.
-
 ## Steps of the TDD Process
 
 1. Add a test
-1. Run all tests and see if the new test fails
-1. Write the code
-1. Run tests again to see if any tests fail
-1. Refactor code
+2. Run all tests and see if the new test fails
+3. Write the code
+4. Run tests again to see if any tests fail
+5. Refactor code
 
 ## Types of Testing
 
-As you can gather from the list above, the steps for TDD are quite simple, at a high level. But, much like with everything in software and web development, when things are simple, we are very good at complicating them. As a way of complicating matters, test driven development as a theory is agnostic to the specific type of testing that you perform. All it states is that the tests should be written first, and should be written specifically for the code that you are planning to write.
+As you can gather from the list above, the steps for TDD are quite simple, at a high level. Test driven development as a theory is agnostic to the specific type of testing that you perform. All it states is that the tests should be written first, and should be written specifically for the code that you are planning to write.
 
 ### Unit Testing
 
