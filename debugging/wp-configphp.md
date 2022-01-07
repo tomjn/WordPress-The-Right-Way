@@ -24,11 +24,11 @@ _Check that the values must be **bool** instead of **string**_
 
 A minor patch later the on [Wordpress version 2.3.2](http://codex.wordpress.org/Version_2.3.2), the system allowed us to have a more granular control over the Database error logs.
 
-Later on in the version 2.5, WordPress raised the [error reporting](http://www.php.net/error-reporting) level to E\_ALL, that will allow to see logs for Notices and Deprecation messages.
+Later on in the version 2.5, WordPress raised the [error reporting](http://www.php.net/error-reporting) level to E\_ALL, that allows us to see logs for Notices and Deprecation messages.
 
 #### _Notes:_
 
-If you have this option turned on, you might encounter problems with AJAX requests, this problem is related to Notices been printed on the output of the AJAX response, that **will break XML and JSON**.
+If you have this option turned on, you might encounter problems with AJAX requests. This problem is related to Notices being printed on the output of the AJAX response, that **will break XML and JSON**.
 
 ### `WP_DEBUG_LOG`
 
@@ -36,7 +36,7 @@ When you use `WP_DEBUG` set to `true` you have access to this constant, and this
 
 ### `WP_DEBUG_DISPLAY`
 
-When you use `WP_DEBUG` set to `true` you have access to this constant, with it you can choose to display or not the notices and warnings on the screen.
+When you use `WP_DEBUG` set to `true` you have access to this constant; with it you can choose to display or not the notices and warnings on the screen.
 
 #### Note:
 
