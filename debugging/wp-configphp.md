@@ -20,7 +20,7 @@ define( 'WP_DEBUG', true );
 define( 'WP_DEBUG', false );
 ```
 
-_Check that the values must be **bool** instead of **string**_
+_Note that the values must be **bool** instead of **string**_
 
 A minor patch later the on [Wordpress version 2.3.2](http://codex.wordpress.org/Version_2.3.2), the system allowed us to have a more granular control over the Database error logs.
 
@@ -56,7 +56,7 @@ By default this constant will be set to `false`, and if you want to be able to d
 define( 'SCRIPT_DEBUG', true );
 ```
 
-_Check that the values must be **bool** instead of **string**_
+_Note that the values must be **bool** instead of **string**_
 
 WordPress default files `wp-includes` and `wp-admin` will be set to its development version if set to `true`.
 
