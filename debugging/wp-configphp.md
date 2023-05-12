@@ -1,6 +1,6 @@
 # Constants of wp-config.php
-
-Currently there are several PHP constants on the `wp-config.php` that will allow you to improve you WordPress code and help you debug.
+This `wp-config.php` file is located in the root of your WordPress file directory and contains your website’s base configuration details, such as database connection information.
+There are several PHP constants in the `wp-config.php` file that will allow you to improve and debug your code.
 
 ## `WP_DEBUG`
 
@@ -8,16 +8,9 @@ This is an Option included in [WordPress version 2.3.1](http://codex.wordpress.o
 
 By default this will be set to `false` which will prevent warnings and errors from been shown, but **all WordPress developers should have this option active**.
 
-### Activates the Logs
-
 ```php
-define( 'WP_DEBUG', true );
-```
-
-### Deactivates the Logs
-
-```php
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true )  // activates the logs;
+define( 'WP_DEBUG', false ) // deactivates the logs;
 ```
 
 _Check that the values must be **bool** instead of **string**_
@@ -30,13 +23,13 @@ Later on in the version 2.5, WordPress raised the [error reporting](http://www.p
 
 If you have this option turned on, you might encounter problems with AJAX requests. This problem is related to Notices being printed on the output of the AJAX response, that **will break XML and JSON**.
 
-### `WP_DEBUG_LOG`
+## `WP_DEBUG_LOG`
 
-When you use `WP_DEBUG` set to `true` you have access to this constant, and this will allow you to log your notices and warnings to a file.
+When you have `WP_DEBUG_LOG` set to `true`, this will allow you to log your WP-notices and warnings to a log-file.
 
-### `WP_DEBUG_DISPLAY`
+## `WP_DEBUG_DISPLAY`
 
-When you use `WP_DEBUG` set to `true` you have access to this constant; with it you can choose to display or not the notices and warnings on the screen.
+When you have `WP_DEBUG_DISPLAY` set to `true`, this will display the errors and warnings on the screen.
 
 #### Note:
 
