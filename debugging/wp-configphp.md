@@ -1,5 +1,5 @@
 # Constants of wp-config.php
-This `wp-config.php` file is located in the root of your WordPress file directory and contains your website’s base configuration details, such as database connection information.
+The `wp-config.php` file is located in the root of your WordPress file directory and contains your website’s base configuration details, such as database connection information.
 There are several PHP constants in the `wp-config.php` file that will allow you to improve and debug your code.
 
 ## `WP_DEBUG`
@@ -25,11 +25,11 @@ If you have this option turned on, you might encounter problems with AJAX reques
 
 ## `WP_DEBUG_LOG`
 
-When you have `WP_DEBUG_LOG` set to `true`, this will allow you to log your WP-notices and warnings to a log-file.
+When you have `WP_DEBUG_LOG` set to `true`, it will allow you to log your Wordpress notices and warnings to a log-file.
 
 ## `WP_DEBUG_DISPLAY`
 
-When you have `WP_DEBUG_DISPLAY` set to `true`, this will display the errors and warnings on the screen.
+When you have `WP_DEBUG_DISPLAY` set to `true`, it will display the errors and warnings on the screen.
 
 #### Note:
 
